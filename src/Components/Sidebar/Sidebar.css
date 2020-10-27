@@ -1,0 +1,88 @@
+.ham-container, .change {
+    cursor: pointer;
+    display: block;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: #fff;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: #fff;
+}
+
+.menu {
+    background: #03002C;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.55);
+    height: 100vh;
+    width: 392px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    transform: translateX(-50%);
+}
+
+.menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    padding: 20px;
+}
+
+.menu ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    font-size: 16px;
+    transition: all 0.25s ease;
+    animation: fadeInRight .25s ease forwards;
+}
+
+.menu ul li:hover {
+    transition: all 0.25s ease;
+    /*background: #030031;*/
+    background: #04003A;
+    cursor: pointer;
+}
+
+.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.25s ease;
+    transform: translateX(0);
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
