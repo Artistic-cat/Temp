@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './Components/Login';
+import Login from './Views/Login/Login';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
