@@ -1,0 +1,65 @@
+.header{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #000A28;
+    top: 0;
+    position: sticky;
+    z-index: 100;
+    justify-content: space-evenly;
+}
+
+.burger-menu{
+    width: 50px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 5px;
+    color: #FFFF;
+    font-size: 20px;
+}
+
+.logo{
+    width: 100px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 5px;
+    color: #FFFF;
+    font-size: 20px;
+}
+
+.search-bar{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.search-bar-input{
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    max-width: 70em;
+}
+
+.profile-icon{
+    width: 100px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-left: 30px;
+    margin-top: 5px;
+    color: #FFFF;
+    font-size: 20px;
+}
+.search-icon{
+    background: url('../../Images/search.svg');
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    fill: #F00;
+}
+
+.search-icon{
+    fill: #FFF;
+}
