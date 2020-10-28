@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Header/Header.css';
-import '../../Images/search.svg';
+// import '../../Images/search.svg';
 
 function Header(){
     return(
