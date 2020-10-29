@@ -8,11 +8,25 @@
     text-align: center;
 }
 
+.nav-buttons {
+    margin: 5% 0 5% 0;
+}
+
 .circle-inner-text {
     background: #03002C;
     border-radius: 50%;
     color: #FFFFFF;
-    padding: 3%;
+    padding: 20%;
     margin: 5%;
 }
 
+.rectangle {
+    background-color: #F3F6FF;
+    min-height: 30vh;
+    margin: 0 3% 3% 0;
+}
+
+.rectangle h4 {
+    padding-top: 2%;
+    color: #000000;
+}
