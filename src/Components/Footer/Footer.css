@@ -1,12 +1,19 @@
-.footer{
+.footer {
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background-color: #000A28;
     bottom: 0;
     color: #FFFF;
     padding-left: 20%;
     padding-right: 20%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        font-size: 3vw;
+    }
 }
