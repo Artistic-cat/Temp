@@ -1,19 +1,18 @@
 import React from 'react';
 import Login from './Views/Login/Login';
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from "./Views/Home/Home"
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/home">
-            <Header />
-            <Footer />
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/home">
+              <Home/>
           </Route>
           <Route path="/">
             <Login />

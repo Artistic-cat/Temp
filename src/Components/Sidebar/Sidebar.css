@@ -1,0 +1,7 @@
+nav {
+    top: 6% !important;
+    background: #03002C !important;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.55) !important;
+    position: fixed !important;
+    z-index: 1 !important;
+}
