@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 70px;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@
     justify-content: space-evenly;
 }
 
-.burger-menu{
+.burger-menu {
     width: 50px;
     object-fit: contain;
     margin: 5px 20px 0;
@@ -25,7 +25,7 @@
     font-size: 20px;
 }
 
-.search-bar{
+.search-bar {
     display: flex;
     flex: 1;
     align-items: center;
@@ -33,7 +33,7 @@
     justify-content: center;
 }
 
-.search-bar-input{
+.search-bar-input {
     height: 12px;
     padding: 10px;
     border: none;
@@ -48,6 +48,7 @@
     color: #FFFF;
     font-size: 20px;
 }
+
 .search-icon {
     width: 1em;
     height: 1em;
@@ -55,6 +56,6 @@
     fill: #F00;
 }
 
-.search-icon{
+.search-icon {
     fill: #FFF;
 }
