@@ -1,31 +1,47 @@
-.login{
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.login{ 
+    position: relative;
+    left: 0em;
+    top: 0em;
+    background: url('../../Images/login_background.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .login-block{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    background: rgba(0,14,29, 0.8);
+    width: 25em;
+    height: 26em;
+
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    
 }
 
-.login-block-background{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 30em;
-    height: 32em;
-    background: #000E1D;
-    opacity: 0.88;
+.login-logo{
+    position: absolute;
+    margin-top: 30%;
+    color: #FFF;
+    font-size: 2em;
 }
 
 .login-form{
-    display: flex;
-    flex-direction: column;
-    margin-top: 6em;
-}
+    position: absolute;
+    top: 45%;
+} 
 
 .input{
     border: none;
@@ -36,35 +52,19 @@
     height: 3.5em;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 60px;
-
-}
-
-.logo{
-     
+    border-radius: 90px;
 }
 
 .login-button{
-    width: 14em;
-    height: 3.5em;
+    width: 12em;
+    height: 3em;
     background: #560034;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 60px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 70px;
     border: none;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.7em;
     color: #FFF;
-    margin: 2em;
-    
+    margin-top: 1em;
 }
 
-.background-image{
-    left: 0em;
-    top: 0em;
-    background: url('../../Images/login_background.jpg');
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    background-size: cover;
-    background-position: center;
-}

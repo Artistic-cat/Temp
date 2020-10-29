@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Header/Header.css';
+
 import '../../Images/search.svg';
 import Sidebar from "../Sidebar/Sidebar";
 

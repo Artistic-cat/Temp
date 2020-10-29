@@ -3,6 +3,7 @@ import './Login.css';
 //import {Link} from 'react-router-dom';
 
 function Login() {
+
     const [email, setEmail]= useState('');
     const [password, setPassword]=useState('');
 
@@ -13,18 +14,14 @@ function Login() {
 
     return(
         <div className='login'>
-            <div className='background-image'></div>
             <div className='login-block'>
-            <div className='login-block-background'></div>
-                <div className='logo'>LOGO</div>
-                <form className='login-form'>
+                <div className='login-logo'>LOGO</div>
+                <div className='login-form'>
                     <input className='input' type='text' placeholder='Username/Email ID' value={email} onChange={e => setEmail(e.target.value)} />
                     <input className='input' type='password' placeholder='Password' value={password} onChange={e=> setPassword(e.target.value)} />
-                    <button className='login-button' type='submit' onClick={logIn} >LOG IN</button>
-                </form>
-                
+                    <button className='login-button' type='submit' onClick={logIn} >Log In</button>
+                </div>
             </div>
-            
         </div>
     )
 }
