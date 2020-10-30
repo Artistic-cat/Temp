@@ -163,59 +163,62 @@ const FileDropBox = () => {
 
     return (
         <div>
-            <div className="container">
+            <div className="file-drop-container">
                 {unsupportedFiles.length === 0 && validFiles.length ?
-                    <button className="file-upload-btn" onClick={() => uploadFiles()}>Upload Files</button> : ''}
+                    <button className="file-drop-file-upload-btn" onClick={() => uploadFiles()}>Upload
+                        Files</button> : ''}
                 {unsupportedFiles.length ? <p>Please remove all unsupported files.</p> : ''}
-                <div className="drop-container"
+                <div className="file-drop-drop-container"
                      onDragOver={dragOver}
                      onDragEnter={dragEnter}
                      onDragLeave={dragLeave}
                      onDrop={fileDrop}
                      onClick={fileInputClicked}
                 >
-                    <div className="drop-message">
-                        <div className="upload-icon"></div>
+                    <div className="file-drop-drop-message">
+                        <div className="file-drop-upload-icon"></div>
                         Drag & Drop files here or click to select file(s)
                     </div>
                     <input
                         ref={fileInputRef}
-                        className="file-input"
+                        className="file-drop-file-input"
                         type="file"
                         multiple
                         onChange={filesSelected}
                     />
                 </div>
-                <div className="file-display-container">
+                <div className="file-drop-file-display-container">
                     {
                         validFiles.map((data, i) =>
-                            <div className="file-status-bar" key={i}>
+                            <div className="file-drop-file-status-bar" key={i}>
                                 <div onClick={!data.invalid ? () => openImageModal(data) : () => removeFile(data.name)}>
-                                    <div className="file-type-logo"></div>
-                                    <div className="file-type">{fileType(data.name)}</div>
-                                    <span className={`file-name ${data.invalid ? 'file-error' : ''}`}>{data.name}</span>
-                                    <span className="file-size">({fileSize(data.size)})</span> {data.invalid &&
-                                <span className='file-error-message'>({errorMessage})</span>}
+                                    <div className="file-drop-file-type-logo"></div>
+                                    <div className="file-drop-file-type">{fileType(data.name)}</div>
+                                    <span
+                                        className={`file-drop-file-name ${data.invalid ? 'file-drop-file-error' : ''}`}>{data.name}</span>
+                                    <span
+                                        className="file-drop-file-size">({fileSize(data.size)})</span> {data.invalid &&
+                                <span className='file-drop-file-error-message'>({errorMessage})</span>}
                                 </div>
-                                <div className="file-remove" onClick={() => removeFile(data.name)}>X</div>
+                                <div className="file-drop-file-remove" onClick={() => removeFile(data.name)}>X</div>
                             </div>
                         )
                     }
                 </div>
             </div>
-            <div className="modal" ref={modalRef}>
-                <div className="overlay"></div>
-                <span className="close" onClick={(() => closeModal())}>X</span>
-                <div className="modal-image" ref={modalImageRef}></div>
+            <div className="file-drop-modal" ref={modalRef}>
+                <div className="file-drop-overlay"></div>
+                <span className="file-drop-close" onClick={(() => closeModal())}>X</span>
+                <div className="file-drop-modal-image" ref={modalImageRef}></div>
             </div>
 
-            <div className="upload-modal" ref={uploadModalRef}>
-                <div className="overlay"></div>
-                <div className="close" onClick={(() => closeUploadModal())}>X</div>
-                <div className="progress-container">
+            <div className="file-drop-upload-modal" ref={uploadModalRef}>
+                <div className="file-drop-overlay"></div>
+                <div className="file-drop-close" onClick={(() => closeUploadModal())}>X</div>
+                <div className="file-drop-progress-container">
                     <span ref={uploadRef}></span>
-                    <div className="progress">
-                        <div className="progress-bar" ref={progressRef}></div>
+                    <div className="file-drop-progress">
+                        <div className="file-drop-progress-bar" ref={progressRef}></div>
                     </div>
                 </div>
             </div>
