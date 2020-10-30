@@ -2,14 +2,8 @@ import React from 'react';
 import '../Header/Header.css';
 
 import '../../Images/search.svg';
-import Sidebar from "../Sidebar/Sidebar";
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.sidebar = new Sidebar(props);
-    }
-
     render() {
         return (
             React.createElement("div", {className: "header"},

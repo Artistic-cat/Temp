@@ -7,9 +7,24 @@ import {AiFillHome, AiOutlineFundProjectionScreen} from "react-icons/ai";
 import {BiAnalyse} from "react-icons/bi";
 
 class Sidebar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            expanded: true
+        };
+    }
+
     render() {
         return (
-            <SideNav>
+            <SideNav
+                expanded={this.state.expanded}
+                onToggle={(expanded) => {
+                    this.setState({expanded});
+                }}
+                onSelect={(selected) => {
+                    // Add your code here
+                }}
+            >
                 <Toggle/>
                 <Nav defaultSelected="home">
                     <NavItem eventKey="home">
