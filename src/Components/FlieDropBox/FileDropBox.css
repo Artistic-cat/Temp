@@ -1,8 +1,9 @@
-.file-input {
+
+.file-drop-file-input {
     display: none;
 }
 
-.file-upload-btn {
+.file-drop-file-upload-btn {
     color: white;
     text-transform: uppercase;
     outline: none;
@@ -13,22 +14,22 @@
 }
 
 
-.container p {
+.file-drop-container p {
     color: red;
     text-align: center;
 }
 
-.drop-container {
+.file-drop-drop-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto 0 auto;
     width: 800px;
     height: 200px;
     border: 4px dashed #03002C;
 }
 
-.upload-icon {
+.file-drop-upload-icon {
     width: 50px;
     height: 50px;
     background: url(https://raw.githubusercontent.com/uzochukwueddie/react-dropzone/master/src/images/upload.png) no-repeat center center;
@@ -38,13 +39,13 @@
     padding-top: 30px;
 }
 
-.drop-message {
+.file-drop-drop-message {
     text-align: center;
     color: #03002C;
     font-size: 20px;
 }
 
-.file-progressBar {
+.file-drop-file-progressBar {
     border-radius: 5px;
     overflow: hidden;
     display: inline-block;
@@ -55,7 +56,7 @@
     width: calc(100% - 50px)
 }
 
-.file-progressBar div {
+.file-drop-file-progressBar div {
     height: auto;
     color: #fff;
     text-align: right;
@@ -66,12 +67,12 @@
     font-size: 13px;
 }
 
-.file-display-container {
+.file-drop-file-display-container {
     position: fixed;
     width: 805px;
 }
 
-.file-status-bar {
+.file-drop-file-status-bar {
     width: 100%;
     vertical-align: top;
     margin-top: 10px;
@@ -81,11 +82,11 @@
     height: 50px;
 }
 
-.file-status-bar > div {
+.file-drop-file-status-bar > div {
     overflow: hidden;
 }
 
-.file-type {
+.file-drop-file-type {
     display: inline-block !important;
     position: absolute;
     font-size: 12px;
@@ -100,25 +101,25 @@
     text-transform: uppercase;
 }
 
-.file-name {
+.file-drop-file-name {
     display: inline-block;
     vertical-align: top;
     margin-left: 50px;
     color: #4aa1f3;
 }
 
-.file-error {
+.file-drop-file-error {
     display: inline-block;
     vertical-align: top;
     margin-left: 50px;
     color: #9aa9bb;
 }
 
-.file-error-message {
+.file-drop-file-error-message {
     color: red;
 }
 
-.file-type-logo {
+.file-drop-file-type-logo {
     width: 50px;
     height: 50px;
     background: url(https://raw.githubusercontent.com/uzochukwueddie/react-dropzone/master/src/images/generic.png) no-repeat center center;
@@ -126,7 +127,7 @@
     position: absolute;
 }
 
-.file-size {
+.file-drop-file-size {
     display: inline-block;
     vertical-align: top;
     color: #30693D;
@@ -138,7 +139,7 @@
     font-size: 14px;
 }
 
-.file-remove {
+.file-drop-file-remove {
     position: absolute;
     top: 20px;
     right: 10px;
@@ -148,13 +149,13 @@
     margin-right: -10px;
 }
 
-.modal {
+.file-drop-modal {
     z-index: 999;
     display: none;
     overflow: hidden;
 }
 
-.modal .overlay {
+.file-drop-modal .file-drop-overlay {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, .66);
@@ -163,7 +164,7 @@
     left: 0;
 }
 
-.modal .modal-image {
+.file-drop-modal .file-drop-modal-image {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -177,7 +178,7 @@
     background-position: center;
 }
 
-.modal-image-text {
+.file-drop-modal-image-text {
     position: absolute;
     color: red;
     top: 50%;
@@ -186,7 +187,7 @@
     font-size: 16px;
 }
 
-.close {
+.file-drop-close {
     position: absolute;
     top: 15px;
     right: 35px;
@@ -197,13 +198,13 @@
     cursor: pointer;
 }
 
-.upload-modal {
+.file-drop-upload-modal {
     z-index: 999;
     display: none;
     overflow: hidden;
 }
 
-.upload-modal .overlay {
+.file-drop-upload-modal .file-drop-overlay {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, .66);
@@ -212,7 +213,7 @@
     left: 0;
 }
 
-.progress-container {
+.file-drop-progress-container {
     background: white;
     width: 500px;
     height: 300px;
@@ -223,14 +224,14 @@
     overflow: hidden;
 }
 
-.progress-container span {
+.file-drop-progress-container span {
     display: flex;
     justify-content: center;
     padding-top: 20px;
     font-size: 20px;
 }
 
-.progress {
+.file-drop-progress {
     width: 90%;
     position: absolute;
     top: 50%;
@@ -241,7 +242,7 @@
     border-radius: 5px;
 }
 
-.progress-bar {
+.file-drop-progress-bar {
     position: absolute;
     background-color: #03002C;
     height: 20px;
@@ -251,6 +252,6 @@
     font-weight: bold;
 }
 
-.error {
+.file-drop-error {
     color: red;
 }
