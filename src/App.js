@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './Views/Login/Login';
 import Home from "./Views/Home/Home"
+import Setup from "./Views/Setup/Setup";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,6 +12,9 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
+          <Route path="/Setup">   
+              <Setup/>
+          </Route>
             <Route path="/home">
               <Home/>
           </Route>
