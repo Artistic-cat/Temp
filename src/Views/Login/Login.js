@@ -5,15 +5,15 @@ import {Link} from 'react-router-dom';
 
 function Login() {
 
-    const [email, setEmail]= useState('');
-    const [password, setPassword]=useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const logIn = e => {
         e.preventDefault();
         //add node functionality here
     }
 
-    return(
+    return (
         <div className='login'>
             <div className='login-container'>
                 <div className='login-block'>

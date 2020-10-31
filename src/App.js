@@ -5,9 +5,12 @@ import About from './Views/About/About';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import DependentForms from './Components/DependentForms/DependentForms';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from "./Views/Home/Home"
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
+import FileDropBox from "./Components/FlieDropBox/FileDropBox";
 
 function App() {
   return (
@@ -23,19 +26,20 @@ function App() {
             <Footer />
           </Route>
           <Route path="/home">
-            <Header />
-            <Footer />
+            <Home />
           </Route>
           <Route path="/reset">
             <Reset />
+          </Route>
+          <Route path="/files">
+            <FileDropBox/>
           </Route>
           <Route path="/">
             <Login />
           </Route>
         </Switch>
       </div>
-    </Router>
-      
+    </Router>    
   );
 }
 

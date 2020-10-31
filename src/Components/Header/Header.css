@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 70px;
     display: flex;
     align-items: center;
@@ -9,25 +9,23 @@
     justify-content: space-evenly;
 }
 
-.burger-menu{
+.burger-menu {
     width: 50px;
     object-fit: contain;
-    margin: 0 20px;
-    margin-top: 5px;
+    margin: 5px 20px 0;
     color: #FFFF;
     font-size: 20px;
 }
 
-.logo{
+.logo {
     width: 100px;
     object-fit: contain;
-    margin: 0 20px;
-    margin-top: 5px;
+    margin: 5px 20px 0;
     color: #FFFF;
     font-size: 20px;
 }
 
-.search-bar{
+.search-bar {
     display: flex;
     flex: 1;
     align-items: center;
@@ -36,7 +34,7 @@
     outline: 0;
 }
 
-.search-bar-input{
+.search-bar-input {
     height: 12px;
     padding: 10px;
     border: none;
@@ -44,23 +42,21 @@
     max-width: 70em;
 }
 
-.profile-icon{
+.profile-icon {
     width: 100px;
     object-fit: contain;
-    margin: 0 20px;
-    margin-left: 30px;
-    margin-top: 5px;
+    margin: 5px 20px 0 30px;
     color: #FFFF;
     font-size: 20px;
 }
-.search-icon{
-    /* background: url('../../Images/search.svg'); */
+
+.search-icon {
     width: 1em;
     height: 1em;
-    background-repeat: no-repeat;
+    background: url('../../Images/search.svg') no-repeat;
     fill: #F00;
 }
 
-.search-icon{
+.search-icon {
     fill: #FFF;
 }

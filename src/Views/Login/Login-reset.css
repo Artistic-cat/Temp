@@ -8,11 +8,10 @@
 
 .login-container{ 
     position: relative;
-    left: 0em;
-    top: 0em;
-    background: url('../../Images/login_background.jpg');
+    left: 0;
+    top: 0;
     background-size: cover;
-    background-position: center;
+    background: url('../../Images/login_background.jpg') center;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -21,32 +20,32 @@
     width: 100vw;
 }
 
-.login-block{
+.login-block {
     position: absolute;
-    background: rgba(0,14,29, 0.8);
+    background: rgba(0, 14, 29, 0.8);
     width: 25em;
     height: 26em; 
 
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    
+
 }
 
-.login-logo{
+.login-logo {
     position: absolute;
     margin-top: 30%;
     color: #FFF;
     font-size: 2em;
 }
 
-.login-form{
+.login-form {
     position: absolute;
     top: 42%;
 } 
 
-.input{
+.input {
     border: none;
     outline: 0;
     text-align: center;
@@ -64,7 +63,7 @@
     width: 12em;
     height: 3em;
     background: #560034;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
     border-radius: 70px;
     border: none;
     font-weight: bold;

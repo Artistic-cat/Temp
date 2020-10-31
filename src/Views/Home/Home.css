@@ -1,0 +1,32 @@
+.container {
+    margin-left: 20% !important;
+    max-width: 80% !important;
+    min-height: calc(100vh - 70px) !important;
+}
+
+.col {
+    text-align: center;
+}
+
+.home-nav-buttons {
+    margin: 5% 0 5% 0;
+}
+
+.home-circle-inner-text {
+    background: #03002C;
+    border-radius: 50%;
+    color: #FFFFFF;
+    padding: 2vh;
+    margin: 5%;
+}
+
+.home-rectangle {
+    background-color: #F3F6FF;
+    min-height: 30vh;
+    margin: 0 3% 3% 0;
+}
+
+.home-rectangle h4 {
+    padding-top: 2%;
+    color: #000000;
+}
