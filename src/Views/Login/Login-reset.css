@@ -1,4 +1,12 @@
-.login {
+.login{
+    margin: 0;
+    padding: 0;
+    /* height: 100%;
+    width: 100%; */
+    
+}
+
+.login-container{ 
     position: relative;
     left: 0;
     top: 0;
@@ -8,13 +16,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .login-block {
     position: absolute;
     background: rgba(0, 14, 29, 0.8);
     width: 25em;
-    height: 26em;
+    height: 26em; 
 
     display: flex;
     align-items: center;
@@ -32,14 +42,15 @@
 
 .login-form {
     position: absolute;
-    top: 45%;
-}
+    top: 42%;
+} 
 
 .input {
     border: none;
+    outline: 0;
     text-align: center;
     font-size: 0.85em;
-    margin: 1em;
+    margin: 0.6em;
     width: 20em;
     height: 3.5em;
     background: #FFFFFF;
@@ -47,7 +58,8 @@
     border-radius: 90px;
 }
 
-.login-button {
+.login-button{
+    outline: 0;
     width: 12em;
     height: 3em;
     background: #560034;
@@ -60,3 +72,33 @@
     margin-top: 1em;
 }
 
+.login-button:hover{
+    cursor: pointer;
+    background: #710044;
+}
+
+.login-link{
+    position: absolute;
+    text-decoration: none;
+    color: #FFF;
+    top: 72%;
+    width: 9.5em;
+    height: 1.6em;
+}
+
+.login-link:hover{
+    color: #B1B1B1;
+}
+
+.reset-link{
+    position: absolute;
+    text-decoration: none;
+    color: #FFF;
+    top: 86%;
+    width: 9.5em;
+    height: 1.6em;
+}
+
+.reset-link:hover{
+    color: #B1B1B1;
+}
