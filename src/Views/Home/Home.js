@@ -55,7 +55,33 @@ class Home extends Component {
                     <Row>
                         <Col>
                             <div className="home-rectangle">
-                                <h4>Monitor</h4>
+                                <h4>Frequently Used</h4>
+                                <Row className={'m-3'}>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <MdPhonelinkSetup style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>Product Setup</span>
+                                        </button>
+                                    </Col>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <FiSettings style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>Configurations</span>
+                                        </button>
+                                    </Col>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <BsCheckCircle style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>Approvals</span>
+                                        </button>
+                                    </Col>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <FiUsers style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>User Management</span>
+                                        </button>
+                                    </Col>
+                                </Row>
                             </div>
                         </Col>
                     </Row>

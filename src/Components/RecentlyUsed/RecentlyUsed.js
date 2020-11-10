@@ -19,12 +19,7 @@ class RecentlyUsed extends Component {
             localstorage(title, path);
             const page = JSON.parse(pages);
             //localstorage("page", "("+title+","+JSON.parse(current)+")");
-            const a = "<Col> \
-                              <button className=\"btn\" onClick=\"/" + title + "\"> \
-                                  <MdPhonelinkSetup style=\"fontSize: '8vh' className=\"home-circle-inner-text mb-2\"/> \
-                                  <p>+title+</p> \
-                              </button> \
-                           </Col>"
+            const a = "<Col><button className=\"btn\" onClick=\"/" + title + "\"> <MdPhonelinkSetup style=\"fontSize: '8vh' className=\"home-circle-inner-text mb-2\"/> <p>+title+</p><button></Col>"
             if (!pages)
                 localstorage("page", a)
             else
@@ -40,7 +35,7 @@ class RecentlyUsed extends Component {
             <Row className="home-nav-buttons"
                  dangerouslySetInnerHTML={{
                      __html: this.state.pages
-                 }}></Row>
+                 }}/>
         )
     }
 }

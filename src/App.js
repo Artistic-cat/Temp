@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
-import FileDropBox from "./Components/FlieDropBox/FileDropBox";
+import FileUpload from "./Views/FileUpload/FileUpload";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                         <Home/>
                     </Route>
                     <Route path="/files">
-                        <FileDropBox/>
+                        <FileUpload/>
                     </Route>
                     <Route path="/">
                         <Login/>
