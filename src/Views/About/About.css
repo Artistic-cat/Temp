@@ -1,0 +1,15 @@
+
+.abt_img {
+
+   position : relative;
+   display : flex;
+   width : 90% !important;
+   height : 430px !important;
+   margin : 2% 6% 5% 5%;
+
+}
+
+h2 {
+    left : 128px !important;
+    color : #ff0000;
+}

@@ -7,6 +7,10 @@
     
 }
 
+.col {
+    text-align: center;
+}
+
 .btn-circle.btn-xl { 
 
     width: 75px; 
@@ -21,15 +25,62 @@
 
 } 
 
-.rectangle {
+.API-rectangle {
 
     position : relative;
     display: flex;
-    width : 60%;
+    width : 90%;
     height : 1000px;
     background: #F3F6FF;
     margin-right : 0%;
     margin-bottom : 5%;
     margin-left : 0%;
+    outline : 0;
 
   }
+
+  .Giix-rectangle {
+
+    position : relative;
+    display: flex;
+    width : 90%;
+    height : 1000px;
+    background: #F3F6FF;
+    margin-right : 0%;
+    margin-bottom : 5%;
+    margin-left : 0%;
+    outline : 0;
+
+  }
+
+  .Insurer-rectangle {
+
+    position : relative;
+    display: flex;
+    width : 90%;
+    height : 1000px;
+    background: #F3F6FF;
+    margin-right : 0%;
+    margin-bottom : 5%;
+    margin-left : 0%;
+    outline : 0;
+
+  }
+
+  .API-rectangle h4 {
+    padding-top: 2%;
+    color: #000000;
+    
+}
+
+.Giix-rectangle h4 {
+    padding-top: 2%;
+    color: #000000;
+    
+}
+
+.Insurer-rectangle h4 {
+    padding-top: 5%;
+    color: #000000;
+    
+}
