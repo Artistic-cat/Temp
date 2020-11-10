@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Login-reset.css';
 import {Link} from 'react-router-dom';
+
 // import Reset from './Reset';
 
 function Login() {
@@ -19,9 +20,14 @@ function Login() {
                 <div className='login-block'>
                     <div className='login-logo'>LOGO</div>
                     <div className='login-form'>
-                        <input className='input' type='text' placeholder='Username/Email ID' value={email} onChange={e => setEmail(e.target.value)} />
-                        <input className='input' type='password' placeholder='Password' value={password} onChange={e=> setPassword(e.target.value)} />
-                        <button className='login-button' type='submit' onClick={logIn} >Log In</button>
+                        <input className='input' type='text' placeholder='Username/Email ID' value={email}
+                               onChange={e => setEmail(e.target.value)}/>
+                        <input className='input' type='password' placeholder='Password' value={password}
+                               onChange={e => setPassword(e.target.value)}/>
+                        <button className='login-button' type='submit' onClick={logIn}>Log In</button>
+                        {/* Temporary Login Link to home start*/}
+                        <Link to='/home' className='reset-link'>Temp Login</Link>
+                        {/* Temporary Login Link to home end*/}
                     </div>
                     <Link to='/reset' className='reset-link'>Forgot Password?</Link>
                 </div>
