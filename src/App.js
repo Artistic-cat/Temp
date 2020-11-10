@@ -4,13 +4,12 @@ import Reset from './Views/Login/Reset';
 import About from './Views/About/About';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import DependentForms from './Components/DependentForms/DependentForms';
 import Home from "./Views/Home/Home"
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
-import FileDropBox from "./Components/FlieDropBox/FileDropBox";
+import FileUpload from "./Views/FileUpload/FileUpload";
 
 function App() {
   return (
@@ -32,7 +31,7 @@ function App() {
             <Reset />
           </Route>
           <Route path="/files">
-            <FileDropBox/>
+            <FileUpload/>
           </Route>
           <Route path="/">
             <Login />
