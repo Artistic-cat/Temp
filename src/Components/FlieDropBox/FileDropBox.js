@@ -178,6 +178,8 @@ const FileDropBox = () => {
                     <div className="file-drop-drop-message">
                         <div className="file-drop-upload-icon"></div>
                         Drag & Drop files here or click to select file(s)
+                        <br/>
+                        <small>Valid file types are <code>csv</code> and <code>json</code></small>
                     </div>
                     <input
                         ref={fileInputRef}
