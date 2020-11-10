@@ -23,7 +23,6 @@ class Home extends Component {
             <div>
                 <Header/>
                 <Sidebar/>
-                {/*<RecentlyUsed />*/}
                 <Container>
                     <Row className="home-nav-buttons">
                         <Col>

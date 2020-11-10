@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import FileUpload from "./Views/FileUpload/FileUpload";
+import RecentlyUsed from "./Components/RecentlyUsed/RecentlyUsed";
 
 function App() {
   return (
@@ -19,16 +20,21 @@ function App() {
           {/* <Route path="/testing">
             <DependentForms />
           </Route> */}
+          <Route path="/recent">
+            <Header/>
+            <RecentlyUsed/>
+            <Footer/>
+          </Route>
           <Route path="/about">
-            <Header />
-            <About />
-            <Footer />
+            <Header/>
+            <About/>
+            <Footer/>
           </Route>
           <Route path="/home">
-            <Home />
+            <Home/>
           </Route>
           <Route path="/reset">
-            <Reset />
+            <Reset/>
           </Route>
           <Route path="/files">
             <FileUpload/>
