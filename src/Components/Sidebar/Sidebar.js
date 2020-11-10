@@ -5,6 +5,7 @@ import "./Sidebar.css";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {AiFillHome, AiOutlineFundProjectionScreen} from "react-icons/ai";
 import {BiAnalyse} from "react-icons/bi";
+import RecentlyUsed from "../RecentlyUsed/RecentlyUsed";
 
 class Sidebar extends Component {
     constructor(props) {
@@ -27,6 +28,10 @@ class Sidebar extends Component {
             >
                 <Toggle/>
                 <Nav defaultSelected="home">
+                    <div className="sidebar-recentlyUsed">
+                        <p>Recently Used</p>
+                        <RecentlyUsed/>
+                    </div>
                     <NavItem eventKey="home">
                         <NavIcon>
                             <AiFillHome style={{fontSize: '1.75em'}}/>

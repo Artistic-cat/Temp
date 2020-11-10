@@ -5,6 +5,11 @@ nav {
     position: fixed !important;
 }
 
+.sidebar-recentlyUsed p {
+    margin-left: 2rem;
+    color: #FFFFFF;
+}
+
 @media only screen and (max-width: 600px) {
     nav {
         top: 8% !important;
