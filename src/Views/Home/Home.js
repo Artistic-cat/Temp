@@ -12,6 +12,7 @@ import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {BiAnalyse, SiLivejournal, SiLogstash} from "react-icons/all";
+import {Line} from "react-chartjs-2";
 
 class Home extends Component {
     constructor(props) {
@@ -20,6 +21,26 @@ class Home extends Component {
     }
 
     render() {
+        const logData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "Logging Data",
+                backgroundColor: 'rgb(253,100,133)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        }
+
+        const manageData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "Business Analytics",
+                backgroundColor: 'rgb(5,0,43)',
+                borderColor: 'rgb(5,0,43)',
+                data: [10, 0, 50, 2, 20, 15, 5],
+            }]
+        }
+
         return (
             <div>
                 <Header/>
@@ -27,7 +48,7 @@ class Home extends Component {
                 <Container>
                     <Row className="home-nav-buttons">
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="btn">
                                 <MdPhonelinkSetup style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>Product Setup</p>
                             </button>
@@ -112,6 +133,11 @@ class Home extends Component {
                         <Col>
                             <div className="home-rectangle">
                                 <h4>Log Management</h4>
+                                <Line
+                                    data={logData}
+                                    height={100}
+                                    width={200}
+                                />
                             </div>
                         </Col>
                     </Row>
@@ -120,6 +146,11 @@ class Home extends Component {
                         <Col>
                             <div className="home-rectangle">
                                 <h4>Business Analytics</h4>
+                                <Line
+                                    data={manageData}
+                                    height={50}
+                                    width={100}
+                                />
                             </div>
                         </Col>
                     </Row>
