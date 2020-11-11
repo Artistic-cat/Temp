@@ -11,6 +11,7 @@ import {MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
+import {BiAnalyse, SiLivejournal, SiLogstash} from "react-icons/all";
 
 class Home extends Component {
     constructor(props) {
@@ -54,7 +55,7 @@ class Home extends Component {
                     <Row>
                         <Col>
                             <div className="home-rectangle">
-                                <h4>Frequently Used</h4>
+                                <h4>Setup</h4>
                                 <Row className={'m-3'}>
                                     <Col>
                                         <button className="btn" onClick={Home}>
@@ -78,6 +79,28 @@ class Home extends Component {
                                         <button className="btn" onClick={Home}>
                                             <FiUsers style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>User Management</span>
+                                        </button>
+                                    </Col>
+                                </Row>
+
+                                <h4>Monitor</h4>
+                                <Row className={'m-3'}>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <SiLivejournal style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>Manage Live Products</span>
+                                        </button>
+                                    </Col>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <SiLogstash style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>Log Management</span>
+                                        </button>
+                                    </Col>
+                                    <Col>
+                                        <button className="btn" onClick={Home}>
+                                            <BiAnalyse style={{fontSize: '2vh'}} className="m-2"/>
+                                            <span>Business Analytic</span>
                                         </button>
                                     </Col>
                                 </Row>

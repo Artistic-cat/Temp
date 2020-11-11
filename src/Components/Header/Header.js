@@ -12,7 +12,6 @@ class Header extends React.Component {
                     React.createElement("input", {className: "search-bar-input", type: "text"}),
                     React.createElement("div", {className: "search-icon"})
                 ),
-                React.createElement("div", {className: "profile-icon"}, "Profile"),
             )
         )
     }
