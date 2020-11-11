@@ -3,9 +3,10 @@ import SideNav, {Nav, NavIcon, NavItem, NavText, Toggle} from '@trendmicro/react
 import "./Sidebar.css";
 
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import {AiFillHome, AiOutlineFundProjectionScreen} from "react-icons/ai";
+import {AiFillHome, AiOutlineFundProjectionScreen, AiOutlineUser} from "react-icons/ai";
 import {BiAnalyse} from "react-icons/bi";
 import RecentlyUsed from "../RecentlyUsed/RecentlyUsed";
+import {FaSignOutAlt, FiSettings, FiUser, TiArrowBackOutline} from "react-icons/all";
 
 class Sidebar extends Component {
     constructor(props) {
@@ -24,14 +25,50 @@ class Sidebar extends Component {
                 }}
                 onSelect={(selected) => {
                     // Add your code here
+                    const to = '/' + selected;
+                    if (!(window.location.pathname === to)) {
+                        window.location = to;
+                    }
                 }}
             >
                 <Toggle/>
-                <Nav defaultSelected="home">
+                <Nav defaultSelected="user">
                     <div className="sidebar-recentlyUsed">
                         <p>Recently Used</p>
                         <RecentlyUsed/>
                     </div>
+                    <NavItem eventKey="user">
+                        <NavIcon>
+                            <AiOutlineUser style={{fontSize: '1.75em'}}/>
+                        </NavIcon>
+                        <NavText>
+                            User Name Comes Here
+                        </NavText>
+                        <NavItem eventKey="user/profile">
+                            <NavIcon>
+                                <FiUser style={{fontSize: '1em', marginRight: '1em'}}/>
+                                Profile
+                            </NavIcon>
+                        </NavItem>
+                        <NavItem eventKey="user/settings">
+                            <NavIcon>
+                                <FiSettings style={{fontSize: '1em', marginRight: '1em'}}/>
+                                Settings
+                            </NavIcon>
+                        </NavItem>
+                        <NavItem eventKey="user/about">
+                            <NavIcon>
+                                <TiArrowBackOutline style={{fontSize: '1em', marginRight: '1em'}}/>
+                                About Us
+                            </NavIcon>
+                        </NavItem>
+                        <NavItem eventKey="user/sign_out">
+                            <NavIcon>
+                                <FaSignOutAlt style={{fontSize: '1em', marginRight: '1em'}}/>
+                                Sign Out
+                            </NavIcon>
+                        </NavItem>
+                    </NavItem>
                     <NavItem eventKey="home">
                         <NavIcon>
                             <AiFillHome style={{fontSize: '1.75em'}}/>
@@ -65,12 +102,12 @@ class Sidebar extends Component {
                         <NavText>
                             Insurer
                         </NavText>
-                        <NavItem eventKey="monitor/new_product">
+                        <NavItem eventKey="insurer/new_product">
                             <NavText>
                                 New Products
                             </NavText>
                         </NavItem>
-                        <NavItem eventKey="monitor/edit_existing">
+                        <NavItem eventKey="insurer/edit_existing">
                             <NavText>
                                 Edit Existing
                             </NavText>
