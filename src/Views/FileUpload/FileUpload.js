@@ -4,21 +4,15 @@ import "./FileUpload.css";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import {Container} from "react-bootstrap";
-import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import FileDropBox from "../../Components/FlieDropBox/FileDropBox";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 
 class FileUpload extends Component {
-    constructor(props) {
-        super(props);
-        new RecentlyUsed().setPath("FileUpload", window.location.href)
-    }
-
     render() {
         return (
             <div>
                 <Header/>
-                {/*<Sidebar/>*/}
-                {/*<RecentlyUsed />*/}
+                <Sidebar/>
                 <Container>
                     <div className="file-file_box">
                         <h4>Upload Your Files to Proceed</h4>
