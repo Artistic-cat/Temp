@@ -2,19 +2,26 @@
 Last Updated: November 12, 2020
 
 ---
-Documented By: [Rifas](https://github.com/RifasM)
+Documented By: 
+- Rifas - [RifasM](https://github.com/RifasM)
+- Sristi - [Artistic-cat](https://github.com/Artistic-cat)
+- Vidhi - [vids014](https://github.com/vids014)
 
-Screen flow:
+---
+
+#### Screen flow:
 1. Login Page and Reset Password Page
-    View: Login
-    Components: None 
+   - View: Login
+   - Components: None 
 2. Home Page
-    View: Home
-    Components: Header, Footer, Sidebar
-    i. About Page:
-        View: About
-        Components: Header, Footer, Sidebar
+   - View: Home
+   - Components: Header, Footer, Sidebar
+        - About Page:
+            - View: About
+            - Components: Header, Footer, Sidebar
 3. Set up and Configure Page
-    View: Configure
-    Components: Header, Footer, Sidebar, DependentForms
+   - View: Configure
+   - Components: Header, Footer, Sidebar, DependentForms
 4. Drop Box Page
+    - View: FileUpload
+    - Components: Header, Footer, Sidebar, FileDropBox
