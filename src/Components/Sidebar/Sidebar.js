@@ -56,7 +56,7 @@ class Sidebar extends Component {
                                 Settings
                             </NavIcon>
                         </NavItem>
-                        <NavItem eventKey="user/about">
+                        <NavItem eventKey="about">
                             <NavIcon>
                                 <TiArrowBackOutline style={{fontSize: '1em', marginRight: '1em'}}/>
                                 About Us
