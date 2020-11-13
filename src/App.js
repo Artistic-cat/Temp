@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import FileUpload from "./Views/FileUpload/FileUpload";
-import RecentlyUsed from "./Components/RecentlyUsed/RecentlyUsed";
+import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 
 function App() {
   return (
@@ -20,10 +20,8 @@ function App() {
           {/* <Route path="/testing">
             <DependentForms />
           </Route> */}
-          <Route path="/recent">
-            <Header/>
-            <RecentlyUsed/>
-            <Footer/>
+          <Route path="/dropdown">
+            <CascadingDropdown/>
           </Route>
           <Route path="/about">
             <Header/>
