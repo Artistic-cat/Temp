@@ -48,18 +48,18 @@ class Home extends Component {
             }]
         }
         const donutData = {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Red', 'Blue', 'Green', 'Cyan', 'Purple', 'Orange'],
             datasets: [
                 {
                     label: 'Sales',
                     data: this.state.businessChart.donutData,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
+                        'rgb(246,58,58)',
+                        'rgb(117,197,250)',
+                        'rgb(159,220,73)',
+                        'rgb(77,203,175)',
+                        'rgb(18,48,123)',
+                        'rgb(238,127,53)',
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
