@@ -9,7 +9,7 @@ Documented By:
 
 ---
 
-#### Screen flow:
+#### Screen Flow:
 1. Login Page and Reset Password Page
    - View: Login
    - Components: None 
