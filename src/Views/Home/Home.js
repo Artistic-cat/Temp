@@ -11,7 +11,6 @@ import {MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
-import {BiAnalyse, SiLivejournal, SiLogstash} from "react-icons/all";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
 
@@ -76,7 +75,7 @@ class Home extends Component {
 
         /* Business Analytics Charts Ends */
 
-        /* Logging Charts Ends */
+        /* Logging Charts Starts */
         const logLineData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
@@ -87,7 +86,6 @@ class Home extends Component {
             }]
         }
 
-        // multi line starts
         const multiLineData = {
             labels: ['1', '2', '3', '4', '5', '6'],
             datasets: [
@@ -165,7 +163,7 @@ class Home extends Component {
                         </Col>
                     </Row>
 
-                    <Row>
+                    {/*<Row>
                         <Col>
                             <div className="home-rectangle">
                                 <h4>Setup</h4>
@@ -219,7 +217,7 @@ class Home extends Component {
                                 </Row>
                             </div>
                         </Col>
-                    </Row>
+                    </Row> */}
 
                     <Row>
                         <Col>

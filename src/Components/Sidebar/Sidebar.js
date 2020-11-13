@@ -6,7 +6,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {AiFillHome, AiOutlineFundProjectionScreen, AiOutlineUser} from "react-icons/ai";
 import {BiAnalyse} from "react-icons/bi";
 import RecentlyUsed from "../RecentlyUsed/RecentlyUsed";
-import {FaSignOutAlt, FiSettings, FiUser, TiArrowBackOutline} from "react-icons/all";
+import {FaSignOutAlt, FiSettings, FiUser, MdRecentActors, TiArrowBackOutline} from "react-icons/all";
 
 class Sidebar extends Component {
     constructor(props) {
@@ -33,10 +33,24 @@ class Sidebar extends Component {
             >
                 <Toggle/>
                 <Nav defaultSelected="user">
-                    <div className="sidebar-recentlyUsed">
-                        <p>Recently Used</p>
-                        <RecentlyUsed/>
-                    </div>
+                    <NavItem eventKey="recent">
+                        <NavIcon>
+                            <MdRecentActors style={{fontSize: '1.75em'}}/>
+                        </NavIcon>
+                        <NavText>
+                            Recently Used
+                        </NavText>
+                        {
+                            [...new RecentlyUsed().state.pages].map((entry) => {
+                                let title = entry[0]
+                                let path = entry[1]
+                                return <NavItem eventKey={path}><NavText
+                                    style={{fontSize: '1.2em', paddingLeft: '15%'}}><a
+                                    style={{color: '#fff', textDecoration: 'none'}}
+                                    href={path}>{title}</a></NavText></NavItem>
+                            })
+                        }
+                    </NavItem>
                     <NavItem eventKey="user">
                         <NavIcon>
                             <AiOutlineUser style={{fontSize: '1.75em'}}/>

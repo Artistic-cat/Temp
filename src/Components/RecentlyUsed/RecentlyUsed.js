@@ -16,21 +16,6 @@ class RecentlyUsed extends Component {
         this.state.pages.set(title, path);
         localstorage("pages", Array.from(this.state.pages.entries()));
     }
-
-
-    render() {
-        return (
-            <div className="recentlyUsed-container">
-                {
-                    [...this.state.pages].map((entry) => {
-                        let title = entry[0]
-                        let path = entry[1]
-                        return <p><a href={path}>{title}</a></p>
-                    })
-                }
-            </div>
-        )
-    }
 }
 
 export default RecentlyUsed;
