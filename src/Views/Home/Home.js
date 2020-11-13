@@ -13,6 +13,7 @@ import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {BiAnalyse, SiLivejournal, SiLogstash} from "react-icons/all";
 import {Doughnut, Line} from "react-chartjs-2";
+import Table from "react-bootstrap/Table";
 
 class Home extends Component {
     constructor(props) {
@@ -23,6 +24,13 @@ class Home extends Component {
             businessChart: {
                 donutData: [1, 12, 15, 10, 37, 10], // this should be the overall data
                 lineData: [68, 31, 60, 40, 45, 25, 68] // this should be the overall data
+            },
+            logChart: {
+                multiLineData: {
+                    line1Data: [12, 19, 3, 5, 2, 3],
+                    line2Data: [1, 2, 1, 1, 2, 2],
+                },
+                logLineData: [0, 10, 5, 2, 20, 30, 45]
             }
         }
     }
@@ -68,45 +76,16 @@ class Home extends Component {
 
         /* Business Analytics Charts Ends */
 
-
-        const logData = {
+        /* Logging Charts Ends */
+        const logLineData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
                 label: "Logging Data",
                 backgroundColor: 'rgb(253,100,133)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45],
+                data: this.state.logChart.logLineData,
             }]
         }
-
-        // line chart starts
-
-        const lineData = {
-            labels: ['1', '2', '3', '4', '5', '6'],
-            datasets: [
-                {
-                    label: 'Crash Logs',
-                    data: [12, 19, 3, 5, 2, 3],
-                    fill: false,
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgba(255, 99, 132, 0.2)',
-                },
-            ],
-        }
-
-        const lineOptions = {
-            scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                    },
-                ],
-            },
-        }
-
-        // Line chart ends
 
         // multi line starts
         const multiLineData = {
@@ -114,7 +93,7 @@ class Home extends Component {
             datasets: [
                 {
                     label: 'Product 1',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: this.state.logChart.multiLineData.line1Data,
                     fill: false,
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgba(255, 99, 132, 0.2)',
@@ -122,7 +101,7 @@ class Home extends Component {
                 },
                 {
                     label: 'Product 2',
-                    data: [1, 2, 1, 1, 2, 2],
+                    data: this.state.logChart.multiLineData.line2Data,
                     fill: false,
                     backgroundColor: 'rgb(54, 162, 235)',
                     borderColor: 'rgba(54, 162, 235, 0.2)',
@@ -152,7 +131,7 @@ class Home extends Component {
                 ],
             },
         }
-        // multi line ends
+        /* Logging Charts Ends */
 
         return (
             <div>
@@ -252,15 +231,29 @@ class Home extends Component {
                                         businessChart: {
                                             donutData: [1, 12, 15, 10, 37, 10],
                                             lineData: [68, 31, 60, 40, 45, 25, 68]
+                                        },
+                                        logChart: {
+                                            multiLineData: {
+                                                line1Data: [12, 19, 3, 5, 2, 3],
+                                                line2Data: [1, 2, 1, 1, 2, 2],
+                                            },
+                                            logLineData: [0, 10, 5, 2, 20, 30, 45]
                                         }
                                     }
                                 )}>Overall
                                 </button>
                                 <button className="btn btn-outline-info" onClick={() => this.setState({
-                                    businessChart: {
-                                        donutData: [1, 2, 5, 1, 5, 1],
-                                        lineData: [50, 10, 40, 20, 25, 15, 48]
-                                    }
+                                        businessChart: {
+                                            donutData: [1, 2, 5, 1, 5, 1],
+                                            lineData: [50, 10, 40, 20, 25, 15, 48]
+                                        },
+                                        logChart: {
+                                            multiLineData: {
+                                                line1Data: [9, 11, 13, 15, 12, 13],
+                                                line2Data: [11, 12, 11, 11, 12, 12],
+                                            },
+                                            logLineData: [10, 20, 15, 12, 29, 13, 55]
+                                        }
                                     }
                                 )}>GiiX Managed
                                 </button>
@@ -268,6 +261,13 @@ class Home extends Component {
                                         businessChart: {
                                             donutData: [1, 3, 1, 2, 1, 1],
                                             lineData: [15, 11, 14, 12, 25, 5, 14]
+                                        },
+                                        logChart: {
+                                            multiLineData: {
+                                                line1Data: [1, 2, 3, 5, 2, 7],
+                                                line2Data: [1, 1, 9, 11, 20, 15],
+                                            },
+                                            logLineData: [1, 12, 11, 25, 12, 3, 25]
                                         }
                                     }
                                 )}>Insurer Managed
@@ -295,15 +295,99 @@ class Home extends Component {
                                 <h4>Log Management</h4>
                                 <Row>
                                     <Col>
-                                        <Line data={logData}/>
+                                        <Line data={logLineData}/>
                                     </Col>
                                     <Col>
-                                        <Line data={lineData} options={lineOptions}/>
+                                        <Line data={multiLineData} options={multiLineOptions}/>
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col>
-                                        <Line data={multiLineData} options={multiLineOptions}/>
+                                    <Col className="home-log-table">
+                                        <Table hover responsive striped>
+                                            <thead>
+                                            <tr>
+                                                <th>Timestamp</th>
+                                                <th>Description</th>
+                                                <th>Message</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    {
+                                                        new Intl.DateTimeFormat(
+                                                            'en-IN',
+                                                            {
+                                                                year: 'numeric',
+                                                                month: '2-digit',
+                                                                day: '2-digit',
+                                                                hour: '2-digit',
+                                                                minute: '2-digit',
+                                                                second: '2-digit'
+                                                            }
+                                                        )
+                                                            .format(Date.now())
+                                                    }
+                                                </td>
+                                                <td>User Login</td>
+                                                <td><p className="text-success">Alert</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td>{
+                                                    new Intl.DateTimeFormat(
+                                                        'en-IN',
+                                                        {
+                                                            year: 'numeric',
+                                                            month: '2-digit',
+                                                            day: '2-digit',
+                                                            hour: '2-digit',
+                                                            minute: '2-digit',
+                                                            second: '2-digit'
+                                                        }
+                                                    )
+                                                        .format(Date.now() - 1)
+                                                }</td>
+                                                <td>Product 1 Launched</td>
+                                                <td><p className="text-success">Launch Success</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td>{
+                                                    new Intl.DateTimeFormat(
+                                                        'en-IN',
+                                                        {
+                                                            year: 'numeric',
+                                                            month: '2-digit',
+                                                            day: '2-digit',
+                                                            hour: '2-digit',
+                                                            minute: '2-digit',
+                                                            second: '2-digit'
+                                                        }
+                                                    )
+                                                        .format(Date.now() - 0.5)
+                                                }</td>
+                                                <td>Insurer Client Callback Loop Failure</td>
+                                                <td><p className="text-danger">Critical</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td>{
+                                                    new Intl.DateTimeFormat(
+                                                        'en-IN',
+                                                        {
+                                                            year: 'numeric',
+                                                            month: '2-digit',
+                                                            day: '2-digit',
+                                                            hour: '2-digit',
+                                                            minute: '2-digit',
+                                                            second: '2-digit'
+                                                        }
+                                                    )
+                                                        .format(Date.now() - 2)
+                                                }</td>
+                                                <td>Response time degradation</td>
+                                                <td><p className="text-warning">Warning</p></td>
+                                            </tr>
+                                            </tbody>
+                                        </Table>
                                     </Col>
                                 </Row>
                             </div>
