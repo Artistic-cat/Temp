@@ -12,12 +12,18 @@ import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {BiAnalyse, SiLivejournal, SiLogstash} from "react-icons/all";
-import {Doughnut, Line, Scatter} from "react-chartjs-2";
+import {Doughnut, Line} from "react-chartjs-2";
 
 class Home extends Component {
     constructor(props) {
         super(props);
         new RecentlyUsed().setPath("Home", window.location.href)
+        this.state = {
+            businessChart1: {
+                donutData: [10, 20, 50, 10, 50, 10],
+                manageData: [68, 31, 60, 40, 45, 25, 68]
+            }
+        }
     }
 
     render() {
@@ -37,7 +43,7 @@ class Home extends Component {
                 label: "Business Analytics",
                 backgroundColor: 'rgb(5,0,43)',
                 borderColor: 'rgb(5,0,43)',
-                data: [10, 0, 50, 2, 20, 15, 5],
+                data: this.state.businessChart1.manageData,
             }]
         }
 
@@ -116,54 +122,12 @@ class Home extends Component {
         }
         // multi line ends
 
-        // scatter
-        const rand = () => Math.round(Math.random() * 20 - 10)
-
-        const scatterData = {
-            datasets: [
-                {
-                    label: 'Product Hits',
-                    data: [
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                        {x: rand(), y: rand()},
-                    ],
-                    backgroundColor: 'rgba(255, 99, 132, 1)',
-                },
-            ],
-        }
-
-        const scatterOptions = {
-            scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                    },
-                ],
-            },
-        }
-        // scatter ends
-
-        //donut
         const donutData = {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [
                 {
                     label: 'Sales',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: this.state.businessChart1.donutData,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -184,7 +148,6 @@ class Home extends Component {
                 },
             ],
         }
-        // donut ends
 
         return (
             <div>
@@ -277,6 +240,47 @@ class Home extends Component {
                     <Row>
                         <Col>
                             <div className="home-rectangle">
+                                <button className="btn btn-outline-info" onClick={() => this.setState({
+                                        businessChart1: {
+                                            donutData: [15, 20, 50, 10, 50, 10],
+                                            manageData: [68, 31, 60, 40, 45, 25, 68]
+                                        }
+                                    }
+                                )}>Overall
+                                </button>
+                                <button className="btn btn-outline-info" onClick={() => this.setState({
+                                        businessChart1: {
+                                            donutData: [1, 2, 5, 1, 5, 1],
+                                            manageData: [50, 10, 40, 20, 25, 15, 48]
+                                        }
+                                    }
+                                )}>GiiX Managed
+                                </button>
+                                <button className="btn btn-outline-info" onClick={() => this.setState({
+                                        businessChart1: {
+                                            donutData: [1, 3, 1, 2, 1, 1],
+                                            manageData: [15, 11, 14, 12, 25, 5, 14]
+                                        }
+                                    }
+                                )}>Insurer Managed
+                                </button>
+                                <h4>Business Analytics</h4>
+                                <Row>
+                                    <Col>
+                                        <Doughnut data={donutData}/>
+                                    </Col>
+                                    <Col>
+                                        <Line data={manageData}/>
+                                    </Col>
+                                </Row>
+
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col>
+                            <div className="home-rectangle">
                                 <h4>Log Management</h4>
                                 <Row>
                                     <Col>
@@ -290,27 +294,7 @@ class Home extends Component {
                                     <Col>
                                         <Line data={multiLineData} options={multiLineOptions}/>
                                     </Col>
-                                    <Col>
-                                        <Scatter data={scatterData} options={scatterOptions}/>
-                                    </Col>
                                 </Row>
-                            </div>
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col>
-                            <div className="home-rectangle">
-                                <h4>Business Analytics</h4>
-                                <Row>
-                                    <Col>
-                                        <Doughnut data={donutData}/>
-                                    </Col>
-                                    <Col>
-                                        <Line data={manageData}/>
-                                    </Col>
-                                </Row>
-
                             </div>
                         </Col>
                     </Row>
