@@ -1,7 +1,5 @@
-import React, {Component} from "react";
+import {Component} from "react";
 import localstorage from "local-storage";
-
-import "./RecentlyUsed.css";
 
 class RecentlyUsed extends Component {
     constructor(props) {
