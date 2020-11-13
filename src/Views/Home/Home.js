@@ -19,14 +19,56 @@ class Home extends Component {
         super(props);
         new RecentlyUsed().setPath("Home", window.location.href)
         this.state = {
-            businessChart1: {
-                donutData: [10, 20, 50, 10, 50, 10],
-                manageData: [68, 31, 60, 40, 45, 25, 68]
+            /* Business Analytics Charts */
+            businessChart: {
+                donutData: [1, 12, 15, 10, 37, 10], // this should be the overall data
+                lineData: [68, 31, 60, 40, 45, 25, 68] // this should be the overall data
             }
         }
     }
 
     render() {
+
+        /* Business Analytics Charts Starts */
+        const manageData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "Business Analytics",
+                backgroundColor: 'rgb(5,0,43)',
+                borderColor: 'rgb(5,0,43)',
+                data: this.state.businessChart.lineData,
+            }]
+        }
+        const donutData = {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [
+                {
+                    label: 'Sales',
+                    data: this.state.businessChart.donutData,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                    ],
+                    borderWidth: 1,
+                },
+            ],
+        }
+
+        /* Business Analytics Charts Ends */
+
+
         const logData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
@@ -34,16 +76,6 @@ class Home extends Component {
                 backgroundColor: 'rgb(253,100,133)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: [0, 10, 5, 2, 20, 30, 45],
-            }]
-        }
-
-        const manageData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [{
-                label: "Business Analytics",
-                backgroundColor: 'rgb(5,0,43)',
-                borderColor: 'rgb(5,0,43)',
-                data: this.state.businessChart1.manageData,
             }]
         }
 
@@ -121,33 +153,6 @@ class Home extends Component {
             },
         }
         // multi line ends
-
-        const donutData = {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [
-                {
-                    label: 'Sales',
-                    data: this.state.businessChart1.donutData,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
-                    ],
-                    borderWidth: 1,
-                },
-            ],
-        }
 
         return (
             <div>
@@ -240,39 +245,45 @@ class Home extends Component {
                     <Row>
                         <Col>
                             <div className="home-rectangle">
+                                <h4>Business Analytics</h4>
+
+                                {/* Chart Buttons Start */}
                                 <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart1: {
-                                            donutData: [15, 20, 50, 10, 50, 10],
-                                            manageData: [68, 31, 60, 40, 45, 25, 68]
+                                        businessChart: {
+                                            donutData: [1, 12, 15, 10, 37, 10],
+                                            lineData: [68, 31, 60, 40, 45, 25, 68]
                                         }
                                     }
                                 )}>Overall
                                 </button>
                                 <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart1: {
-                                            donutData: [1, 2, 5, 1, 5, 1],
-                                            manageData: [50, 10, 40, 20, 25, 15, 48]
-                                        }
+                                    businessChart: {
+                                        donutData: [1, 2, 5, 1, 5, 1],
+                                        lineData: [50, 10, 40, 20, 25, 15, 48]
+                                    }
                                     }
                                 )}>GiiX Managed
                                 </button>
                                 <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart1: {
+                                        businessChart: {
                                             donutData: [1, 3, 1, 2, 1, 1],
-                                            manageData: [15, 11, 14, 12, 25, 5, 14]
+                                            lineData: [15, 11, 14, 12, 25, 5, 14]
                                         }
                                     }
                                 )}>Insurer Managed
                                 </button>
-                                <h4>Business Analytics</h4>
+                                {/* Chart Buttons Ends */}
+
+                                {/* Charts Start */}
                                 <Row>
-                                    <Col>
+                                    <Col className="mt-2 mb-2">
                                         <Doughnut data={donutData}/>
                                     </Col>
-                                    <Col>
+                                    <Col className="mt-2 mb-2">
                                         <Line data={manageData}/>
                                     </Col>
                                 </Row>
+                                {/* Charts Ends */}
 
                             </div>
                         </Col>
