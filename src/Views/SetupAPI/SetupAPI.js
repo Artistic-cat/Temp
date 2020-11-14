@@ -4,7 +4,9 @@ import Footer from "../../Components/Footer/Footer";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import {Container} from "react-bootstrap";
 
-class CascadingDropdown extends React.Component {
+import "./SetupAPI.css";
+
+class SetupAPI extends React.Component {
     constructor(props, fieldArray, jsonData) {
         super(props);
         this.state = {
@@ -58,36 +60,40 @@ class CascadingDropdown extends React.Component {
                 <Header/>
                 <Sidebar/>
                 <Container>
-                    <h2>Cascading or Dependent Dropdown using React</h2>
+                    <div className="setupApi-rectangle">
+                        <h4>Setup API Driven Product</h4>
 
-                    <div>
-                        <label>Country</label>
-                        <select placeholder="Country" value={this.state.selectedCountry} onChange={this.changeCountry}>
-                            <option>--Choose Country--</option>
-                            {this.state.countries.map((e, key) => {
-                                return <option key={key}>{e.name}</option>;
-                            })}
-                        </select>
-                    </div>
+                        <div>
+                            <label>Country</label>
+                            <select placeholder="Country" value={this.state.selectedCountry} onChange={this.changeCountry}>
+                                <option>--Choose Country--</option>
+                                {this.state.countries.map((e, key) => {
+                                    return <option key={key}>{e.name}</option>;
+                                })}
+                            </select>
+                        </div>
 
-                    <div>
-                        <label>State</label>
-                        <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
-                            <option>--Choose State--</option>
-                            {this.state.states.map((e, key) => {
-                                return <option key={key}>{e.name}</option>;
-                            })}
-                        </select>
-                    </div>
+                        <div>
+                            <label>State</label>
+                            <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
+                                <option>--Choose State--</option>
+                                {this.state.states.map((e, key) => {
+                                    return <option key={key}>{e.name}</option>;
+                                })}
+                            </select>
+                        </div>
 
-                    <div>
-                        <label>City</label>
-                        <select placeholder="City">
-                            <option>--Choose City--</option>
-                            {this.state.cities.map((e, key) => {
-                                return <option key={key}>{e}</option>;
-                            })}
-                        </select>
+                        <div>
+                            <label>City</label>
+                            <select placeholder="City">
+                                <option>--Choose City--</option>
+                                {this.state.cities.map((e, key) => {
+                                    return <option key={key}>{e}</option>;
+                                })}
+                            </select>
+                        </div>
+
+
                     </div>
                 </Container>
                 <Footer/>
@@ -96,4 +102,4 @@ class CascadingDropdown extends React.Component {
     }
 }
 
-export default CascadingDropdown;
+export default SetupAPI;
