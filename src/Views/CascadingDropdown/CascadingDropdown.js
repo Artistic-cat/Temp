@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import {Container} from "react-bootstrap";
 
 class CascadingDropdown extends React.Component {
     constructor(props, fieldArray, jsonData) {
@@ -56,7 +57,7 @@ class CascadingDropdown extends React.Component {
             <>
                 <Header/>
                 <Sidebar/>
-                <div id="container">
+                <Container>
                     <h2>Cascading or Dependent Dropdown using React</h2>
 
                     <div>
@@ -88,7 +89,7 @@ class CascadingDropdown extends React.Component {
                             })}
                         </select>
                     </div>
-                </div>
+                </Container>
                 <Footer/>
             </>
         )
