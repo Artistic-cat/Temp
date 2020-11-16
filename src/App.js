@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import FileUpload from "./Views/FileUpload/FileUpload";
-import CascadingDropdown from "./Views/CascadingDropdown/CascadingDropdown";
+import SetupAPI from "./Views/SetupAPI/SetupAPI";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <DependentForms />
           </Route> */}
           <Route path="/dropdown">
-            <CascadingDropdown/>
+            <SetupAPI/>
           </Route>
           <Route path="/about">
             <Header/>
