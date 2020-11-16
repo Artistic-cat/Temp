@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import FileUpload from "./Views/FileUpload/FileUpload";
-import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
+import CascadingDropdown from "./Views/CascadingDropdown/CascadingDropdown";
 
 function App() {
   return (

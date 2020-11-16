@@ -1,4 +1,7 @@
 import React from 'react';
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
+import Sidebar from "../../Components/Sidebar/Sidebar";
 
 class CascadingDropdown extends React.Component {
     constructor(props, fieldArray, jsonData) {
@@ -50,51 +53,44 @@ class CascadingDropdown extends React.Component {
 
     render() {
         return (
-            <div id="container">
-                <h2>Cascading or Dependent Dropdown using React</h2>
+            <>
+                <Header/>
+                <Sidebar/>
+                <div id="container">
+                    <h2>Cascading or Dependent Dropdown using React</h2>
 
-                {/*this.state.fieldArray.forEach((item, i) =>
-                    (
                     <div>
-                        <label>{item}</label>
-                        <select placeholder={item} value={'this.state.selected'+item}>
-                            <option>Select an Option</option>
+                        <label>Country</label>
+                        <select placeholder="Country" value={this.state.selectedCountry} onChange={this.changeCountry}>
+                            <option>--Choose Country--</option>
+                            {this.state.countries.map((e, key) => {
+                                return <option key={key}>{e.name}</option>;
+                            })}
                         </select>
                     </div>
-                    )
-                )
-                */}
 
-                <div>
-                    <label>Country</label>
-                    <select placeholder="Country" value={this.state.selectedCountry} onChange={this.changeCountry}>
-                        <option>--Choose Country--</option>
-                        {this.state.countries.map((e, key) => {
-                            return <option key={key}>{e.name}</option>;
-                        })}
-                    </select>
-                </div>
+                    <div>
+                        <label>State</label>
+                        <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
+                            <option>--Choose State--</option>
+                            {this.state.states.map((e, key) => {
+                                return <option key={key}>{e.name}</option>;
+                            })}
+                        </select>
+                    </div>
 
-                <div>
-                    <label>State</label>
-                    <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
-                        <option>--Choose State--</option>
-                        {this.state.states.map((e, key) => {
-                            return <option key={key}>{e.name}</option>;
-                        })}
-                    </select>
+                    <div>
+                        <label>City</label>
+                        <select placeholder="City">
+                            <option>--Choose City--</option>
+                            {this.state.cities.map((e, key) => {
+                                return <option key={key}>{e}</option>;
+                            })}
+                        </select>
+                    </div>
                 </div>
-
-                <div>
-                    <label>City</label>
-                    <select placeholder="City">
-                        <option>--Choose City--</option>
-                        {this.state.cities.map((e, key) => {
-                            return <option key={key}>{e}</option>;
-                        })}
-                    </select>
-                </div>
-            </div>
+                <Footer/>
+            </>
         )
     }
 }
