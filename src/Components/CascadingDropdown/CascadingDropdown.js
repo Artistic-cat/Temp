@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Sidebar from "../Sidebar/Sidebar";
 import {Container} from "react-bootstrap";
 
-import "./SetupAPI.css";
+import "./CascadingDropdown.css";
 
-class SetupAPI extends React.Component {
+class CascadingDropdown extends React.Component {
     constructor(props, fieldArray, jsonData) {
         super(props);
         this.state = {
@@ -102,4 +102,4 @@ class SetupAPI extends React.Component {
     }
 }
 
-export default SetupAPI;
+export default CascadingDropdown;
