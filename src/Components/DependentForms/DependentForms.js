@@ -1,78 +1,89 @@
 import React from 'react';
-import './DependentForms.css';
+// import ReactDOM from "react-dom";
+
+class DependentForms extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         value: "coconut"
+    //     }
+    // }
 
 
-  
-function DependentForms() {
-		
-	return (
-		<div id="dependentforms">	
-		</div>
-	)	
+    // constructor(props) {
+    // 	super(props);
+    // 	this.state = {
+    // 		countries : [],
+    // 		states : [],
+    // 		cities : [],
+    // 		selectedCountry : '--Choose Country--',
+    // 		selectedState : '--Choose State--'
+    // 	};
+    // 	this.changeCountry = this.changeCountry.bind(this);
+    // 	this.changeState = this.changeState.bind(this);
+    // }
+
+    // componentDidMount() {
+    // 	this.setState({
+    // 		countries : [
+    // 			{ name: 'Germany', states: [ {name: 'A', cities: ['Duesseldorf', 'Leinfelden-Echterdingen', 'Eschborn']} ] },
+    // 			{ name: 'Spain', states: [ {name: 'B', cities: ['Barcelona']} ] },
+    // 			{ name: 'USA', states: [ {name: 'C', cities: ['Downers Grove']} ] },
+    // 			{ name: 'Mexico', states: [ {name: 'D', cities: ['Puebla']} ] },
+    // 			{ name: 'India', states: [ {name: 'E', cities: ['Delhi', 'Kolkata', 'Mumbai', 'Bangalore']} ] },
+    // 		]
+    // 	});
+    // }
+
+    // changeCountry(event) {
+    // 	this.setState({selectedCountry: event.target.value});
+    // 	this.setState({states : this.state.countries.find(cntry => cntry.name === event.target.value).states});
+    // }
+
+    // changeState(event) {
+    // 	this.setState({selectedState: event.target.value});
+    // 	const stats = this.state.countries.find(cntry => cntry.name === this.state.selectedCountry).states;
+    // 	this.setState({cities : stats.find(stat => stat.name === event.target.value).cities});
+    // }
+
+    // render() {
+    // 	return (
+    // 		<div id="container">
+    // 			<h2>Cascading or Dependent Dropdown using React</h2>
+
+    // 			<div>
+    // 				<label>Country</label>
+    // 				<select placeholder="Country" value={this.state.selectedCountry} onChange={this.changeCountry}>
+    // 					<option>--Choose Country--</option>
+    // 					{this.state.countries.map((e, key) => {
+    // 						return <option key={key}>{e.name}</option>;
+    // 					})}
+    // 				</select>
+    // 			</div>
+
+    // 			<div>
+    // 				<label>State</label>
+    // 				<select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
+    // 					<option>--Choose State--</option>
+    // 					{this.state.states.map((e, key) => {
+    // 						return <option key={key}>{e.name}</option>;
+    // 					})}
+    // 				</select>
+    // 			</div>
+
+    // 			<div>
+    // 				<label>City</label>
+    // 				<select placeholder="City">
+    // 					<option>--Choose City--</option>
+    // 					{this.state.cities.map((e, key) => {
+    // 						return <option key={key}>{e}</option>;
+    // 					})}
+    // 				</select>
+    // 			</div>
+    // 		</div>
+    // 	)
+    // }
+
 }
 
 export default DependentForms;
-
-// The forwardRef is important!!
-// Dropdown needs access to the DOM node in order to position the Menu
-// const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
-// 	<a
-// 	  href=""
-// 	  ref={ref}
-// 	  onClick={(e) => {
-// 		e.preventDefault();
-// 		onClick(e);
-// 	  }}
-// 	>
-// 	  {children}
-// 	  &#x25bc;
-// 	</a>
-//   ));
-  
-//   // forwardRef again here!
-//   // Dropdown needs access to the DOM of the Menu to measure it
-//   const CustomMenu = React.forwardRef(
-// 	({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {
-// 	  const [value, setValue] = useState('');
-  
-// 	  return (
-// 		<div
-// 		  ref={ref}
-// 		  style={style}
-// 		  className={className}
-// 		  aria-labelledby={labeledBy}
-// 		>
-// 		  <FormControl
-// 			autoFocus
-// 			className="mx-3 my-2 w-auto"
-// 			placeholder="Type to filter..."
-// 			onChange={(e) => setValue(e.target.value)}
-// 			value={value}
-// 		  />
-// 		  <ul className="list-unstyled">
-// 			{React.Children.toArray(children).filter(
-// 			  (child) =>
-// 				!value || child.props.children.toLowerCase().startsWith(value),
-// 			)}
-// 		  </ul>
-// 		</div>
-// 	  );
-// 	},
-//   );
-  
-//   render(
-// 	<Dropdown>
-// 	  <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-// 		Custom toggle
-// 	  </Dropdown.Toggle>
-  
-// 	  <Dropdown.Menu as={CustomMenu}>
-// 		<Dropdown.Item eventKey="1">Red</Dropdown.Item>
-// 		<Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-// 		<Dropdown.Item eventKey="3" active>
-// 		  Orange
-// 		</Dropdown.Item>
-// 		<Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
-// 	  </Dropdown.Menu>
-// 	</Dropdown>,
-//   );

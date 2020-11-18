@@ -3,16 +3,15 @@
     padding: 0;
     /* height: 100%;
     width: 100%; */
-    
 }
 
 .login-container{ 
     position: relative;
     left: 0;
     top: 0;
-    background-size: cover;
     background: url('../../Images/login_background.jpg') center;
-    overflow: hidden;
+    background-size: cover;
+    /* overflow: hidden; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +58,7 @@
 }
 
 .login-button{
-    outline: 0;
+    
     width: 12em;
     height: 3em;
     background: #560034;
@@ -70,11 +69,13 @@
     font-size: 0.7em;
     color: #FFF;
     margin-top: 1em;
+    outline: 0;
 }
 
 .login-button:hover{
     cursor: pointer;
     background: #710044;
+    
 }
 
 .login-link{
@@ -84,10 +85,12 @@
     top: 72%;
     width: 9.5em;
     height: 1.6em;
+    
 }
 
 .login-link:hover{
     color: #B1B1B1;
+    text-decoration: none;
 }
 
 .reset-link{
@@ -97,8 +100,10 @@
     top: 86%;
     width: 9.5em;
     height: 1.6em;
+    
 }
 
 .reset-link:hover{
     color: #B1B1B1;
+    text-decoration: none;
 }
