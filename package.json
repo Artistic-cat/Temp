@@ -40,6 +40,8 @@
     ]
   },
   "devDependencies": {
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1",
     "axios": "^0.21.0"
   }
 }
