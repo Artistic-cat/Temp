@@ -7,10 +7,11 @@ import './App.css';
 
 import About from "./Views/About/About";
 import Setup from "./Views/Setup/Setup";
-import FileDropBox from "./Components/FlieDropBox/FileDropBox";
 import Reset from "./Views/Login/Reset";
 import Login from './Views/Login/Login';
 import Home from "./Views/Home/Home"
+import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
+import FileUpload from "./Views/FileUpload/FileUpload";
 
 function App() {
     return (
@@ -18,7 +19,7 @@ function App() {
             <div className="App">
                 <Switch>
                     <Route path="/dropdown">
-                          <SetupAPI/>
+                          <CascadingDropdown />
                         </Route>
                     <Route path="/home">
                         <Home/>
@@ -33,7 +34,7 @@ function App() {
                         <Reset/>
                     </Route>
                     <Route path="/files">
-                        <FileDropBox/>
+                        <FileUpload />
                     </Route>
                     <Route path="/">
                         <Login/>
