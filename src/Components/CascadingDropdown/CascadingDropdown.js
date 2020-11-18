@@ -1,12 +1,7 @@
 import React from 'react';
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Sidebar from "../Sidebar/Sidebar";
-import {Container} from "react-bootstrap";
-
-import "./CascadingDropdown.css";
 
 class CascadingDropdown extends React.Component {
+    keys_data = []
     constructor(props, fieldArray, jsonData) {
         super(props);
         this.state = {
@@ -15,16 +10,7 @@ class CascadingDropdown extends React.Component {
             cities: [],
             selectedCountry: '--Choose Country--',
             selectedState: '--Choose State--',
-            jsonData: jsonData,
-            fieldArray: fieldArray
-        };
-        this.changeCountry = this.changeCountry.bind(this);
-        this.changeState = this.changeState.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({
-            countries: [
+            jsonData: [
                 {
                     name: 'Germany',
                     states: [{name: 'A', cities: ['Duesseldorf', 'Leinfelden-Echterdingen', 'Eschborn']}]
@@ -39,8 +25,11 @@ class CascadingDropdown extends React.Component {
                 {name: 'USA', states: [{name: 'C', cities: ['Downers Grove']}]},
                 {name: 'Mexico', states: [{name: 'D', cities: ['Puebla']}]},
                 {name: 'India', states: [{name: 'E', cities: ['Delhi', 'Kolkata', 'Mumbai', 'Bangalore']}]},
-            ]
-        });
+            ],
+            fieldArray: ["Country", "State", "City"]
+        };
+        this.changeCountry = this.changeCountry.bind(this);
+        this.changeState = this.changeState.bind(this);
     }
 
     changeCountry(event) {
@@ -55,35 +44,38 @@ class CascadingDropdown extends React.Component {
     }
 
     render() {
+        this.items = this.state.fieldArray.map((item) =>
+
+            <div>
+                <label>Select {item}: </label>
+                <select placeholder={item} value={this.state.e} onChange={(event) => {
+                    this.setState({e: event.target.value})
+                    this.setState({states: this.state.jsonData.find(cntry => cntry.name === event.target.value).states});
+                }
+                }>
+                    <option>--Choose {item}--</option>
+                    {this.state.jsonData.find(i => i.e).map((e, key) => {
+                        return <option key={key}>{e.name}</option>;
+                    })}
+                </select>
+            </div>
+        );
         return (
-            <>
-                <Header/>
-                <Sidebar/>
-                <Container>
-                    <div className="setupApi-rectangle">
-                        <h4>Setup API Driven Product</h4>
+            <div>
+                <h4>Setup API Driven Product</h4>
+                {this.items}
 
-                        <div>
-                            <label>Country</label>
-                            <select placeholder="Country" value={this.state.selectedCountry} onChange={this.changeCountry}>
-                                <option>--Choose Country--</option>
-                                {this.state.countries.map((e, key) => {
-                                    return <option key={key}>{e.name}</option>;
-                                })}
+                <div>
+                    <label>State</label>
+                    <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
+                        <option>--Choose State--</option>
+                        {this.state.states.map((e, key) => {
+                            return <option key={key}>{e.name}</option>;
+                        })}
                             </select>
                         </div>
 
-                        <div>
-                            <label>State</label>
-                            <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
-                                <option>--Choose State--</option>
-                                {this.state.states.map((e, key) => {
-                                    return <option key={key}>{e.name}</option>;
-                                })}
-                            </select>
-                        </div>
-
-                        <div>
+                {/*-<div>
                             <label>City</label>
                             <select placeholder="City">
                                 <option>--Choose City--</option>
@@ -91,13 +83,10 @@ class CascadingDropdown extends React.Component {
                                     return <option key={key}>{e}</option>;
                                 })}
                             </select>
-                        </div>
+                        </div>*/}
 
 
                     </div>
-                </Container>
-                <Footer/>
-            </>
         )
     }
 }
