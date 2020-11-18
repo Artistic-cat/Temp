@@ -4,28 +4,36 @@ import Reset from './Views/Login/Reset';
 import About from './Views/About/About';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-// import DependentForms from './Components/DependentForms/DependentForms';
 import Home from "./Views/Home/Home"
+import Setup from "./Views/Setup/Setup";
+import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
+import FileUpload from "./Views/FileUpload/FileUpload";
+
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import FileDropBox from "./Components/FlieDropBox/FileDropBox";
+import Cttabs from './Components/Test/Cttabs'
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Cttabs from './Components/Test/Cttabs'
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/dropdown">
+            <CascadingDropdown />
+          </Route>
           <Route path="/testing">
             <Cttabs />
           </Route>
           <Route path="/about">
-            <Header />
             <About />
-            <Footer />
+          </Route>
+          <Route path="/Setup">
+            <Setup/>
           </Route>
           <Route path="/home">
             <Home />
@@ -43,6 +51,6 @@ function App() {
       </div>
     </Router>    
   );
-}
+
 
 export default App;
