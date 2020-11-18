@@ -44,7 +44,7 @@ class CascadingDropdown extends React.Component {
     }
 
     render() {
-        this.items = this.state.fieldArray.map((item) =>
+        this.items = this.state.fieldArray.map((item, e) =>
 
             <div>
                 <label>Select {item}: </label>
@@ -54,7 +54,7 @@ class CascadingDropdown extends React.Component {
                 }
                 }>
                     <option>--Choose {item}--</option>
-                    {this.state.jsonData.find(i => i.e).map((e, key) => {
+                    {this.state.jsonData.map((e, key) => {
                         return <option key={key}>{e.name}</option>;
                     })}
                 </select>
@@ -72,8 +72,8 @@ class CascadingDropdown extends React.Component {
                         {this.state.states.map((e, key) => {
                             return <option key={key}>{e.name}</option>;
                         })}
-                            </select>
-                        </div>
+                    </select>
+                </div>
 
                 {/*-<div>
                             <label>City</label>
