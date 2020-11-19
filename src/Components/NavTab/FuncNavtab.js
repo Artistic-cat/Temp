@@ -1,22 +1,26 @@
 import React from 'react'
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
-import './Fotabs.css'
+import './FuncNavtab.css'
 
 function FunctionBody(props){
     return(
         <div className='content-area'>
             <div className='content-text'>
                 {`${props.content}`}
+                <h3>Fill the form here</h3>
+                <Link to='/files'>
+                    <h3>Next</h3>
+                </Link>
             </div>
         </div>
     )
 }
 
-function Fotabs(props){
+function FuncNavtab(props){
     const content=props.content
     return(      
-        <div className='fotab'>
+        <div className='functionality'>
             <Link to={`${props.tabpath}`} className="link" >
                 <div className='circle'></div>
                 <div className='text'>{`${props.tabname}`}</div>
@@ -28,4 +32,4 @@ function Fotabs(props){
     )
 }
 
-export default Fotabs
+export default FuncNavtab

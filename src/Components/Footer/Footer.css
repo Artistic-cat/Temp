@@ -1,5 +1,5 @@
 .footer {
-    height: 70px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,9 +7,10 @@
     background-color: #000A28;
     bottom: 0;
     color: #FFFF;
-    padding-left: 20%;
+    padding-left: 30%;
     padding-right: 20%;
     font-size: 0.9rem;
+    /* position: sticky; */
 }
 
 @media only screen and (max-width: 600px) {

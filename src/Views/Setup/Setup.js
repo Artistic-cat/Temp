@@ -1,83 +1,55 @@
-import React  from "react";
-import "./Setup.css";
+import React from "react"
+import "./Setup.css"
 
-import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
-import Sidebar from "../../Components/Sidebar/Sidebar";
-import {Container, Button} from "react-bootstrap"; 
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import Header from '../../Components/Header/Header'
+import Footer from '../../Components/Footer/Footer'
+import Sidebar from "../../Components/Sidebar/Sidebar"
+import FuncNavtab from "../../Components/NavTab/FuncNavtab"
+import { Container } from "react-bootstrap"
+import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
+// import {VscFiles,BsBoundingBox,RiBuildingLine} from 'react-icons'
 
-function Setup() { 
-        return (
+//To do:
+//Pass icons as components
+//Dropdown options for API Driven
 
-            <div>
-            <Sidebar />
-            <Header />
+const tabs = [
+    {
+        id: 1,
+        tabname: "API Driven",
+        tabpath: "/setup/APIDriven",
+        content: "For API Driven"
+    },
+    {
+        id: 2,
+        tabname: "GiiX Managed",
+        tabpath: "/setup/GiiXManaged",
+        content: "For GiiX Managed"
+    },
+    {
+        id: 3,
+        tabname: "Insurer Managed",
+        tabpath: "/setup/InsurerManaged",
+        content: "For Insurer Managed",
+    },
+]
 
+function Setup() {
+    new RecentlyUsed().setPath("Setup", window.location.href)
+    const tabsComponent= tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname} content={tab.content} tabpath={tab.tabpath} />)
+    return (
+        <div>
+            <Header/>
+            <Sidebar/>
             <Container>
-                <Row className = "home-nav-buttons">
-                    <Col>
-                        <Button type = "button" className = "btn btn-primary btn-circle btn-xl" onClick >
-                           API Driven
-                         </Button>
-                    </Col>
-
-                    <Col>
-                        <Button type = "button" className = "btn btn-primary btn-circle btn-xl" onClick >
-                            Giix Managed
-                        </Button>    
-                    </Col>
-
-                    <Col>
-                        <Button type = "button" className = "btn btn-primary btn-circle btn-xl" onClick  >
-                            Insurer Managed
-                        </Button>
-                    </Col>
-
-                </Row>
-
-                <Row>
-                    <Col>
-                       <div className = "API-rectangle">
-                           <h5 style = {{textAlign:"center"}}>API Driven Form</h5>
-                       </div>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                       <div className = "Giix-rectangle">
-                           <h5 style = {{textAlign:"center"}}>Giix Managed Form</h5>
-                       </div>
-                    </Col>
-                </Row>
-
-                <Row>
-                    <Col>
-                       <div className = "Insurer-rectangle">
-                           <h5 style = {{textAlign:"center"}}>Insurer Managed Form</h5>
-                       </div>
-                    </Col>
-                </Row>
-
+                <div className='overall'>
+                    <div className='tabs'>
+                        {tabsComponent}
+                    </div>
+                </div>
             </Container>
-
-             <Footer />
+            <Footer />
         </div>
-        );
-    }
-
-export default Setup;
-            
-    
-        
-
-        
-
-
-    
-
-        
-
-
+    )
+}
+export default Setup

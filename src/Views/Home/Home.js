@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./Home.css"
+import {Link} from 'react-router-dom';
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
@@ -138,10 +139,12 @@ class Home extends Component {
                 <Container>
                     <Row className="home-nav-buttons">
                         <Col>
-                            <button className="btn">
+                        <Link to='/setup'>
+                            <button className="btn" >
                                 <MdPhonelinkSetup style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>Product Setup</p>
                             </button>
+                        </Link>
                         </Col>
                         <Col>
                             <button className="btn" onClick={Home}>

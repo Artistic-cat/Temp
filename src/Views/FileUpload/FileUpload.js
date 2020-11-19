@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer/Footer';
 import {Container} from "react-bootstrap";
 import FileDropBox from "../../Components/FlieDropBox/FileDropBox";
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import { Link } from "react-router-dom";
 
 class FileUpload extends Component {
     render() {
@@ -21,6 +22,11 @@ class FileUpload extends Component {
                             <FileDropBox/>
                         </div>
                     </div>
+                    
+                    <Link to='/setup'>
+                        <h3>Back</h3>
+                    </Link>
+                    
                 </Container>
 
                 <Footer/>

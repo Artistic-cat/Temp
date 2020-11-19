@@ -58,7 +58,7 @@ class Sidebar extends Component {
                         <NavText>
                             User Name Comes Here
                         </NavText>
-                        <NavItem eventKey="user/profile">
+                        <NavItem eventKey="user/profile" >
                             <NavIcon>
                                 <FiUser style={{fontSize: '1em', marginRight: '1em'}}/>
                                 Profile

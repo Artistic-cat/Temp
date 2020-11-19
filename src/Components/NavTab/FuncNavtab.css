@@ -18,25 +18,30 @@
     align-items: center;
     flex-direction: column;
 }
+
 .link:hover{
     text-decoration: none;
 }
 
-.fotab{
+.functionality{
     /* background-color: lightcoral; */
     height: auto;
-    margin-left: 0.9em;
 }
 
 .content-area{
     position: absolute;
     background-color: #d5e0ff;
-    left: 0;
     margin-top: 2em;
-    width: 34em;
+    width: 100%;
+    min-width: 10em;
     border-radius: 4%;
-    min-height: 20em;
+    min-height: 10em;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
 }
 .content-text{
     margin: 3em;
 }
+
