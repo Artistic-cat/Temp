@@ -27,9 +27,11 @@ class CascadingDropdown extends React.Component {
                 {name: 'India', states: [{name: 'E', cities: ['Delhi', 'Kolkata', 'Mumbai', 'Bangalore']}]},
             ],
             fieldArray: ["Country", "State", "City"],
-            dataArray: [["India", "USA"],
+            dataArray: [
+                [["India", "USA"]],
                 [["Bangalore", "Chennai"], ["Texas", "WDC"]],
-                [["Bangalore Urban", "Mysore"], ["Chennai Central", "Coimbatore"]]]
+                [["Bangalore Urban", "Mysore"], ["Chennai Central", "Coimbatore"]]
+            ]
         };
         this.changeCountry = this.changeCountry.bind(this);
         this.changeState = this.changeState.bind(this);
@@ -58,7 +60,9 @@ class CascadingDropdown extends React.Component {
                 }>
                     <option>--Choose {item}--</option>
                     {[...this.state.dataArray[e]].map((data, key) => {
-                        return <option key={key}>{String(data)}</option>;
+                        return [...data].map((k, v) => {
+                            return <option key={v}>{String(k)}</option>;
+                        })
                     })}
                 </select>
             </div>
