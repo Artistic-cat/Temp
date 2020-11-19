@@ -2,7 +2,7 @@ import React from 'react';
 
 class CascadingDropdown extends React.Component {
     keys_data = []
-    constructor(props, fieldArray, jsonData) {
+    constructor(props, dataArray, jsonData) {
         super(props);
         this.state = {
             countries: [],
@@ -26,7 +26,10 @@ class CascadingDropdown extends React.Component {
                 {name: 'Mexico', states: [{name: 'D', cities: ['Puebla']}]},
                 {name: 'India', states: [{name: 'E', cities: ['Delhi', 'Kolkata', 'Mumbai', 'Bangalore']}]},
             ],
-            fieldArray: ["Country", "State", "City"]
+            fieldArray: ["Country", "State", "City"],
+            dataArray: [["India", "USA"],
+                [{"India": ["Bangalore", "Chennai"]}, {"USA": ["Texas", "WDC"]}],
+                [{"Bangalore": ["Bangalore Urban", "Mysore"]}, {"Chennai": ["Chennai Central", "Coimbatore"]}]]
         };
         this.changeCountry = this.changeCountry.bind(this);
         this.changeState = this.changeState.bind(this);
@@ -44,28 +47,29 @@ class CascadingDropdown extends React.Component {
     }
 
     render() {
-        this.items = this.state.fieldArray.map((item, e) =>
+        this.items = [...this.state.fieldArray].map((item, e) =>
 
             <div>
                 <label>Select {item}: </label>
                 <select placeholder={item} value={this.state.e} onChange={(event) => {
                     this.setState({e: event.target.value})
-                    this.setState({states: this.state.jsonData.find(cntry => cntry.name === event.target.value).states});
+                    //this.setState({states: this.state.jsonData.find(cntry => cntry.name === event.target.value).states});
                 }
                 }>
                     <option>--Choose {item}--</option>
-                    {this.state.jsonData.map((e, key) => {
-                        return <option key={key}>{e.name}</option>;
+                    {[...this.state.dataArray[e]].map((data, key) => {
+                        return <option key={key}>{String(data)}</option>;
                     })}
                 </select>
             </div>
         );
+
         return (
             <div>
                 <h4>Setup API Driven Product</h4>
                 {this.items}
 
-                <div>
+                {/*<div>
                     <label>State</label>
                     <select placeholder="State" value={this.state.selectedState} onChange={this.changeState}>
                         <option>--Choose State--</option>
@@ -75,7 +79,7 @@ class CascadingDropdown extends React.Component {
                     </select>
                 </div>
 
-                {/*-<div>
+                <div>
                             <label>City</label>
                             <select placeholder="City">
                                 <option>--Choose City--</option>

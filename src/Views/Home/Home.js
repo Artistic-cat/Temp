@@ -163,6 +163,33 @@ class Home extends Component {
                         </Col>
                     </Row>
 
+                    <Row className="home-nav-buttons">
+                        <Col>
+                            <button className="btn">
+                                <MdPhonelinkSetup style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Product Setup</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="btn" onClick={Home}>
+                                <FiSettings style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Configurations</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="btn" onClick={Home}>
+                                <BsCheckCircle style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Approvals</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="btn" onClick={Home}>
+                                <FiUsers style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>User Management</p>
+                            </button>
+                        </Col>
+                    </Row>
+
                     {/*<Row>
                         <Col>
                             <div className="home-rectangle">
