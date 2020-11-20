@@ -146,19 +146,19 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">Product</h4>
                         <Col>
-                            <button className="btn">
+                            <button className="home-btn">
                                 <MdPhonelinkSetup style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>New Setup</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="home-btn" onClick={Home}>
                                 <FiSettings style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>Change Existing Setup</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="home-btn" onClick={Home}>
                                 <FcDataConfiguration style={{fontSize: '6.5vh'}}
                                                      className="home-circle-inner-text mb-2"/>
                                 <p>Manage Configurations</p>
@@ -169,20 +169,20 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">Monitor</h4>
                         <Col>
-                            <button className="btn">
+                            <button className="home-btn">
                                 <TiBusinessCard style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>Business Analytics</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="home-btn" onClick={Home}>
                                 <AiOutlineFundProjectionScreen style={{fontSize: '6.5vh'}}
                                                                className="home-circle-inner-text mb-2"/>
                                 <p>Manage Live Products and Partners</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="home-btn" onClick={Home}>
                                 <BiTrendingUp style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>Industry/Market Trends</p>
                             </button>
@@ -192,19 +192,19 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">Admin</h4>
                         <Col>
-                            <button className="btn">
+                            <button className="home-btn">
                                 <BsCheckCircle style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>Approval Mechanism</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="home-btn" onClick={Home}>
                                 <FiUsers style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>User Management</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
+                            <button className="home-btn" onClick={Home}>
                                 <SiLogstash style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>System Log Management</p>
                             </button>
@@ -217,25 +217,25 @@ class Home extends Component {
                                 <h4>Setup</h4>
                                 <Row className={'m-3'}>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <MdPhonelinkSetup style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>Product Setup</span>
                                         </button>
                                     </Col>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <FiSettings style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>Configurations</span>
                                         </button>
                                     </Col>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <BsCheckCircle style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>Approvals</span>
                                         </button>
                                     </Col>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <FiUsers style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>User Management</span>
                                         </button>
@@ -245,19 +245,19 @@ class Home extends Component {
                                 <h4>Monitor</h4>
                                 <Row className={'m-3'}>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <SiLivejournal style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>Manage Live Products</span>
                                         </button>
                                     </Col>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <SiLogstash style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>Log Management</span>
                                         </button>
                                     </Col>
                                     <Col>
-                                        <button className="btn" onClick={Home}>
+                                        <button className="home-btn" onClick={Home}>
                                             <BiAnalyse style={{fontSize: '2vh'}} className="m-2"/>
                                             <span>Business Analytic</span>
                                         </button>
@@ -271,61 +271,61 @@ class Home extends Component {
                         <Col>
                             <div className="home-rectangle">
                                 <h4>Business Analytics</h4>
-
                                 {/* Chart Buttons Start */}
-                                <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart: {
-                                            donutData: [1, 12, 15, 10, 37, 10],
-                                            lineData: [68, 31, 60, 40, 45, 25, 68]
-                                        },
-                                        logChart: {
-                                            multiLineData: {
-                                                line1Data: [12, 19, 3, 5, 2, 3],
-                                                line2Data: [1, 2, 1, 1, 2, 2],
+                                <div className="m-4">
+                                    <button className="home-chart-btn" onClick={() => this.setState({
+                                            businessChart: {
+                                                donutData: [1, 12, 15, 10, 37, 10],
+                                                lineData: [68, 31, 60, 40, 45, 25, 68]
                                             },
-                                            logLineData: [0, 10, 5, 2, 20, 30, 45]
+                                            logChart: {
+                                                multiLineData: {
+                                                    line1Data: [12, 19, 3, 5, 2, 3],
+                                                    line2Data: [1, 2, 1, 1, 2, 2],
+                                                },
+                                                logLineData: [0, 10, 5, 2, 20, 30, 45]
+                                            }
                                         }
-                                    }
-                                )}>Overall
-                                </button>
-                                <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart: {
-                                            donutData: [1, 2, 5, 1, 5, 1],
-                                            lineData: [50, 10, 40, 20, 25, 15, 48]
-                                        },
-                                        logChart: {
-                                            multiLineData: {
-                                                line1Data: [9, 11, 13, 15, 12, 13],
-                                                line2Data: [11, 12, 11, 11, 12, 12],
+                                    )}>Overall
+                                    </button>
+                                    <button className="home-chart-btn" onClick={() => this.setState({
+                                            businessChart: {
+                                                donutData: [1, 2, 5, 1, 5, 1],
+                                                lineData: [50, 10, 40, 20, 25, 15, 48]
                                             },
-                                            logLineData: [10, 20, 15, 12, 29, 13, 55]
+                                            logChart: {
+                                                multiLineData: {
+                                                    line1Data: [9, 11, 13, 15, 12, 13],
+                                                    line2Data: [11, 12, 11, 11, 12, 12],
+                                                },
+                                                logLineData: [10, 20, 15, 12, 29, 13, 55]
+                                            }
                                         }
-                                    }
-                                )}>GiiX Managed
-                                </button>
-                                <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart: {
-                                            donutData: [1, 3, 1, 2, 1, 1],
-                                            lineData: [15, 11, 14, 12, 25, 5, 14]
-                                        },
-                                        logChart: {
-                                            multiLineData: {
-                                                line1Data: [1, 2, 3, 5, 2, 7],
-                                                line2Data: [1, 1, 9, 11, 20, 15],
+                                    )}>GiiX Managed
+                                    </button>
+                                    <button className="home-chart-btn" onClick={() => this.setState({
+                                            businessChart: {
+                                                donutData: [1, 3, 1, 2, 1, 1],
+                                                lineData: [15, 11, 14, 12, 25, 5, 14]
                                             },
-                                            logLineData: [1, 12, 11, 25, 12, 3, 25]
+                                            logChart: {
+                                                multiLineData: {
+                                                    line1Data: [1, 2, 3, 5, 2, 7],
+                                                    line2Data: [1, 1, 9, 11, 20, 15],
+                                                },
+                                                logLineData: [1, 12, 11, 25, 12, 3, 25]
+                                            }
                                         }
-                                    }
-                                )}>Insurer Managed
-                                </button>
+                                    )}>Insurer Managed
+                                    </button>
+                                </div>
                                 {/* Chart Buttons Ends */}
-
                                 {/* Charts Start */}
                                 <Row>
-                                    <Col className="mt-2 mb-2">
+                                    <Col className="m-4 mb-2">
                                         <Doughnut data={donutData}/>
                                     </Col>
-                                    <Col className="mt-2 mb-2">
+                                    <Col className="m-4 mb-2">
                                         <Line data={manageData}/>
                                     </Col>
                                 </Row>
@@ -341,10 +341,10 @@ class Home extends Component {
                                 <h4>Log Management</h4>
                                 <Row>
                                     <Col>
-                                        <Line data={logLineData}/>
+                                        <Line className="m-4 mb-2" data={logLineData}/>
                                     </Col>
                                     <Col>
-                                        <Line data={multiLineData} options={multiLineOptions}/>
+                                        <Line className="m-4 mb-2" data={multiLineData} options={multiLineOptions}/>
                                     </Col>
                                 </Row>
                                 <Row>
