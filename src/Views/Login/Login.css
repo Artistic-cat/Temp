@@ -1,11 +1,10 @@
 
-.login{ 
+.login {
     position: relative;
-    left: 0em;
-    top: 0em;
-    background: url('../../Images/login_background.jpg');
+    left: 0;
+    top: 0;
     background-size: cover;
-    background-position: center;
+    background: url('../../Images/login_background.jpg') center;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -35,9 +34,9 @@
 .login-form{
     position: absolute;
     top: 45%;
-} 
+}
 
-.input{
+.input {
     border: none;
     text-align: center;
     font-size: 0.85em;
@@ -45,20 +44,7 @@
     width: 20em;
     height: 3.5em;
     background: #FFFFFF;
-    box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.3);
     border-radius: 90px;
-}
-
-.login-button{
-    width: 12em;
-    height: 3em;
-    background: #560034;
-    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 70px;
-    border: none;
-    font-weight: bold;
-    font-size: 0.7em;
-    color: #FFF;
-    margin-top: 1em;
 }
 
