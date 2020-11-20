@@ -4,7 +4,7 @@ class CascadingDropdown extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fieldArray: ["Country", "State", "City"],
+            fieldArray: ["New Product", "State", "City"],
             dataArray: [[["India", "USA"]],
                 [["Bangalore", "Chennai"], ["Texas", "WDC"]],
                 [["Bangalore Urban", "Mysore"], ["Chennai Central", "Coimbatore"]]]
@@ -16,7 +16,7 @@ class CascadingDropdown extends React.Component {
 
             <div>
                 <label>Select {item}: </label>
-                <select placeholder={item} value={this.state.e} onChange={(event) => {
+                <select key={e} placeholder={item} value={this.state.e} onChange={(event) => {
                     this.setState({e: event.target.value})
                 }
                 }>
