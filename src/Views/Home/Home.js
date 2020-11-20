@@ -13,13 +13,7 @@ import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
-import {
-    AiOutlineFundProjectionScreen,
-    BiTrendingUp,
-    FcDataConfiguration,
-    SiLogstash,
-    TiBusinessCard
-} from "react-icons/all";
+import {AiOutlineFundProjectionScreen, BiTrendingUp, FaServer, SiLogstash, TiBusinessCard} from "react-icons/all";
 
 class Home extends Component {
     constructor(props) {
@@ -144,7 +138,7 @@ class Home extends Component {
                 <Sidebar/>
                 <Container>
                     <Row className="home-nav-buttons">
-                        <h4 className="home-nav-button-title">Product</h4>
+                        <h4 className="home-nav-button-title">Product Management</h4>
                         <Col>
                             <button className="home-btn">
                                 <MdPhonelinkSetup style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
@@ -154,20 +148,20 @@ class Home extends Component {
                         <Col>
                             <button className="home-btn" onClick={Home}>
                                 <FiSettings style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Change Existing Setup</p>
+                                <p>Change Request</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <FcDataConfiguration style={{fontSize: '6.5vh'}}
-                                                     className="home-circle-inner-text mb-2"/>
-                                <p>Manage Configurations</p>
+                                <FaServer style={{fontSize: '6.5vh'}}
+                                          className="home-circle-inner-text mb-2"/>
+                                <p>Configuration</p>
                             </button>
                         </Col>
                     </Row>
 
                     <Row className="home-nav-buttons">
-                        <h4 className="home-nav-button-title">Monitor</h4>
+                        <h4 className="home-nav-button-title">Business Monitoring and Controls</h4>
                         <Col>
                             <button className="home-btn">
                                 <TiBusinessCard style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
@@ -178,19 +172,19 @@ class Home extends Component {
                             <button className="home-btn" onClick={Home}>
                                 <AiOutlineFundProjectionScreen style={{fontSize: '6.5vh'}}
                                                                className="home-circle-inner-text mb-2"/>
-                                <p>Manage Live Products and Partners</p>
+                                <p>Live Products and Partners</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
                                 <BiTrendingUp style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Industry/Market Trends</p>
+                                <p>Industry Trends</p>
                             </button>
                         </Col>
                     </Row>
 
                     <Row className="home-nav-buttons">
-                        <h4 className="home-nav-button-title">Admin</h4>
+                        <h4 className="home-nav-button-title">System Administration</h4>
                         <Col>
                             <button className="home-btn">
                                 <BsCheckCircle style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
@@ -317,6 +311,21 @@ class Home extends Component {
                                             }
                                         }
                                     )}>Insurer Managed
+                                    </button>
+                                    <button className="home-chart-btn" onClick={() => this.setState({
+                                            businessChart: {
+                                                donutData: [3, 5, 2, 3, 5, 1],
+                                                lineData: [25, 18, 24, 22, 5, 15, 4]
+                                            },
+                                            logChart: {
+                                                multiLineData: {
+                                                    line1Data: [10, 20, 15, 12, 29, 55],
+                                                    line2Data: [1, 12, 11, 25, 12, 25],
+                                                },
+                                                logLineData: [11, 22, 31, 25, 12, 3, 25]
+                                            }
+                                        }
+                                    )}>API Driven
                                     </button>
                                 </div>
                                 {/* Chart Buttons Ends */}
