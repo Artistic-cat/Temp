@@ -13,6 +13,13 @@ import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
+import {
+    AiOutlineFundProjectionScreen,
+    BiTrendingUp,
+    FcDataConfiguration,
+    SiLogstash,
+    TiBusinessCard
+} from "react-icons/all";
 
 class Home extends Component {
     constructor(props) {
@@ -137,55 +144,69 @@ class Home extends Component {
                 <Sidebar/>
                 <Container>
                     <Row className="home-nav-buttons">
+                        <h4 className="home-nav-button-title">Product</h4>
                         <Col>
                             <button className="btn">
-                                <MdPhonelinkSetup style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Product Setup</p>
+                                <MdPhonelinkSetup style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>New Setup</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="btn" onClick={Home}>
-                                <FiSettings style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Configurations</p>
+                                <FiSettings style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Change Existing Setup</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="btn" onClick={Home}>
-                                <BsCheckCircle style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Approvals</p>
-                            </button>
-                        </Col>
-                        <Col>
-                            <button className="btn" onClick={Home}>
-                                <FiUsers style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>User Management</p>
+                                <FcDataConfiguration style={{fontSize: '6.5vh'}}
+                                                     className="home-circle-inner-text mb-2"/>
+                                <p>Manage Configurations</p>
                             </button>
                         </Col>
                     </Row>
 
                     <Row className="home-nav-buttons">
+                        <h4 className="home-nav-button-title">Monitor</h4>
                         <Col>
                             <button className="btn">
-                                <MdPhonelinkSetup style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Product Setup</p>
+                                <TiBusinessCard style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Business Analytics</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="btn" onClick={Home}>
-                                <FiSettings style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Configurations</p>
+                                <AiOutlineFundProjectionScreen style={{fontSize: '6.5vh'}}
+                                                               className="home-circle-inner-text mb-2"/>
+                                <p>Manage Live Products and Partners</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="btn" onClick={Home}>
-                                <BsCheckCircle style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Approvals</p>
+                                <BiTrendingUp style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Industry/Market Trends</p>
+                            </button>
+                        </Col>
+                    </Row>
+
+                    <Row className="home-nav-buttons">
+                        <h4 className="home-nav-button-title">Admin</h4>
+                        <Col>
+                            <button className="btn">
+                                <BsCheckCircle style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Approval Mechanism</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="btn" onClick={Home}>
-                                <FiUsers style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
+                                <FiUsers style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>User Management</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="btn" onClick={Home}>
+                                <SiLogstash style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>System Log Management</p>
                             </button>
                         </Col>
                     </Row>
