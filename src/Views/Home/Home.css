@@ -63,3 +63,13 @@
 .home-log-table {
     margin: 5%;
 }
+
+.home-chart-btn-area-left {
+    margin-top: 4vh;
+    float: left;
+}
+
+.home-chart-btn-area-right {
+    margin-top: 4vh;
+    float: right;
+}
