@@ -16,6 +16,12 @@
 
 .home-chart-btn {
     border: 2px solid #E0EAF9;
+    background: transparent;
+    transition: 0.1s linear;
+    color: #000000;
+}
+
+.home-chart-btn:hover {
     background: #03002C;
     color: #FFFFFF;
 }

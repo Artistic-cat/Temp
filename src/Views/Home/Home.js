@@ -7,13 +7,13 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import {Container} from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import {MdPhonelinkSetup} from "react-icons/md";
+import {MdComputer, MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
-import {AiOutlineFundProjectionScreen, BiTrendingUp, FaServer, SiLogstash, TiBusinessCard} from "react-icons/all";
+import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
 
 class Home extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class Home extends Component {
             logChart: {
                 multiLineData: {
                     line1Data: [12, 19, 3, 5, 2, 3],
-                    line2Data: [1, 2, 1, 1, 2, 2],
+                    line2Data: [1, 2, 1, 3, 2, 3],
                 },
                 logLineData: [0, 10, 5, 2, 20, 30, 45]
             }
@@ -153,8 +153,8 @@ class Home extends Component {
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <FaServer style={{fontSize: '6.5vh'}}
-                                          className="home-circle-inner-text mb-2"/>
+                                <MdComputer style={{fontSize: '6.5vh'}}
+                                            className="home-circle-inner-text mb-2"/>
                                 <p>Configuration</p>
                             </button>
                         </Col>
@@ -274,8 +274,8 @@ class Home extends Component {
                                             },
                                             logChart: {
                                                 multiLineData: {
-                                                    line1Data: [12, 19, 3, 5, 2, 3],
-                                                    line2Data: [1, 2, 1, 1, 2, 2],
+                                                    line1Data: [12, 19, 3, 5, 2, 13],
+                                                    line2Data: [1, 2, 1, 3, 2, 3],
                                                 },
                                                 logLineData: [0, 10, 5, 2, 20, 30, 45]
                                             }
@@ -325,7 +325,8 @@ class Home extends Component {
                                                 logLineData: [11, 22, 31, 25, 12, 3, 25]
                                             }
                                         }
-                                    )}>API Driven
+                                    )
+                                    }>API Driven
                                     </button>
                                 </div>
                                 {/* Chart Buttons Ends */}
