@@ -77,7 +77,7 @@ const FileDropBox = () => {
     }
 
     const validateFile = (file) => {
-        const validTypes = ["text/csv", "image/jpeg"];
+        const validTypes = ["text/csv", "image/jpeg", "application/msword"];
         if (validTypes.indexOf(file.type) === -1) {
             return false;
         }
@@ -118,6 +118,13 @@ const FileDropBox = () => {
         modalRef.current.style.display = "block";
         reader.readAsDataURL(file);
         reader.onload = function (e) {
+            const file1 = new Blob([file]);
+            //Build a URL from the file
+            const fileURL = URL.createObjectURL(file1);
+            //Open the URL on new Window
+            const pdfWindow = window.open();
+            pdfWindow.location.href = fileURL;
+            window.open(e, "_blank");
             modalImageRef.current.style.backgroundImage = `url(${e.target.result})`;
         }
     }
@@ -201,6 +208,14 @@ const FileDropBox = () => {
                                     <span
                                         className="file-drop-file-size">({fileSize(data.size)})</span> {data.invalid &&
                                 <span className='file-drop-file-error-message'>({errorMessage})</span>}
+                                    <span className="file-drop-file-category">
+                                        Select File Category: &nbsp;
+                                        <select>
+                                            <option>API</option>
+                                            <option>Master</option>
+                                            <option>Reference</option>
+                                        </select>
+                                    </span>
                                 </div>
                                 <div className="file-drop-file-remove" onClick={() => removeFile(data.name)}>X</div>
                             </div>
