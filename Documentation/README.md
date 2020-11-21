@@ -20,8 +20,8 @@ Documented By:
             - View: About
             - Components: Header, Footer, Sidebar
 3. Set up and Configure Page
-   - View: Configure
-   - Components: Header, Footer, Sidebar, DependentForms
+   - View: Setup
+   - Components: Header, Footer, Sidebar, NavTab/FuncNavTab 
 4. Drop Box Page
     - View: FileUpload
     - Components: Header, Footer, Sidebar, FileDropBox

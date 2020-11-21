@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from "react-router-dom"
 import { Link } from "react-router-dom"
-import './FuncNavtab.css'
+import './Functionality.css'
 
 function InnerFunctionBody(props){
     return(
@@ -31,11 +31,19 @@ function FunctionBody(props){
                     <Route path={`${props.tabpath}`+'/Drafts'} render={(props) =><InnerFunctionBody content={drafts} />}/>
                 </Switch>
             </div>
+
+            {/* <div className='content-text'>
+                <h5>{`${props.content}`}</h5>
+                <h5>{`${props.npcontent}`}</h5>
+                <h5>{`${props.nttcontent}`}</h5>
+                <h5>{`${props.drafts}`}</h5>
+                <h5>{`${props.tabpath}`+'/NewProduct'}</h5>
+            </div> */}
         </div>
     )
 }
-
-function FuncNavtab(props){
+// npcontent=props.npcontent nttcontent=props. drafts=props.
+function Functionality(props){
     const content=props.content
     const npcontent=props.npcontent
     const nttcontent=props.nttcontent
@@ -55,4 +63,4 @@ function FuncNavtab(props){
     )
 }
 
-export default FuncNavtab
+export default Functionality
