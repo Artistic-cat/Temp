@@ -7,7 +7,10 @@ import Sidebar from "../../Components/Sidebar/Sidebar"
 import FuncNavtab from "../../Components/NavTab/FuncNavtab"
 import {Container} from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
-import {AiOutlineCopy, AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-icons/ai";
+import {AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-icons/ai";
+import {
+    GrGraphQl,
+} from "react-icons/all";
 
 //To do:
 //Pass icons as components
@@ -16,7 +19,7 @@ import {AiOutlineCopy, AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-i
 const tabs = [
     {
         id: 1,
-        icon: <AiOutlineCopy className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
+        icon: <GrGraphQl className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
         content: "For API Driven",
@@ -26,7 +29,7 @@ const tabs = [
     },
     {
         id: 2,
-        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
+        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "GiiX Managed",
         tabpath: "/setup/GiiXManaged",
         content: "For GiiX Managed",
@@ -36,7 +39,7 @@ const tabs = [
     },
     {
         id: 3,
-        icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
+        icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "Insurer Managed",
         tabpath: "/setup/InsurerManaged",
         content: "For Insurer Managed",

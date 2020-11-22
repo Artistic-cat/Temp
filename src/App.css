@@ -19,9 +19,14 @@
 
 .btn:hover {
     background: #560034;
+    color: #FFFFFF;
 }
 
 a {
     text-decoration: none !important;
+    color: inherit;
+}
+
+a:hover{
     color: inherit;
 }

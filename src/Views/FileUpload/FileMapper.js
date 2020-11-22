@@ -20,8 +20,16 @@ class FileUpload extends Component {
                             <FileMapper/>
                         </div>
                         <div className={"m-4"}>
-                            <Link to="/files" className="btn">Back</Link>
-                            <button className="btn">Next</button>
+                            <Link to="/files">
+                                <button className="btn">
+                                    Back
+                                </button>
+                            </Link>
+                            <Link to="#">
+                                <button className="btn">
+                                    Next
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </Container>

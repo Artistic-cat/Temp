@@ -20,8 +20,16 @@ class FileUpload extends Component {
                             <FileDropBox/>
                         </div>
                         <div className={"m-4"}>
-                            <Link className="btn" to="/setup">Back</Link>
-                            <Link className="btn" to="/mapfile"><span>Next</span></Link>
+                            <Link to="/setup">
+                                <button className="btn">
+                                    Back
+                                </button>
+                            </Link>
+                            <Link to="/mapfile">
+                                <button className="btn">
+                                    Next
+                                </button>
+                            </Link>
                         </div>
                     </div>
 

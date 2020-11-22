@@ -141,20 +141,22 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">Product Management</h4>
                         <Col>
-                            <Link className="home-btn" to="/setup">
-                                <MdPhonelinkSetup style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>New Setup</p>
+                            <Link to="/setup">
+                                <button className="home-btn">
+                                    <MdPhonelinkSetup style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
+                                    <p>New Setup</p>
+                                </button>
                             </Link>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <FiSettings style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <FiSettings style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>Change Request</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <MdComputer style={{fontSize: '6.5vh'}}
+                                <MdComputer style={{fontSize: '3.5em'}}
                                             className="home-circle-inner-text mb-2"/>
                                 <p>Configuration</p>
                             </button>
@@ -165,20 +167,20 @@ class Home extends Component {
                         <h4 className="home-nav-button-title">Business Monitoring and Controls</h4>
                         <Col>
                             <button className="home-btn">
-                                <TiBusinessCard style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <TiBusinessCard style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>Business Analytics</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <AiOutlineFundProjectionScreen style={{fontSize: '6.5vh'}}
+                                <AiOutlineFundProjectionScreen style={{fontSize: '3.5em'}}
                                                                className="home-circle-inner-text mb-2"/>
                                 <p>Live Products and Partners</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <BiTrendingUp style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <BiTrendingUp style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>Industry Trends</p>
                             </button>
                         </Col>
@@ -188,19 +190,19 @@ class Home extends Component {
                         <h4 className="home-nav-button-title">System Administration</h4>
                         <Col>
                             <button className="home-btn">
-                                <BsCheckCircle style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <BsCheckCircle style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>Approval Mechanism</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <FiUsers style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <FiUsers style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>User Management</p>
                             </button>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
-                                <SiLogstash style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <SiLogstash style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>System Log Management</p>
                             </button>
                         </Col>
