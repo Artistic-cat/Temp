@@ -20,19 +20,19 @@ function FunctionBody(props) {
         <div className='content-area'>
             <div className='content-tabs'>
                 <div className='content-links'>
-                    <NavLink to={`${props.tabpath}` + '/NewProduct'} className='second-tabs'
+                    <NavLink to={`${props.tabpath}/NewProduct`} className='second-tabs'
                              activeClassName='active-second-tabs'>New Product</NavLink>
-                    <NavLink to={`${props.tabpath}` + '/NewTransactionType'} className='second-tabs'
+                    <NavLink to={`${props.tabpath}/NewTransactionType`} className='second-tabs'
                              activeClassName='active-second-tabs'>New Transaction Type</NavLink>
-                    <NavLink to={`${props.tabpath}` + '/Drafts'} className='second-tabs'
+                    <NavLink to={`${props.tabpath}/Drafts`} className='second-tabs'
                              activeClassName='active-second-tabs'>Drafts</NavLink>
                 </div>
                 <Switch>
-                    <Route path={`${props.tabpath}` + '/NewProduct'}
+                    <Route path={`${props.tabpath}/NewProduct`}
                            render={() => <InnerFunctionBody content={npcontent}/>}/>
-                    <Route path={`${props.tabpath}` + '/NewTransactionType'}
+                    <Route path={`${props.tabpath}/NewTransactionType`}
                            render={() => <InnerFunctionBody content={nttcontent}/>}/>
-                    <Route path={`${props.tabpath}` + '/Drafts'}
+                    <Route path={`${props.tabpath}/Drafts`}
                            render={() => <InnerFunctionBody content={drafts}/>}/>
                 </Switch>
             </div>
