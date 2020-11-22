@@ -5,9 +5,9 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Sidebar from "../../Components/Sidebar/Sidebar"
 import FuncNavtab from "../../Components/NavTab/FuncNavtab"
-import { Container } from "react-bootstrap"
+import {Container} from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
-import { AiOutlineCopy,AiOutlineSnippets, AiOutlineDeploymentUnit } from "react-icons/ai";
+import {AiOutlineCopy, AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-icons/ai";
 
 //To do:
 //Pass icons as components
@@ -22,7 +22,7 @@ const tabs = [
         content: "For API Driven",
         npcontent: "API Driven NP",
         nttcontent: "API Driven NTT",
-        drafts: "API Driven Drafts", 
+        drafts: "API Driven Drafts",
     },
     {
         id: 2,
@@ -49,10 +49,12 @@ const tabs = [
 
 function Setup() {
     new RecentlyUsed().setPath("Setup", window.location.href)
-    const tabsComponent= tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname} content={tab.content} npcontent={tab.npcontent} nttcontent={tab.nttcontent} drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon} />)
+    const tabsComponent = tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname} content={tab.content}
+                                                      npcontent={tab.npcontent} nttcontent={tab.nttcontent}
+                                                      drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon}/>)
     return (
         <div>
-            
+
             <Header/>
             <Sidebar/>
             <Container>
@@ -62,8 +64,9 @@ function Setup() {
                     </div>
                 </div>
             </Container>
-            <Footer />
+            <Footer/>
         </div>
     )
 }
+
 export default Setup

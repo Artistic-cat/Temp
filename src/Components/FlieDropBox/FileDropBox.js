@@ -212,20 +212,20 @@ const FileDropBox = () => {
 
                 {
                     validFiles.map((data, i) =>
-                            <div className="file-drop-file-status-bar" key={i}>
-                                <div onClick={!data.invalid ? null : () => removeFile(data.name)}>
-                                    <div className="file-drop-file-type-logo"/>
-                                    <div className="file-drop-file-type">{fileType(data.name)}</div>
-                                    <span
-                                        className={`file-drop-file-name ${data.invalid ? 'file-drop-file-error' : ''}`}>{data.name}</span>
-                                    <span
-                                        className="file-drop-file-size">({fileSize(data.size)})</span> {data.invalid &&
-                                <span className='file-drop-file-error-message'>({errorMessage})</span>}
-                                </div>
-                                <div className="file-drop-file-remove" onClick={() => removeFile(data.name)}>X</div>
+                        <div className="file-drop-file-status-bar" key={i}>
+                            <div onClick={!data.invalid ? null : () => removeFile(data.name)}>
+                                <div className="file-drop-file-type-logo"/>
+                                <div className="file-drop-file-type">{fileType(data.name)}</div>
+                                <span
+                                    className={`file-drop-file-name ${data.invalid ? 'file-drop-file-error' : ''}`}>{data.name}</span>
+                                <span
+                                    className="file-drop-file-size">({fileSize(data.size)})</span> {data.invalid &&
+                            <span className='file-drop-file-error-message'>({errorMessage})</span>}
                             </div>
-                        )
-                    }
+                            <div className="file-drop-file-remove" onClick={() => removeFile(data.name)}>X</div>
+                        </div>
+                    )
+                }
             </div>
             <div className="file-drop-modal" ref={modalRef}>
                 <div className="file-drop-overlay"/>

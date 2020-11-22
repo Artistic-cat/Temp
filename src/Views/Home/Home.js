@@ -14,7 +14,6 @@ import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
 import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
-import Setup from "../Setup/Setup";
 import {Link} from "react-router-dom";
 
 class Home extends Component {

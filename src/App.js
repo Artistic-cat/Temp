@@ -15,39 +15,39 @@ import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Components/FileMapper/FileMapper";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/mapfile">
-            <FileMapper/>
-          </Route>
-          <Route path="/dropdown">
-            <CascadingDropdown/>
-          </Route>
-          <Route path="/about">
-            <About/>
-          </Route>
-          <Route path="/setup">
-            <Setup/>
-          </Route>
+    return (
+        <Router>
+            <div className="App">
+                <Switch>
+                    <Route path="/mapfile">
+                        <FileMapper/>
+                    </Route>
+                    <Route path="/dropdown">
+                        <CascadingDropdown/>
+                    </Route>
+                    <Route path="/about">
+                        <About/>
+                    </Route>
+                    <Route path="/setup">
+                        <Setup/>
+                    </Route>
 
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/reset">
-            <Reset />
-          </Route>
-          <Route path="/files"> {/* Move this inside some other page */}
-            <FileUpload/>
-          </Route>
-          <Route path="/">
-            <Login />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+                    <Route path="/home">
+                        <Home/>
+                    </Route>
+                    <Route path="/reset">
+                        <Reset/>
+                    </Route>
+                    <Route path="/files"> {/* Move this inside some other page */}
+                        <FileUpload/>
+                    </Route>
+                    <Route path="/">
+                        <Login/>
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
