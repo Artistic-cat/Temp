@@ -20,3 +20,8 @@
 .btn:hover {
     background: #560034;
 }
+
+a{
+    text-decoration: none !important;
+    color: inherit;
+}

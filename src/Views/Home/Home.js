@@ -14,6 +14,8 @@ import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
 import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
+import Setup from "../Setup/Setup";
+import {Link} from "react-router-dom";
 
 class Home extends Component {
     constructor(props) {
@@ -140,10 +142,10 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">Product Management</h4>
                         <Col>
-                            <button className="home-btn">
+                            <Link className="home-btn" to="/setup">
                                 <MdPhonelinkSetup style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
                                 <p>New Setup</p>
-                            </button>
+                            </Link>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
