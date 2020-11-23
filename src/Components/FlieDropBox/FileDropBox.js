@@ -209,16 +209,7 @@ const FileDropBox = () => {
                         onChange={filesSelected}
                     />
                 </div>
-                {/*                <table className="table table-hover file-drop-file-display-container">
-                        <tr>
-                            <td>File Name</td>
-                            <td>File Size</td>
-                            <td>&nbsp;</td>
-                            <td>File Type</td>
-                            <td>Preview</td>
-                            <td>Close</td>
-                        </tr>
-                </table>*/}
+
                 {
                     validFiles.map((data, i) =>
                             <div className="file-drop-file-status-bar" key={i}>
