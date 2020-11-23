@@ -77,7 +77,19 @@ const FileDropBox = () => {
     }
 
     const validateFile = (file) => {
-        const validTypes = ["text/csv", "image/jpeg", "application/msword"];
+        console.log(file.type);
+        const validTypes = ["text/csv",
+            "image/jpeg",
+            "application/json",
+            "text/plain",
+            "application/vmd.ms-excel", // ms office excel
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", // microsoft excel openxml
+            "application/msword", // ms office word
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml", // microsoft word openxml
+            "application/wps-office.docx", // wps office word
+            "application/wps-office.xlsx", // wps office excel
+            "application/pdf", // pdf files
+        ];
         if (validTypes.indexOf(file.type) === -1) {
             return false;
         }
@@ -113,21 +125,22 @@ const FileDropBox = () => {
         }
     }
 
-    const openImageModal = (file) => {
+    /*const openImageModal = (file) => {
         const reader = new FileReader();
-        modalRef.current.style.display = "block";
+        // modalRef.current.style.display = "block";
         reader.readAsDataURL(file);
         reader.onload = function (e) {
             const file1 = new Blob([file]);
-            //Build a URL from the file
+            // Build a URL from the file
             const fileURL = URL.createObjectURL(file1);
-            //Open the URL on new Window
+
+            // Open the URL on new Window
             const pdfWindow = window.open();
             pdfWindow.location.href = fileURL;
-            window.open(e, "_blank");
-            modalImageRef.current.style.backgroundImage = `url(${e.target.result})`;
+
+            // modalImageRef.current.style.backgroundImage = `url(${e.target.result})`;
         }
-    }
+    }*/
 
     const closeModal = () => {
         modalRef.current.style.display = "none";
@@ -196,11 +209,20 @@ const FileDropBox = () => {
                         onChange={filesSelected}
                     />
                 </div>
-                <div className="file-drop-file-display-container">
-                    {
-                        validFiles.map((data, i) =>
+                {/*                <table className="table table-hover file-drop-file-display-container">
+                        <tr>
+                            <td>File Name</td>
+                            <td>File Size</td>
+                            <td>&nbsp;</td>
+                            <td>File Type</td>
+                            <td>Preview</td>
+                            <td>Close</td>
+                        </tr>
+                </table>*/}
+                {
+                    validFiles.map((data, i) =>
                             <div className="file-drop-file-status-bar" key={i}>
-                                <div onClick={!data.invalid ? () => openImageModal(data) : () => removeFile(data.name)}>
+                                <div onClick={!data.invalid ? null : () => removeFile(data.name)}>
                                     <div className="file-drop-file-type-logo"/>
                                     <div className="file-drop-file-type">{fileType(data.name)}</div>
                                     <span
@@ -208,20 +230,11 @@ const FileDropBox = () => {
                                     <span
                                         className="file-drop-file-size">({fileSize(data.size)})</span> {data.invalid &&
                                 <span className='file-drop-file-error-message'>({errorMessage})</span>}
-                                    <span className="file-drop-file-category">
-                                        Select File Category: &nbsp;
-                                        <select>
-                                            <option>API</option>
-                                            <option>Master</option>
-                                            <option>Reference</option>
-                                        </select>
-                                    </span>
                                 </div>
                                 <div className="file-drop-file-remove" onClick={() => removeFile(data.name)}>X</div>
                             </div>
                         )
                     }
-                </div>
             </div>
             <div className="file-drop-modal" ref={modalRef}>
                 <div className="file-drop-overlay"/>
