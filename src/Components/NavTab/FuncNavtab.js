@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from "react-router-dom"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './FuncNavtab.css'
 
 function InnerFunctionBody(props){
@@ -12,18 +12,18 @@ function InnerFunctionBody(props){
 }
 
 function FunctionBody(props){
-    const content=props.content
+    // const content=props.content
     const npcontent=props.npcontent
     const nttcontent=props.nttcontent
     const drafts=props.drafts
-    const tabpath=props.tabpath
+    
     return(
         <div className='content-area'>
             <div className='content-tabs'>
                 <div className='content-links'>
-                    <Link to={`${props.tabpath}`+'/NewProduct'} className='second-tabs'>New Product</Link>
-                    <Link to={`${props.tabpath}`+'/NewTransactionType'} className='second-tabs'>New Transaction Type</Link>
-                    <Link to={`${props.tabpath}`+'/Drafts'} className='second-tabs'>Drafts</Link>
+                    <NavLink to={`${props.tabpath}`+'/NewProduct'} className='second-tabs' activeClassName='active-second-tabs'>New Product</NavLink>
+                    <NavLink to={`${props.tabpath}`+'/NewTransactionType'} className='second-tabs' activeClassName='active-second-tabs'>New Transaction Type</NavLink>
+                    <NavLink to={`${props.tabpath}`+'/Drafts'} className='second-tabs' activeClassName='active-second-tabs'>Drafts</NavLink>
                 </div>
                 <Switch>
                     <Route path={`${props.tabpath}`+'/NewProduct'} render={(props) =><InnerFunctionBody content={npcontent} />}/>
@@ -41,12 +41,14 @@ function FuncNavtab(props){
     const nttcontent=props.nttcontent
     const drafts=props.drafts
     const tabpath=props.tabpath
+    const icon=props.icon
     return(      
         <div className='functionality'>
-            <Link to={`${props.tabpath}`} className="link" >
-                <div className='circle'></div>
+            
+            <NavLink to={`${props.tabpath}`} className="link" activeClassName='active-tabs'>
+                <div className='circle'>{icon}</div>
                 <div className='text'>{`${props.tabname}`}</div>
-            </Link>
+            </NavLink>
             <Switch>
                 <Route path={`${props.tabpath}`} render={(props) => 
                 <FunctionBody tabpath={tabpath} content={content} npcontent={npcontent} nttcontent={nttcontent} drafts={drafts} />} />

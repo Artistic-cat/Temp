@@ -7,7 +7,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar"
 import FuncNavtab from "../../Components/NavTab/FuncNavtab"
 import { Container } from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
-import {VscFiles,BsBoundingBox,RiBuildingLine} from 'react-icons'
+import { AiOutlineCopy,AiOutlineSnippets, AiOutlineDeploymentUnit } from "react-icons/ai";
 
 //To do:
 //Pass icons as components
@@ -16,6 +16,7 @@ import {VscFiles,BsBoundingBox,RiBuildingLine} from 'react-icons'
 const tabs = [
     {
         id: 1,
+        icon: <AiOutlineCopy className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
         content: "For API Driven",
@@ -25,6 +26,7 @@ const tabs = [
     },
     {
         id: 2,
+        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
         tabname: "GiiX Managed",
         tabpath: "/setup/GiiXManaged",
         content: "For GiiX Managed",
@@ -34,6 +36,7 @@ const tabs = [
     },
     {
         id: 3,
+        icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
         tabname: "Insurer Managed",
         tabpath: "/setup/InsurerManaged",
         content: "For Insurer Managed",
@@ -46,9 +49,10 @@ const tabs = [
 
 function Setup() {
     new RecentlyUsed().setPath("Setup", window.location.href)
-    const tabsComponent= tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname} content={tab.content} npcontent={tab.npcontent} nttcontent={tab.nttcontent} drafts={tab.drafts} tabpath={tab.tabpath} />)
+    const tabsComponent= tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname} content={tab.content} npcontent={tab.npcontent} nttcontent={tab.nttcontent} drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon} />)
     return (
         <div>
+            
             <Header/>
             <Sidebar/>
             <Container>

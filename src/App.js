@@ -7,13 +7,12 @@ import Setup from "./Views/Setup/Setup";
 import FileUpload from "./Views/FileUpload/FileUpload"
 
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
-import Looks from './Components/Testing/Looks'
+
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavDropdown from './Components/Testing/NavDropdown';
 
 
 function App() {
@@ -21,8 +20,6 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/testing"><Looks /></Route>
-          
           <Route path="/dropdown">
             <CascadingDropdown />
           </Route>

@@ -5,13 +5,23 @@
     border-radius: 50%;
     background-color: #000A28;   
     margin: 0 3.3em 1.5em 3.3em;
+    transition:all ease-in-out .2s;
 }
+
+.setup-icons{
+    margin-top: 0.25em;
+}
+
 .text{
     text-decoration: none;
     color: #000;
 }
 .text:hover{
     color:#303030;
+}
+
+.active-tabs .circle{
+    background-color: rgb(1, 48, 102);
 }
 
 .link{
@@ -35,7 +45,6 @@
     margin-top: 2em;
     width: 100%;
     min-width: 15em;
-    border-radius: 4%;
     min-height: 10em;
     left:0;
     right:0;
@@ -52,24 +61,35 @@
     flex-wrap: wrap;
     align-items: center;
     vertical-align: middle;
-    margin-left: 8%;
+    left: 2.5%;
 }
 
 .second-tabs {
-    padding: 0.5em;
-    margin: 0.5em;
-    border: 2px solid #5bc0de;
-    background: transparent;
-    transition: 0.3s linear;
-    color: #5bc0de;
-    border-radius: 10px !important;
+    margin-top: 1em;
+    margin-left: 2em;
+    font-size:15px;
+    background:transparent;
+    border:none;
+    outline:none;
+    padding:5px 10px ;
+    cursor:pointer;
+    color:rgb(112, 112, 112);
+    transition:all ease-in-out .2s;
+    border-bottom:2px solid transparent;
+    border-radius: 0 !important;
 }
 
 .second-tabs:hover{
-    background: #5bc0de;
-    color: #FFFFFF;
     text-decoration: none;
+    border-bottom:2px solid #42b3f4 ;
+    color:black;
 } 
+
+.active-second-tabs{
+    text-decoration: none;
+    border-bottom:2px solid #42b3f4 ;
+    color:black;
+}
 
 .inner-body-content{
     position: absolute;
