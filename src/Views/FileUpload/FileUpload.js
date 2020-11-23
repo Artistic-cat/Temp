@@ -20,8 +20,6 @@ class FileUpload extends Component {
                         </div>
                         <div className={"m-4"}>
                             <Button>Back</Button>
-                            <Button>Cancel</Button>
-                            <Button>Next</Button>
                         </div>
                     </div>
                 </Container>
