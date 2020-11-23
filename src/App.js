@@ -12,15 +12,19 @@ import Login from './Views/Login/Login';
 import Home from "./Views/Home/Home"
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 import FileUpload from "./Views/FileUpload/FileUpload";
+import FileMapper from "./Components/FileMapper/FileMapper";
 
 function App() {
     return (
         <Router>
             <div className="App">
                 <Switch>
+                    <Route path="/mapfile">
+                        <FileMapper/>
+                    </Route>
                     <Route path="/dropdown">
-                          <CascadingDropdown />
-                        </Route>
+                        <CascadingDropdown/>
+                    </Route>
                     <Route path="/home">
                         <Home/>
                     </Route>
