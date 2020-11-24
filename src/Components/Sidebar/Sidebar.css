@@ -1,5 +1,5 @@
 nav {
-    top: 6% !important;
+    top: 70px !important;
     background: #03002C !important;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.55) !important;
     position: fixed !important;
@@ -12,7 +12,7 @@ nav {
 
 @media only screen and (max-width: 600px) {
     nav {
-        top: 8% !important;
+        top: 70px !important;
         bottom: -5% !important;
     }
 }

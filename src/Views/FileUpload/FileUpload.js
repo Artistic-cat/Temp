@@ -24,6 +24,11 @@ class FileUpload extends Component {
                             <Link class="btn" to="/mapfile"><span>Next</span></Link>
                         </div>
                     </div>
+
+                    <Link to='/setup'>
+                        <h3>Back</h3>
+                    </Link>
+
                 </Container>
 
                 <Footer/>
