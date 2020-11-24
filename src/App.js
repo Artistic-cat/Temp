@@ -12,6 +12,7 @@ import Login from './Views/Login/Login';
 import Home from "./Views/Home/Home"
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 import FileUpload from "./Views/FileUpload/FileUpload";
+import FileMapper from "./Components/FileMapper/FileMapper";
 
 function App() {
   return (
@@ -19,16 +20,16 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/mapfile">
-                        <FileMapper/>
-                    </Route>
-                    <Routepath="/dropdown">
-            <CascadingDropdown />
+            <FileMapper/>
+          </Route>
+          <Route path="/dropdown">
+            <CascadingDropdown/>
           </Route>
           <Route path="/about">
-            <About />
+            <About/>
           </Route>
           <Route path="/setup">
-            <Setup />
+            <Setup/>
           </Route>
 
           <Route path="/home">
