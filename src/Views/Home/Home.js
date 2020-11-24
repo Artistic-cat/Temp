@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import "./Home.css"
-import {Link} from 'react-router-dom';
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
@@ -8,12 +7,13 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import {Container} from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import {MdPhonelinkSetup} from "react-icons/md";
+import {MdComputer, MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
 import {Doughnut, Line} from "react-chartjs-2";
 import Table from "react-bootstrap/Table";
+import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
 
 class Home extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class Home extends Component {
             logChart: {
                 multiLineData: {
                     line1Data: [12, 19, 3, 5, 2, 3],
-                    line2Data: [1, 2, 1, 1, 2, 2],
+                    line2Data: [1, 2, 1, 3, 2, 3],
                 },
                 logLineData: [0, 10, 5, 2, 20, 30, 45]
             }
@@ -48,7 +48,7 @@ class Home extends Component {
             }]
         }
         const donutData = {
-            labels: ['Red', 'Blue', 'Green', 'Cyan', 'Purple', 'Orange'],
+            labels: ['Car Insurance 1', 'Health Insurance 1', 'Health Insurance 2', 'Car Insurance 2', 'Travel Insurance', 'Insurance 3'],
             datasets: [
                 {
                     label: 'Sales',
@@ -138,89 +138,72 @@ class Home extends Component {
                 <Sidebar/>
                 <Container>
                     <Row className="home-nav-buttons">
+                        <h4 className="home-nav-button-title">Product Management</h4>
                         <Col>
-                        <Link to='/setup'>
-                            <button className="btn" >
-                                <MdPhonelinkSetup style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Product Setup</p>
-                            </button>
-                        </Link>
-                        </Col>
-                        <Col>
-                            <button className="btn" onClick={Home}>
-                                <FiSettings style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Configurations</p>
+                            <button className="home-btn">
+                                <MdPhonelinkSetup style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>New Setup</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
-                                <BsCheckCircle style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>Approvals</p>
+                            <button className="home-btn" onClick={Home}>
+                                <FiSettings style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Change Request</p>
                             </button>
                         </Col>
                         <Col>
-                            <button className="btn" onClick={Home}>
-                                <FiUsers style={{fontSize: '8vh'}} className="home-circle-inner-text mb-2"/>
-                                <p>User Management</p>
+                            <button className="home-btn" onClick={Home}>
+                                <MdComputer style={{fontSize: '6.5vh'}}
+                                            className="home-circle-inner-text mb-2"/>
+                                <p>Configuration</p>
                             </button>
                         </Col>
                     </Row>
 
-                    {/*<Row>
+                    <Row className="home-nav-buttons">
+                        <h4 className="home-nav-button-title">Business Monitoring and Controls</h4>
                         <Col>
-                            <div className="home-rectangle">
-                                <h4>Setup</h4>
-                                <Row className={'m-3'}>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <MdPhonelinkSetup style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>Product Setup</span>
-                                        </button>
-                                    </Col>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <FiSettings style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>Configurations</span>
-                                        </button>
-                                    </Col>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <BsCheckCircle style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>Approvals</span>
-                                        </button>
-                                    </Col>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <FiUsers style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>User Management</span>
-                                        </button>
-                                    </Col>
-                                </Row>
-
-                                <h4>Monitor</h4>
-                                <Row className={'m-3'}>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <SiLivejournal style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>Manage Live Products</span>
-                                        </button>
-                                    </Col>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <SiLogstash style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>Log Management</span>
-                                        </button>
-                                    </Col>
-                                    <Col>
-                                        <button className="btn" onClick={Home}>
-                                            <BiAnalyse style={{fontSize: '2vh'}} className="m-2"/>
-                                            <span>Business Analytic</span>
-                                        </button>
-                                    </Col>
-                                </Row>
-                            </div>
+                            <button className="home-btn">
+                                <TiBusinessCard style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Business Analytics</p>
+                            </button>
                         </Col>
-                    </Row> */}
+                        <Col>
+                            <button className="home-btn" onClick={Home}>
+                                <AiOutlineFundProjectionScreen style={{fontSize: '6.5vh'}}
+                                                               className="home-circle-inner-text mb-2"/>
+                                <p>Live Products and Partners</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="home-btn" onClick={Home}>
+                                <BiTrendingUp style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Industry Trends</p>
+                            </button>
+                        </Col>
+                    </Row>
+
+                    <Row className="home-nav-buttons">
+                        <h4 className="home-nav-button-title">System Administration</h4>
+                        <Col>
+                            <button className="home-btn">
+                                <BsCheckCircle style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>Approval Mechanism</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="home-btn" onClick={Home}>
+                                <FiUsers style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>User Management</p>
+                            </button>
+                        </Col>
+                        <Col>
+                            <button className="home-btn" onClick={Home}>
+                                <SiLogstash style={{fontSize: '6.5vh'}} className="home-circle-inner-text mb-2"/>
+                                <p>System Log Management</p>
+                            </button>
+                        </Col>
+                    </Row>
 
                     <Row>
                         <Col>
@@ -228,59 +211,130 @@ class Home extends Component {
                                 <h4>Business Analytics</h4>
 
                                 {/* Chart Buttons Start */}
-                                <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart: {
-                                            donutData: [1, 12, 15, 10, 37, 10],
-                                            lineData: [68, 31, 60, 40, 45, 25, 68]
-                                        },
-                                        logChart: {
-                                            multiLineData: {
-                                                line1Data: [12, 19, 3, 5, 2, 3],
-                                                line2Data: [1, 2, 1, 1, 2, 2],
-                                            },
-                                            logLineData: [0, 10, 5, 2, 20, 30, 45]
+                                <Row className="mt-3">
+                                    <Col className="home-chart-btn-area-left">
+                                        <button className="home-chart-btn" onClick={() => this.setState({
+                                                businessChart: {
+                                                    donutData: [1, 12, 15, 10, 37, 10],
+                                                    lineData: [68, 31, 60, 40, 45, 25, 68]
+                                                },
+                                                logChart: {
+                                                    multiLineData: {
+                                                        line1Data: [12, 19, 3, 5, 2, 13],
+                                                        line2Data: [1, 2, 1, 3, 2, 3],
+                                                    },
+                                                    logLineData: [0, 10, 5, 2, 20, 30, 45]
+                                                }
+                                            }
+                                        )}>Overall
+                                        </button>
+                                        <button className="home-chart-btn" onClick={() => this.setState({
+                                                businessChart: {
+                                                    donutData: [1, 2, 5, 1, 5, 1],
+                                                    lineData: [50, 10, 40, 20, 25, 15, 48]
+                                                },
+                                                logChart: {
+                                                    multiLineData: {
+                                                        line1Data: [9, 11, 13, 15, 12, 13],
+                                                        line2Data: [11, 12, 11, 11, 12, 12],
+                                                    },
+                                                    logLineData: [10, 20, 15, 12, 29, 13, 55]
+                                                }
+                                            }
+                                        )}>GiiX Managed
+                                        </button>
+                                        <button className="home-chart-btn" onClick={() => this.setState({
+                                                businessChart: {
+                                                    donutData: [1, 3, 1, 2, 1, 1],
+                                                    lineData: [15, 11, 14, 12, 25, 5, 14]
+                                                },
+                                                logChart: {
+                                                    multiLineData: {
+                                                        line1Data: [1, 2, 3, 5, 2, 7],
+                                                        line2Data: [1, 1, 9, 11, 20, 15],
+                                                    },
+                                                    logLineData: [1, 12, 11, 25, 12, 3, 25]
+                                                }
+                                            }
+                                        )}>Insurer Managed
+                                        </button>
+                                        <button className="home-chart-btn" onClick={() => this.setState({
+                                                businessChart: {
+                                                    donutData: [3, 5, 2, 3, 5, 1],
+                                                    lineData: [25, 18, 24, 22, 5, 15, 4]
+                                                },
+                                                logChart: {
+                                                    multiLineData: {
+                                                        line1Data: [10, 20, 15, 12, 29, 55],
+                                                        line2Data: [1, 12, 11, 25, 12, 25],
+                                                    },
+                                                    logLineData: [11, 22, 31, 25, 12, 3, 25]
+                                                }
+                                            }
+                                        )
+                                        }>API Driven
+                                        </button>
+                                    </Col>
+                                    <Col className="home-chart-btn-area-right">
+                                        <button className="home-chart-btn" onClick={() =>
+                                            this.setState({
+                                                    businessChart: {
+                                                        donutData: [1, 2, 1, 1, 5, 1],
+                                                        lineData: [50, 10, 4, 12, 25, 15, 48]
+                                                    },
+                                                    logChart: {
+                                                        multiLineData: {
+                                                            line1Data: [9, 11, 13, 15, 12, 13],
+                                                            line2Data: [11, 12, 11, 11, 12, 12],
+                                                        },
+                                                        logLineData: [10, 20, 15, 12, 29, 13, 55]
+                                                    }
+                                                }
+                                            )
                                         }
-                                    }
-                                )}>Overall
-                                </button>
-                                <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart: {
-                                            donutData: [1, 2, 5, 1, 5, 1],
-                                            lineData: [50, 10, 40, 20, 25, 15, 48]
-                                        },
-                                        logChart: {
-                                            multiLineData: {
-                                                line1Data: [9, 11, 13, 15, 12, 13],
-                                                line2Data: [11, 12, 11, 11, 12, 12],
-                                            },
-                                            logLineData: [10, 20, 15, 12, 29, 13, 55]
-                                        }
-                                    }
-                                )}>GiiX Managed
-                                </button>
-                                <button className="btn btn-outline-info" onClick={() => this.setState({
-                                        businessChart: {
-                                            donutData: [1, 3, 1, 2, 1, 1],
-                                            lineData: [15, 11, 14, 12, 25, 5, 14]
-                                        },
-                                        logChart: {
-                                            multiLineData: {
-                                                line1Data: [1, 2, 3, 5, 2, 7],
-                                                line2Data: [1, 1, 9, 11, 20, 15],
-                                            },
-                                            logLineData: [1, 12, 11, 25, 12, 3, 25]
-                                        }
-                                    }
-                                )}>Insurer Managed
-                                </button>
+                                        >Today
+                                        </button>
+                                        <button className="home-chart-btn" onClick={() => this.setState({
+                                                businessChart: {
+                                                    donutData: [1, 5, 6, 2, 1, 5],
+                                                    lineData: [5, 19, 11, 2, 25, 5, 14]
+                                                },
+                                                logChart: {
+                                                    multiLineData: {
+                                                        line1Data: [5, 2, 3, 5, 2, 2],
+                                                        line2Data: [1, 11, 19, 11, 2, 15],
+                                                    },
+                                                    logLineData: [19, 2, 17, 2, 12, 30, 5]
+                                                }
+                                            }
+                                        )}>Last Week
+                                        </button>
+                                        <button className="home-chart-btn" onClick={() => this.setState({
+                                                businessChart: {
+                                                    donutData: [3, 5, 2, 4, 5, 1],
+                                                    lineData: [25, 18, 34, 22, 25, 15, 4]
+                                                },
+                                                logChart: {
+                                                    multiLineData: {
+                                                        line1Data: [10, 25, 5, 12, 29, 55],
+                                                        line2Data: [15, 12, 1, 25, 12, 25],
+                                                    },
+                                                    logLineData: [11, 2, 31, 25, 12, 30, 5]
+                                                }
+                                            }
+                                        )
+                                        }>This Financial Year
+                                        </button>
+                                    </Col>
+                                </Row>
                                 {/* Chart Buttons Ends */}
 
                                 {/* Charts Start */}
                                 <Row>
-                                    <Col className="mt-2 mb-2">
+                                    <Col className="m-4 mb-2">
                                         <Doughnut data={donutData}/>
                                     </Col>
-                                    <Col className="mt-2 mb-2">
+                                    <Col className="m-4 mb-2">
                                         <Line data={manageData}/>
                                     </Col>
                                 </Row>
@@ -296,10 +350,10 @@ class Home extends Component {
                                 <h4>Log Management</h4>
                                 <Row>
                                     <Col>
-                                        <Line data={logLineData}/>
+                                        <Line className="m-4 mb-2" data={logLineData}/>
                                     </Col>
                                     <Col>
-                                        <Line data={multiLineData} options={multiLineOptions}/>
+                                        <Line className="m-4 mb-2" data={multiLineData} options={multiLineOptions}/>
                                     </Col>
                                 </Row>
                                 <Row>
