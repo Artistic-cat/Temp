@@ -3,8 +3,9 @@ import "./FileUpload.css";
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import {Button, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import FileDropBox from "../../Components/FlieDropBox/FileDropBox";
+import {Link} from "react-router-dom";
 
 class FileUpload extends Component {
     render() {
@@ -19,7 +20,8 @@ class FileUpload extends Component {
                             <FileDropBox/>
                         </div>
                         <div className={"m-4"}>
-                            <Button>Back</Button>
+                            <button className="btn">Back</button>
+                            <Link class="btn" to="/mapfile"><span>Next</span></Link>
                         </div>
                     </div>
                 </Container>
