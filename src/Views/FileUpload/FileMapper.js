@@ -7,6 +7,15 @@ import {Container} from "react-bootstrap";
 import FileMapper from "../../Components/FileMapper/FileMapper";
 import {Link} from "react-router-dom";
 
+/**
+ * @Author: Rifas
+ *
+ * File Mapper Page
+ * This page allows the user to tag/map the files uploaded against
+ * API File, Master File or Help File and remove them as required
+ *
+ * Uses the FileMapper Component
+ */
 class FileUpload extends Component {
     render() {
         return (

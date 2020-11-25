@@ -8,7 +8,7 @@ import './FileDropBox.css';
  *
  * File Drop Box/Upload Component
  * This component contains the implementation to drag drop and upload files
- * to the backend server via the /files API
+ * to the backend server via the POST /files API
  */
 const FileDropBox = () => {
     const fileInputRef = useRef();
