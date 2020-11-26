@@ -12,7 +12,7 @@ class FileUpload extends Component {
         return (
             <div>
                 <Header/>
-                <Container>
+                <Container className="container-box">
                     <div className="file-file_box">
                         <h4>Map your Files to Proceed</h4>
 
