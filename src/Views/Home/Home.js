@@ -1,25 +1,36 @@
+/* imports Start Here */
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import "./Home.css"
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
 import Sidebar from "../../Components/Sidebar/Sidebar";
+import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
+
 import {Container} from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Table from "react-bootstrap/Table";
+
 import {MdComputer, MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
-import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed";
-import {Doughnut, Line} from "react-chartjs-2";
-import Table from "react-bootstrap/Table";
 import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
-import {Link} from "react-router-dom";
 
+import {Doughnut, Line} from "react-chartjs-2";
+
+/* Imports End Here */
+
+/* Home class to render the home page */
 class Home extends Component {
+    // Constructor -> initialize all the charts and set it to state
     constructor(props) {
         super(props);
+        // Add this page to the recently used list
         new RecentlyUsed().setPath("Home", window.location.href)
+
+
         this.state = {
             /* Business Analytics Charts */
             businessChart: {
@@ -37,7 +48,6 @@ class Home extends Component {
     }
 
     render() {
-
         /* Business Analytics Charts Starts */
         const manageData = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -74,7 +84,6 @@ class Home extends Component {
                 },
             ],
         }
-
         /* Business Analytics Charts Ends */
 
         /* Logging Charts Starts */
@@ -135,15 +144,19 @@ class Home extends Component {
 
         return (
             <div>
+                {/* Add the header and sidebar components */}
                 <Header/>
                 <Sidebar/>
+
+                {/* Home layout code container Starts */}
                 <Container>
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">Product Management</h4>
                         <Col>
                             <Link to="/setup">
                                 <button className="home-btn">
-                                    <MdPhonelinkSetup style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
+                                    <MdPhonelinkSetup style={{fontSize: '3.5em'}}
+                                                      className="home-circle-inner-text mb-2"/>
                                     <p>New Setup</p>
                                 </button>
                             </Link>
@@ -361,6 +374,8 @@ class Home extends Component {
                                 </Row>
                                 <Row>
                                     <Col className="home-log-table">
+
+                                        {/* Log Table Starts */}
                                         <Table hover responsive striped>
                                             <thead>
                                             <tr>
@@ -446,13 +461,17 @@ class Home extends Component {
                                             </tr>
                                             </tbody>
                                         </Table>
+                                        {/* Log Table Ends */}
+
                                     </Col>
                                 </Row>
                             </div>
                         </Col>
                     </Row>
                 </Container>
+                {/* Home layout code container Ends */}
 
+                {/* Add the footer component */}
                 <Footer/>
             </div>
         )
