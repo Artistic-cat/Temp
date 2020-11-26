@@ -24,7 +24,7 @@ class FileMapper extends Component {
                 id: 2,
                 name: "Pin-code Master",
                 type: "xls",
-                category: null
+                category: "master_file"
             },
             {
                 id: 3,
@@ -36,7 +36,7 @@ class FileMapper extends Component {
                 id: 4,
                 name: "API File",
                 type: "json",
-                category: null
+                category: "api_file"
             }
         ]
     }
@@ -65,15 +65,19 @@ class FileMapper extends Component {
                                     this.state.fileList.find(id => id.id === data.id).category = event.target.value;
                                 }
                                 }>
-                                    <input style={{marginLeft: '5%'}} type="radio" value="api_file"
+                                    {console.log(data.category === "master_file")}
+                                    <input checked={data.category === "api_file"} style={{marginLeft: '5%'}}
+                                           type="radio" value="api_file"
                                            name={"file_type" + key}/> API File
-                                    <input style={{marginLeft: '5%'}} type="radio" value="master_file"
+                                    <input checked={data.category === "master_file"} style={{marginLeft: '5%'}}
+                                           type="radio" value="master_file"
                                            name={"file_type" + key}/> Master File
-                                    <input style={{marginLeft: '5%'}} type="radio" value="help_file"
+                                    <input checked={data.category === "help_file"} style={{marginLeft: '5%'}}
+                                           type="radio" value="help_file"
                                            name={"file_type" + key}/> Help File
                                 </div>
                             </td>
-                            <td><span onClick={(event) => {
+                            <td><span onClick={() => {
                                 //  remove the element clicked
                                 this.state.fileList.splice(key, 1);
 
