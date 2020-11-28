@@ -152,20 +152,22 @@ const FileDropBox = () => {
         uploadRef.current.innerHTML = 'File(s) Uploading...';
         for (let i = 0; i < validFiles.length; i++) {
             const formData = new FormData();
-            formData.append('image', validFiles[i]);
-            formData.append('key', '');
+            formData.append('file', validFiles[i]);
+            formData.append('productTransactionTypeId', '157');
 
-            axios.post('https://api.imgbb.com/1/upload', formData, {
-                onUploadProgress: (progressEvent) => {
-                    const uploadPercentage = Math.floor((progressEvent.loaded / progressEvent.total) * 100);
-                    progressRef.current.innerHTML = `${uploadPercentage}%`;
-                    progressRef.current.style.width = `${uploadPercentage}%`;
+            axios.post(global.config.backend_ip + '/files',
+                formData,
+                {
+                    onUploadProgress: (progressEvent) => {
+                        const uploadPercentage = Math.floor((progressEvent.loaded / progressEvent.total) * 100);
+                        progressRef.current.innerHTML = `${uploadPercentage}%`;
+                        progressRef.current.style.width = `${uploadPercentage}%`;
 
-                    if (uploadPercentage === 100) {
-                        uploadRef.current.innerHTML = 'File(s) Uploaded';
-                        validFiles.length = 0;
-                        setValidFiles([...validFiles]);
-                        setSelectedFiles([...validFiles]);
+                        if (uploadPercentage === 100) {
+                            uploadRef.current.innerHTML = 'File(s) Uploaded';
+                            validFiles.length = 0;
+                            setValidFiles([...validFiles]);
+                            setSelectedFiles([...validFiles]);
                         setUnsupportedFiles([...validFiles]);
                     }
                 },
