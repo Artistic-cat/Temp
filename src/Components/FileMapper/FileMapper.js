@@ -17,9 +17,7 @@ class FileMapper extends Component {
         try {
             await axios.get(global.config.backend_ip + "/files?productTransactionTypeId=155")
                 .then((response) => {
-                    console.log(response.data.apiResponse.data);
                     this.setState({fileList: response.data.apiResponse.data})
-                    console.log("here")
                 });
         } catch (error) {
             alert("An error Occurred, please try again later.");
@@ -76,15 +74,13 @@ class FileMapper extends Component {
                             <td>{data.fileName}</td>
                             <td>{fileType(data.filePath) + " " + data.fileType}</td>
                             <td>
-                                <div>
-                                    {/*
-                                    // put this in div
-                                    onChange={(event) => {
+                                <div onChange={(event) => {
                                     // set the category of the data item to the selected radio button value
                                     this.state.fileList.find(id => id.id === data.id).category = event.target.value;
                                 }
-                                }
-                                    // put this in the corresponding input
+                                }>
+                                    {/*
+                                    // put this in input
                                     checked={data.category === "api_file"}
                                     checked={data.category === "master_file"}
                                     checked={data.category === "help_file"}
