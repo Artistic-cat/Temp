@@ -30,7 +30,6 @@ class Home extends Component {
         // Add this page to the recently used list
         new RecentlyUsed().setPath("Home", window.location.href)
 
-
         this.state = {
             /* Business Analytics Charts */
             businessChart: {
@@ -45,6 +44,7 @@ class Home extends Component {
                 logLineData: [0, 10, 5, 2, 20, 30, 45]
             }
         }
+
     }
 
     render() {

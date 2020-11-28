@@ -13,12 +13,26 @@ import Home from "./Views/Home/Home"
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
+import Status from "./Views/APITags/Status";
+import Define from "./Views/APITags/Define";
+
 
 function App() {
+    // Globally used variables
+    global.config = {
+        backend_ip: "http://13.229.56.134:1337",
+    }
+
     return (
         <Router>
             <div className="App">
                 <Switch>
+                    <Route path="/apidefine">
+                        <Define/>
+                    </Route>
+                    <Route path="/apitag">
+                        <Status/>
+                    </Route>
                     <Route path="/mapfile">
                         <FileMapper/>
                     </Route>
