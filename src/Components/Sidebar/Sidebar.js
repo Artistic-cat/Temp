@@ -8,6 +8,20 @@ import {BiAnalyse} from "react-icons/bi";
 import RecentlyUsed from "../RecentlyUsed/RecentlyUsed";
 import {FaSignOutAlt, FiSettings, FiUser, MdRecentActors, TiArrowBackOutline} from "react-icons/all";
 
+/**
+ * @Author Rifas
+ *
+ * This Component renders the sidebar on the pages where it is required
+ * To the pages using the sidebar, use the format
+ * <>
+ *     <Header />
+ *     <Sidebar />
+ *     <Container>
+ *          --- your code comes here ---
+ *     </Container>
+ *     <Footer />
+ * </>
+ */
 class Sidebar extends Component {
     constructor(props) {
         super(props);
