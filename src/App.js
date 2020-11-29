@@ -23,6 +23,8 @@ import Define from "./Views/APITags/Define";
  * To use the global backend url
  *      "global.config.backend_ip"
  *
+ * Use react buttons
+ *      <button className="btn"></button> to render the common button
  */
 function App() {
     // Globally used variables
