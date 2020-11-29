@@ -16,7 +16,14 @@ import FileMapper from "./Views/FileUpload/FileMapper";
 import Status from "./Views/APITags/Status";
 import Define from "./Views/APITags/Define";
 
-
+/**
+ * Author Sristi, Vidhi, Rifas
+ *
+ * Add your routes here
+ * To use the global backend url
+ *      "global.config.backend_ip"
+ *
+ */
 function App() {
     // Globally used variables
     global.config = {
