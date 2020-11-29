@@ -12,7 +12,8 @@ import {FaSignOutAlt, FiSettings, FiUser, MdRecentActors, TiArrowBackOutline} fr
  * @Author Rifas
  *
  * This Component renders the sidebar on the pages where it is required
- * To the pages using the sidebar, use the format
+ *
+ * For the pages using the sidebar, use the format
  * <>
  *     <Header />
  *     <Sidebar />
@@ -21,6 +22,16 @@ import {FaSignOutAlt, FiSettings, FiUser, MdRecentActors, TiArrowBackOutline} fr
  *     </Container>
  *     <Footer />
  * </>
+ *
+ * For pages not using the sidebar, use the format
+ * <>
+ *     <Header />
+ *     <Container className="container-box">
+ *          --- your code comes here ---
+ *     </Container>
+ *     <Footer />
+ * </>
+ *
  */
 class Sidebar extends Component {
     constructor(props) {
