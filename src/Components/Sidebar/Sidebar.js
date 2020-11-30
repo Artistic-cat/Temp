@@ -38,7 +38,7 @@ class Sidebar extends Component {
                             <MdRecentActors style={{fontSize: '1.75em'}}/>
                         </NavIcon>
                         <NavText>
-                            Recently Used
+                            Recently Visited
                         </NavText>
                         {
                             [...new RecentlyUsed().state.pages].map((entry) => {
@@ -50,38 +50,6 @@ class Sidebar extends Component {
                                     href={path}>{title}</a></NavText></NavItem>
                             })
                         }
-                    </NavItem>
-                    <NavItem eventKey="user">
-                        <NavIcon>
-                            <AiOutlineUser style={{fontSize: '1.75em'}}/>
-                        </NavIcon>
-                        <NavText>
-                            User Name Comes Here
-                        </NavText>
-                        <NavItem eventKey="user/profile" >
-                            <NavIcon>
-                                <FiUser style={{fontSize: '1em', marginRight: '1em'}}/>
-                                Profile
-                            </NavIcon>
-                        </NavItem>
-                        <NavItem eventKey="user/settings">
-                            <NavIcon>
-                                <FiSettings style={{fontSize: '1em', marginRight: '1em'}}/>
-                                Settings
-                            </NavIcon>
-                        </NavItem>
-                        <NavItem eventKey="about">
-                            <NavIcon>
-                                <TiArrowBackOutline style={{fontSize: '1em', marginRight: '1em'}}/>
-                                About Us
-                            </NavIcon>
-                        </NavItem>
-                        <NavItem eventKey="user/sign_out">
-                            <NavIcon>
-                                <FaSignOutAlt style={{fontSize: '1em', marginRight: '1em'}}/>
-                                Sign Out
-                            </NavIcon>
-                        </NavItem>
                     </NavItem>
                     <NavItem eventKey="home">
                         <NavIcon>
@@ -125,6 +93,38 @@ class Sidebar extends Component {
                             <NavText>
                                 Edit Existing
                             </NavText>
+                        </NavItem>
+                    </NavItem>
+                    <NavItem eventKey="user">
+                        <NavIcon>
+                            <AiOutlineUser style={{fontSize: '1.75em'}}/>
+                        </NavIcon>
+                        <NavText>
+                            User Name Comes Here
+                        </NavText>
+                        <NavItem eventKey="user/profile">
+                            <NavIcon>
+                                <FiUser style={{fontSize: '1em', marginRight: '1em'}}/>
+                                Profile
+                            </NavIcon>
+                        </NavItem>
+                        <NavItem eventKey="user/settings">
+                            <NavIcon>
+                                <FiSettings style={{fontSize: '1em', marginRight: '1em'}}/>
+                                Settings
+                            </NavIcon>
+                        </NavItem>
+                        <NavItem eventKey="about">
+                            <NavIcon>
+                                <TiArrowBackOutline style={{fontSize: '1em', marginRight: '1em'}}/>
+                                About GiiX
+                            </NavIcon>
+                        </NavItem>
+                        <NavItem eventKey="user/sign_out">
+                            <NavIcon>
+                                <FaSignOutAlt style={{fontSize: '1em', marginRight: '1em'}}/>
+                                Sign Out
+                            </NavIcon>
                         </NavItem>
                     </NavItem>
                 </Nav>

@@ -1,3 +1,7 @@
 .file-file_box {
     margin-top: 5vh;
 }
+
+.container-box {
+    margin: auto !important;
+}

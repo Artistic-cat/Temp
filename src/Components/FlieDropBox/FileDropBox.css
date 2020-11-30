@@ -23,8 +23,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0 auto;
-    width: 800px;
+    margin: 5%;
+    width: 50%;
     height: 200px;
     border: 4px dashed #03002C;
 }
@@ -68,7 +68,6 @@
 }
 
 .file-drop-file-display-container {
-    position: fixed;
     width: 805px;
 }
 
@@ -130,10 +129,8 @@
 .file-drop-file-size {
     display: inline-block;
     vertical-align: top;
-    color: #30693D;
     margin-left: 10px;
     margin-right: 5px;
-    margin-left: 10px;
     color: #444242;
     font-weight: 700;
     font-size: 14px;
@@ -142,7 +139,7 @@
 .file-drop-file-remove {
     position: absolute;
     top: 20px;
-    right: 10px;
+    right: 10%;
     line-height: 15px;
     cursor: pointer;
     color: red;
@@ -189,13 +186,14 @@
 
 .file-drop-close {
     position: absolute;
-    top: 15px;
+    top: 10vh;
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
+    z-index: 10;
 }
 
 .file-drop-upload-modal {
