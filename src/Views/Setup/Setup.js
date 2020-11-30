@@ -16,7 +16,7 @@ import { AiOutlineCopy,AiOutlineSnippets, AiOutlineDeploymentUnit } from "react-
 const tabs = [
     {
         id: 1,
-        icon: <AiOutlineCopy className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
+        icon: <AiOutlineCopy className='setup-icons' style={{color: 'white', fontSize: '4.5vh'}}/>,
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
         content: "For API Driven",
@@ -26,7 +26,7 @@ const tabs = [
     },
     {
         id: 2,
-        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
+        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '4.5vh'}}/>,
         tabname: "GiiX Managed",
         tabpath: "/setup/GiiXManaged",
         content: "For GiiX Managed",
@@ -36,7 +36,7 @@ const tabs = [
     },
     {
         id: 3,
-        icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '6vh'}}/>,
+        icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '4.5vh'}}/>,
         tabname: "Insurer Managed",
         tabpath: "/setup/InsurerManaged",
         content: "For Insurer Managed",

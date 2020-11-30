@@ -13,13 +13,25 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import StatusOfMasterSetup from './Views/StatusOfMasterSetup/StatusOfMasterSetup'
+import GiiXMapping from './Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping';
+import PreviewMappedEntries from './Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries'
+// import Form from './Components/FormsOnSetupPage/Form'
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/setup/giixmapping/preview">
+            <PreviewMappedEntries />
+          </Route>
+          <Route path="/setup/giixmapping">
+            <GiiXMapping/>
+          </Route>
+          <Route path="/testing">
+            <StatusOfMasterSetup />
+          </Route>
           <Route path="/dropdown">
             <CascadingDropdown />
           </Route>
@@ -29,7 +41,6 @@ function App() {
           <Route path="/setup">
             <Setup />
           </Route>
-
           <Route path="/home">
             <Home />
           </Route>

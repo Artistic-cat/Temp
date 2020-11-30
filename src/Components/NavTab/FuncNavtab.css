@@ -1,7 +1,7 @@
 
 .circle{
-    width: 3.5em;
-    height: 3.5em;
+    width: 3em;
+    height: 3em;
     border-radius: 50%;
     background-color: #000A28;   
     margin: 0 3.3em 1.5em 3.3em;
@@ -9,7 +9,7 @@
 }
 
 .setup-icons{
-    margin-top: 0.25em;
+    margin-top: 0.35em;
 }
 
 .text{
@@ -21,7 +21,7 @@
 }
 
 .active-tabs .circle{
-    background-color: rgb(1, 48, 102);
+    background-color: #42b3f4;
 }
 
 .link{
@@ -66,7 +66,7 @@
 
 .second-tabs {
     margin-top: 1em;
-    margin-left: 2em;
+    margin-left: 1.5em;
     font-size:15px;
     background:transparent;
     border:none;
