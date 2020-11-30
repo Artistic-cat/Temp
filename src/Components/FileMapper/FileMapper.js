@@ -82,7 +82,7 @@ class FileMapper extends Component {
                         <tr key={data.id}>
                             <td>{data.fileName}</td>
 
-                            // TODO: Add preview to the file using the file path returned from the API.
+                            {/* TODO: Add preview to the file using the file path returned from the API.*/}
 
                             <td>{fileType(data.filePath) + " " + data.fileType}</td>
                             <td>
