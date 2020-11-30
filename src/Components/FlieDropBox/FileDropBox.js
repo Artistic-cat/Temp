@@ -151,7 +151,7 @@ const FileDropBox = () => {
     }
 
     const uploadFiles = async () => {
-        // Handle file upload and reder the progress bar
+        // Handle file upload and render the progress bar
         uploadModalRef.current.style.display = 'block';
         uploadRef.current.innerHTML = 'File(s) Uploading...';
         for (let i = 0; i < validFiles.length; i++) {
