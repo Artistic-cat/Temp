@@ -3,6 +3,7 @@ import "./Setup.css";
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import Search from '../../Components/Search/Search';
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import {Container, Button} from "react-bootstrap"; 
 import Col from "react-bootstrap/Col";
@@ -14,6 +15,7 @@ function Setup() {
             <div>
             <Sidebar />
             <Header />
+            <Search />
 
             <Container>
                 <Row className = "home-nav-buttons">

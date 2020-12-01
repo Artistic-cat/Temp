@@ -50,8 +50,6 @@ function About() {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-
-
                 </div>
 
                 <div className = "card2">
@@ -64,8 +62,6 @@ function About() {
                             </Card.Text>
                         </Card.Body>
                     </Card>
-
-
                 </div>
 
             </Container>

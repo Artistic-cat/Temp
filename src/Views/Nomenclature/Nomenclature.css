@@ -1,0 +1,58 @@
+.table_1 {
+
+    margin-top : 5%;
+    margin-left: 5%;
+    /*margin-right: 5%;*/
+    min-height: calc(100vh - 70px) !important;
+
+}
+
+ .txt {
+
+    background-color: #E0EAF9;
+    border : none;
+    outline: 0;
+    width : 50%;
+    margin-left: 5%;
+    
+} 
+
+.txtf{
+
+    background-color: #E0EAF9;
+    border : none;
+    outline: 0;
+    width : 50%;
+
+}
+
+input[type = "checkbox"] {
+    margin-left: 25%;
+}
+
+.view {
+
+    color : blue;
+    font-size: 2vh;
+    padding-left: 8%;
+}
+
+.table_2 {
+
+    margin-left: 5%;
+    /*margin-right: 5%;*/
+    min-height: calc(100vh - 70px) !important;
+}
+
+.wrapper {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.btn {
+    margin-left: 2%;
+    width : 110px;
+   /* background-color: #710044;
+    border-radius: 60%;*/
+    
+}
