@@ -18,6 +18,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import StatusOfMasterSetup from './Views/StatusOfMasterSetup/StatusOfMasterSetup'
 import GiiXMapping from './Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping';
 import PreviewMappedEntries from './Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries'
+import AutomaticMapping from './Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping'
+import InsurerDefinition from './Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition'
 // import Form from './Components/FormsOnSetupPage/Form'
 
 function App() {
@@ -37,13 +39,20 @@ function App() {
           <Route path="/mapfile">
               <FileMapper/>
           </Route>
-          <Route path="/setup/giixmapping/preview">
+          
+          <Route path="/status/giixmapping/automaticmapping">
+            <AutomaticMapping />
+          </Route>
+          <Route path="/status/giixmapping/preview">
             <PreviewMappedEntries />
           </Route>
-          <Route path="/setup/giixmapping">
+          <Route path="/status/insurerdefinition">
+            <InsurerDefinition/>
+          </Route>
+          <Route path="/status/giixmapping">
             <GiiXMapping/>
           </Route>
-          <Route path="/testing">
+          <Route path="/status">
             <StatusOfMasterSetup />
           </Route>
           <Route path="/dropdown">

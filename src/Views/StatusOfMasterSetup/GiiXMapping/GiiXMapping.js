@@ -2,15 +2,40 @@ import React, { Component} from 'react'
 import Footer from '../../../Components/Footer/Footer'
 import Header from '../../../Components/Header/Header'
 import {Link} from 'react-router-dom'
-import { Table,ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
+import { Table, ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import {Container} from 'react-bootstrap'
+import axios from "axios"
 
 import './GiiXMapping.css'
 
 
 class GiiXMapping extends Component{
+    async componentDidMount() {
+        try {
+            await axios.get(global.config.backend_ip
+                + "/giixmastersample?masterRepoId=1")
+                .then((response) => {
+                    this.setState({
+                            giixMasterColumnList: response.data.apiResponse.data
+                        }
+                    )
+                })
+            await axios.get(global.config.backend_ip
+                + "/insurerMasterColumns?insurerMasterRepoId=5")
+                .then((response) => {
+                    this.setState({
+                            insurerMasterColumnList: response.data.apiResponse.data
+                        }
+                    )
+                })
+        } catch (error) {
+            console.log(error.response);
+            alert("An error occurred, please try again.");
+            console.log({error});
+        }
+    }
     render(){
         return(
             <div>
@@ -20,40 +45,45 @@ class GiiXMapping extends Component{
                         <style type="text/css">
                             {`
                             .btn-flat {
-                                background-color: #000A28;
-                                color: white;
-                                outline: 0;
-                                border: 0;
+                                background-color: #000A28 !important;
+                                color: white !important;
+                                outline: 0 !important;
+                                border: 0 !important;
+                                border-radius: 4px !important;
+                                font-weight: normal !important;
                             }
 
                             .btn-xxl.active{
-                                background-color: #0D7DBC;
-                                color: white;
-                                outline: 0;
-                                border: 0;
+                                background-color: #0D7DBC !important;
+                                color: white !important;
+                                outline: 0 !important;
+                                border: 0 !important;
                             }
 
                             .btn-xxl:hover{
-                                background-color: #06517B;
-                                color: white;
-                                outline: 0;
-                                border: 0;
+                                background-color: #06517B !important;
+                                color: white !important;
+                                outline: 0 !important;
+                                border: 0 !important;
                             }
 
                             .btn-xxl {
-                            padding: 1em 1.5em;
-                            font-size: 1em;
-                            width: 15em;
+                            padding: 1em 1.5em !important;
+                            font-size: 1em !important;
+                            width: 15em !important;
+                            height: 3.5em !important;
                             }
 
                             `}
                         </style>
+                        <br/>
+                        <br/>
                         <div className='mapping-options'>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                                 <ToggleButton variant="flat" size="xxl" value={1}>Manually Map</ToggleButton>
-                                <ToggleButton variant="flat" size="xxl" value={2}>Automatic Mapping</ToggleButton>
+                                <ToggleButton variant="flat" size="xxl" value={2}><Link to='/status/giixmapping/automaticmapping'>Automatic Mapping</Link></ToggleButton>
                             </ToggleButtonGroup>
-                            <Link to='/setup/giixmapping/preview' className='mapping-option'>Preview Mapped Entries</Link>
+                            <Link to='/status/giixmapping/preview' className='mapping-option'>Preview Mapped Entries</Link>
                         </div>
                         <br/>
                         <br/>
@@ -72,9 +102,16 @@ class GiiXMapping extends Component{
                                             </tr>
                                         </thread>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                            </tr>
+                                            {/* {
+                                                (this.state != null ?
+                                                    [...this.state.insurerMasterColumnList].map((data) =>
+                                                        <tr key={data.insurerFileManager}>
+                                                            <td>{data.giixMasterName}</td>
+                                                            <td>{data.insurerMasterName}</td> 
+                                                        </tr>
+                                                    )
+                                                    : "")
+                                            } */}
                                         </tbody>
                                     </Table>
                                 </div>
@@ -91,9 +128,16 @@ class GiiXMapping extends Component{
                                             </tr>
                                         </thread>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                            </tr>
+                                            {/* {
+                                                (this.state != null ?
+                                                    [...this.state.giixMasterColumnList].map((data) =>
+                                                        <tr key={data.insurerFileManager}>
+                                                            <td>{data.giixMasterName}</td>
+                                                            <td>{data.insurerMasterName}</td> 
+                                                        </tr>
+                                                    )
+                                                    : "")
+                                            } */}
                                         </tbody>
                                     </Table>
                                 </div>
@@ -102,9 +146,9 @@ class GiiXMapping extends Component{
                         <br/>
                         <br/>
                         <Row className='navigation-buttons'>
-                            <Col><Link to='/testing'><button className='btn '></button>Cancel</Link></Col>
-                            <Col><Link><button className='btn '></button>Save Draft</Link></Col>
-                            <Col><Link><button className='btn '></button>Map</Link></Col>
+                            <Col><Link to='/status'><button className='btn '>Cancel</button></Link></Col>
+                            <Col><Link><button className='btn '>Save Draft</button></Link></Col>
+                            <Col><Link><button className='btn '>Map</button></Link></Col>
                         </Row>
                     </div>
                 </Container>
