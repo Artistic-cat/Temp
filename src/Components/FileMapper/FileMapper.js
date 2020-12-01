@@ -4,7 +4,15 @@ import "./FileMapper.css";
 import {Table} from "react-bootstrap";
 import axios from "axios";
 
-
+/**
+ * @Author: Rifas
+ *
+ * File Mapper Component
+ * This component contains the implementation to map the uploaded files
+ * against API File, Master File or Help File
+ *
+ * Uses the GET /files API
+ */
 class FileMapper extends Component {
     constructor(props, context) {
         super(props, context);
@@ -14,6 +22,7 @@ class FileMapper extends Component {
     }
 
     async componentDidMount() {
+        // wait for the response from the API and set the state variable to render the table
         try {
             await axios.get(global.config.backend_ip + "/files?productTransactionTypeId=155")
                 .then((response) => {
@@ -72,6 +81,9 @@ class FileMapper extends Component {
                     [...this.state.fileList].map((data, key) =>
                         <tr key={data.id}>
                             <td>{data.fileName}</td>
+
+                            {/* TODO: Add preview to the file using the file path returned from the API.*/}
+
                             <td>{fileType(data.filePath) + " " + data.fileType}</td>
                             <td>
                                 <div onChange={(event) => {
@@ -80,7 +92,7 @@ class FileMapper extends Component {
                                 }
                                 }>
                                     {/*
-                                    // put this in input
+                                    // put this in input once the files api has been updated to use the file category
                                     checked={data.category === "api_file"}
                                     checked={data.category === "master_file"}
                                     checked={data.category === "help_file"}

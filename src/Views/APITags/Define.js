@@ -7,7 +7,12 @@ import Col from "react-bootstrap/Col";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 
-
+/**
+ * @Author: Rifas
+ *
+ * Insurer API Nomenclature Page
+ * This page contains the wireframe for the page, has no implementations coded
+ */
 class Define extends Component {
     render() {
         return (
@@ -50,20 +55,7 @@ class Define extends Component {
                         </thead>
                         <tbody>
                         {
-                            (this.state != null ?
-                                [...this.state.giixMasterFileList].map((data, key) =>
-                                    <tr key={data.id}>
-                                        <td>{data.name}</td>
-                                        <td>Insurer {data.name}</td>
-                                        <td>Pending</td>
-                                        <td>
-                                            <span style={{color: "red"}}>Edit</span>
-                                            <span style={{color: "blue"}}>Start</span>
-                                            <span style={{color: "red"}}>Continue Draft</span>
-                                        </td>
-                                    </tr>
-                                )
-                                : "")
+                            /* Add Code Here */
                         }
                         </tbody>
                     </Table>

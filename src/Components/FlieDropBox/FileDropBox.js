@@ -3,6 +3,13 @@ import axios from "axios";
 
 import './FileDropBox.css';
 
+/**
+ * @Author: Rifas
+ *
+ * File Drop Box/Upload Component
+ * This component contains the implementation to drag drop and upload files
+ * to the backend server via the POST /files API
+ */
 const FileDropBox = () => {
     const fileInputRef = useRef();
     const modalImageRef = useRef();
@@ -77,9 +84,9 @@ const FileDropBox = () => {
     }
 
     const validateFile = (file) => {
-        console.log(file.type);
-        const validTypes = ["text/csv",
-            "image/jpeg",
+        // Add the required file types here
+        const validTypes = [
+            "text/csv",
             "application/json",
             "text/plain",
             "application/vmd.ms-excel", // ms office excel
@@ -90,11 +97,7 @@ const FileDropBox = () => {
             "application/wps-office.xlsx", // wps office excel
             "application/pdf", // pdf files
         ];
-        if (validTypes.indexOf(file.type) === -1) {
-            return false;
-        }
-
-        return true;
+        return validTypes.indexOf(file.type) !== -1;
     }
 
     const fileSize = (size) => {
@@ -148,6 +151,7 @@ const FileDropBox = () => {
     }
 
     const uploadFiles = async () => {
+        // Handle file upload and render the progress bar
         uploadModalRef.current.style.display = 'block';
         uploadRef.current.innerHTML = 'File(s) Uploading...';
         for (let i = 0; i < validFiles.length; i++) {
@@ -168,10 +172,10 @@ const FileDropBox = () => {
                             validFiles.length = 0;
                             setValidFiles([...validFiles]);
                             setSelectedFiles([...validFiles]);
-                        setUnsupportedFiles([...validFiles]);
-                    }
-                },
-            })
+                            setUnsupportedFiles([...validFiles]);
+                        }
+                    },
+                })
                 .catch(() => {
                     uploadRef.current.innerHTML = `<span class="error">Error Uploading File(s)</span>`;
                     progressRef.current.style.backgroundColor = 'red';

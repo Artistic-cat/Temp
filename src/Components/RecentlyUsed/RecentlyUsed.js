@@ -1,6 +1,14 @@
 import {Component} from "react";
 import localstorage from "local-storage";
 
+/**
+ * @Author: Rifas
+ *
+ * Component to add the page and its corresponding url to the recently used localstorage
+ * Call this on the required pages as
+ * new RecentlyUsed().setPath("<Display_Name_Here>", window.location.href)
+ *
+ */
 class RecentlyUsed extends Component {
     constructor(props) {
         super(props);

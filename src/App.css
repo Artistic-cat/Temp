@@ -1,3 +1,13 @@
+.container {
+    animation: fade 0.7s ease-in;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+}
+
 * {
     margin: 0;
     font-family: 'Roboto', sans-serif;

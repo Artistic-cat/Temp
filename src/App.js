@@ -14,14 +14,19 @@ import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
 import Status from "./Views/APITags/Status";
 import Define from "./Views/APITags/Define";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import StatusOfMasterSetup from './Views/StatusOfMasterSetup/StatusOfMasterSetup'
-import GiiXMapping from './Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping';
-import PreviewMappedEntries from './Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries'
-import AutomaticMapping from './Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping'
-import InsurerDefinition from './Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition'
-// import Form from './Components/FormsOnSetupPage/Form'
 
+/**
+ * Author Sristi, Vidhi, Rifas
+ *
+ * Add your routes here
+ *
+ * To use the global backend url
+ *      "global.config.backend_ip"
+ *
+ * Use react buttons
+ *      <button className="btn"></button>
+ *      to render the common button
+ */
 function App() {
   global.config = {
     backend_ip: "http://13.229.56.134:1337",
@@ -39,7 +44,6 @@ function App() {
           <Route path="/mapfile">
               <FileMapper/>
           </Route>
-          
           <Route path="/status/giixmapping/automaticmapping">
             <AutomaticMapping />
           </Route>
