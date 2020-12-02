@@ -1,7 +1,5 @@
-/* imports Start Here */
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
-import "./Home.css"
+import React from "react";
+import "./Home.css";
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';

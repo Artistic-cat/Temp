@@ -1,8 +1,7 @@
 import React from 'react';
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import About from "./Views/About/About";
 import Setup from "./Views/Setup/Setup";
@@ -14,6 +13,11 @@ import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
 import Status from "./Views/APITags/Status";
 import Define from "./Views/APITags/Define";
+import Nomenclature from "./Views/Nomenclature/Nomenclature";
+import MasterDependency from "./Views/MasterDependency/MasterDependency";
+import Xmltags from "./Views/Xmltags/Xmltags";
+import Preview from "./Views/Preview/Preview";
+
 
 /**
  * Author Sristi, Vidhi, Rifas
@@ -27,6 +31,7 @@ import Define from "./Views/APITags/Define";
  *      <button className="btn"></button>
  *      to render the common button
  */
+
 function App() {
   global.config = {
     backend_ip: "http://13.229.56.134:1337",
@@ -35,6 +40,20 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path = "/Preview">
+             <Preview/>
+          </Route>
+          <Route path = "/Xmltags">
+             <Xmltags/>
+          </Route>
+
+          <Route path = "/MasterDependency">
+             <MasterDependency/>
+          </Route>
+
+          <Route path = "/Nomenclature">
+             <Nomenclature/>
+          </Route>
           <Route path="/apidefine">
               <Define/>
           </Route>
@@ -82,7 +101,9 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </Router>    
+
+    </Router>  
+
   );
 }
 

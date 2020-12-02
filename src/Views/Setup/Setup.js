@@ -8,9 +8,7 @@ import FuncNavtab from "../../Components/NavTab/FuncNavtab"
 import {Container} from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
 import {AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-icons/ai";
-import {
-    GrGraphQl,
-} from "react-icons/all";
+import {GrGraphQl} from "react-icons/all";
 
 //To do:
 //Pass icons as components

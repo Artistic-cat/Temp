@@ -1,0 +1,32 @@
+.container-box {
+    
+    margin-top : 5%;
+    margin-left: 5%;
+    min-height: calc(100vh - 70px) !important;
+}
+
+.master-header {
+
+    text-align: center;
+    margin-bottom: 6%;
+    margin-top : 10%;
+    font-family : Roboto;
+}
+
+.complete-table {
+
+    width : 80%;
+}
+
+.headings {
+    font-size : 3.5vh;
+}
+
+.btn {
+    
+    background-color : #710044;
+    color : #ffffff;
+    margin-top : 5%;
+    border-radius : 60%; 
+
+}
