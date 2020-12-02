@@ -12,7 +12,6 @@ import aImage from "../../Images/emoji.jpg";
 function About() {
 
     return (
-
         <div>
             <Sidebar />
             <Header />

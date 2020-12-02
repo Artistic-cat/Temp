@@ -1,7 +1,19 @@
 nav {
-    top: 6% !important;
+    top: 70px !important;
     background: #03002C !important;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.55) !important;
     position: fixed !important;
-    z-index: 1 !important;
 }
+
+.sidebar-recentlyUsed p {
+    margin-left: 2rem;
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        top: 70px !important;
+        bottom: -5% !important;
+    }
+}
+

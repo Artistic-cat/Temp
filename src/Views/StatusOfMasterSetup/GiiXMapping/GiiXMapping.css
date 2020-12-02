@@ -1,0 +1,41 @@
+.nav-buttons{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    vertical-align: center;
+    position: absolute;
+}
+.top-columns{
+    display: flex;
+    flex-direction: column;
+}
+
+.mapping-option{
+    background-color: #000A28;
+    color: white;
+    outline: 0;
+    border: 0;
+    padding: 1em 1.5em;
+    font-size: 1em;
+    width: 15em;
+    margin-top: 0.6em;
+    border-radius: 4px !important;
+    text-align: center;
+}
+
+.mapping-option:hover{
+    background-color: #06517B;
+    color: white;
+    text-decoration: none;
+}
+
+.mapping-options{
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.navigation-buttons{
+    width: 50%;
+    
+}

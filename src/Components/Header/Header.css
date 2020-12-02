@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 70px;
     display: flex;
     align-items: center;
@@ -6,10 +6,9 @@
     top: 0;
     position: sticky;
     z-index: 100;
-    justify-content: space-evenly;
 }
 
-.burger-menu{
+.burger-menu {
     width: 50px;
     object-fit: contain;
     margin: 5px 20px 0;
@@ -20,20 +19,20 @@
 .logo {
     width: 100px;
     object-fit: contain;
-    margin: 5px 20px 0;
+    margin-left: 1.5em;
     color: #FFFF;
     font-size: 20px;
 }
 
-.search-bar{
+.search-bar {
     display: flex;
     flex: 1;
-    align-items: center;
     border-radius: 20px;
     justify-content: center;
+    outline: 0;
 }
 
-.search-bar-input{
+.search-bar-input {
     height: 12px;
     padding: 10px;
     border: none;
@@ -41,20 +40,6 @@
     max-width: 70em;
 }
 
-.profile-icon {
-    width: 100px;
-    object-fit: contain;
-    margin: 5px 20px 0 30px;
-    color: #FFFF;
-    font-size: 20px;
-}
 .search-icon {
-    width: 1em;
-    height: 1em;
-    background: url('../../Images/search.svg') no-repeat;
-    fill: #F00;
-}
-
-.search-icon{
     fill: #FFF;
 }

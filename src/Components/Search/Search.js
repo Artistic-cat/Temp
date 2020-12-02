@@ -12,7 +12,6 @@ const Search = () => {
       }
 
     return (
-        <>
         <div className = "searchbar">
           <input type = "text" 
           placeholder = "Search keyword" 
@@ -20,7 +19,6 @@ const Search = () => {
           onChange = {inputEvent} style = {{width : '50%' , height : '5vh'}}
           />
         </div>
-        </>
     );
 }
 
