@@ -11,7 +11,7 @@ import Footer from "../../Components/Footer/Footer";
  * Insurer API Nomenclature Status Page
  * This page contains the wireframe for the page, has no implementations coded
  *
- * Calls the GET /gixapifiles API
+ * Calls the GET /giixapifiles API
  */
 class Status extends Component {
     async componentDidMount() {

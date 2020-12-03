@@ -1,11 +1,31 @@
 import React from 'react'
-import {NavLink, Route, Switch} from "react-router-dom"
+import {Link, NavLink, Route, Switch} from "react-router-dom"
+
 import './FuncNavtab.css'
+
+/*
+ * @Author: Sristi
+ *
+ * Component used in Setup.js (View)
+ * 
+ */
 
 function InnerFunctionBody(props) {
     return (
         <div className='inner-body-content'>
             {`${props.content}`}
+
+            {/* Remove the code from here */}
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Link to='/files'><button className='btn'>Next</button></Link>
+            {/* Remove the code till here, it's added just to preview the page flow */}
+
         </div>
     )
 }
@@ -41,7 +61,6 @@ function FunctionBody(props) {
 }
 
 function FuncNavtab(props) {
-    const content = props.content
     const npcontent = props.npcontent
     const nttcontent = props.nttcontent
     const drafts = props.drafts
@@ -56,7 +75,7 @@ function FuncNavtab(props) {
             </NavLink>
             <Switch>
                 <Route path={`${props.tabpath}`} render={() =>
-                    <FunctionBody tabpath={tabpath} content={content} npcontent={npcontent} nttcontent={nttcontent}
+                    <FunctionBody tabpath={tabpath} npcontent={npcontent} nttcontent={nttcontent}
                                   drafts={drafts}/>}/>
             </Switch>
         </div>

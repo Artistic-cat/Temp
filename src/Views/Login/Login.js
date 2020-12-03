@@ -5,7 +5,15 @@ import axios from "axios";
 import "../../App"
 import Home from "../Home/Home";
 
-// import Reset from './Reset';
+/*
+ * @Author: Sristi
+ *
+ * Login Page
+ * This view has the /login api used
+ * Can have an added invalid credentials message
+ * Also add redirect to login if session time or login has expired.
+ * 
+ */
 
 function Login() {
 
@@ -52,9 +60,11 @@ function Login() {
                         <input className='input' type='password' placeholder='Password' value={password}
                                onChange={e => setPassword(e.target.value)}/>
                         <button className='login-button' type='submit' onClick={logIn}>Log In</button>
+                        
                         {/* Temporary Login Link to home start*/}
                         <Link to='/home' className='reset-link'>Temp Login</Link>
                         {/* Temporary Login Link to home end*/}
+
                     </div>
                     <Link to='/reset' className='reset-link'>Forgot Password?</Link>
                 </div>

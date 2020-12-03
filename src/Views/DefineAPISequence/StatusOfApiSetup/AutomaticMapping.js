@@ -7,14 +7,14 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import {Container} from 'react-bootstrap'
 
-import './GiiXMapping.css'
 
 /*
  * @Author: Sristi
  *
- * Status Page 2- GiiX Mapping page.
+ * Define API Sequence Page 3ii- Automatic Mapping.
  * 
- * This view is just the wireframe and not the implementation
+ * This is just the wireframe but since it's similar to GiiXMapping.js, that API is used. Need to change it.
+ * Change API to what's required.
  * 
  * Add onClicks to the ML and Concantenation toggle buttons
  * 
@@ -78,8 +78,8 @@ class AutomaticMapping extends Component{
                                         <Table>
                                             <thread>
                                                 <tr>
-                                                    <th>Insurer Master Name</th>
-                                                    <th>GiiX Master Name</th>
+                                                    <th>Insurer API File</th>
+                                                    <th>GiiX API File</th>
                                                 </tr>
                                             </thread>
                                             <tbody>
@@ -96,8 +96,8 @@ class AutomaticMapping extends Component{
                                             <thread>
                                                 <tr>
                                                     <th>Sr. No.</th>
-                                                    <th>Insurer Column Names</th>
-                                                    <th>GiiX Column Names</th>
+                                                    <th>Insurer Tag Name</th>
+                                                    <th>GiiX Tag Name</th>
                                                     <th>Sr. No.</th>
                                                     <th>Verified</th>
                                                 </tr>
@@ -114,8 +114,8 @@ class AutomaticMapping extends Component{
                         <br/>
                         <br/>
                         <Row className='navigation-buttons'>
-                            <Col><Link to='/status/giixmapping'><button className='btn '>Back</button></Link></Col>
-                            <Col><Link to='/status/giixmapping'><button className='btn '>Save Mapping</button></Link></Col>
+                            <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Back</button></Link></Col>
+                            <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Save Mapping</button></Link></Col>
                         </Row>
                     </div>
                 </Container>

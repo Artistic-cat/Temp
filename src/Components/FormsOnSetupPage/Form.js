@@ -1,37 +1,49 @@
 import React, {Component} from 'react'
-import {FormControl,Form} from 'react-bootstrap'
-import { FormLabel} from '@material-ui/core';
-import TextField from "@material-ui/core/TextField"
 import axios from "axios";
 
+/*
+ * @Author: Sristi
+ *
+ * Form component used in Setup.js (View)
+ * A work in progress...
+ * 
+ * uses the GET buisnessHierarchy API
+ * 
+ */
+
 class Forms extends Component{
-    constructor(){
-        super()
-        this.state={ data: this.componentDidMount}
-    }
-    
-    async componentDidMount(){
-        try{
-            await axios.get('http://13.229.56.134:1337/buisnessHierarchy')
-            .then(res => {
-                console.log(res.data.apiResponse.data)
-                return res.data.apiResponse.data})
-        }
-    
-        catch (error) {
+    async componentDidMount() {
+        try {
+            await axios.get(global.config.backend_ip
+                + "/buisnessHierarchy")
+                .then((response) => {
+                    this.setState({
+                            formsList: response.data.apiResponse.data
+                        }
+                    )
+                })
+        } catch (error) {
             console.log(error.response);
             alert("An error occurred, please try again.");
-            console.log({ error });
+            console.log({error});
         }
-        
     }
     
     render(){
         return(
             <div>
                 <ul>
-                    
-                    {!this.state.data?this.state.data.map(function(d,i){<li key={i} >{d[i]}</li>},this):""}
+                    {/* {
+                        (this.state != null ?
+                            [...this.state.formsList].map((data) =>
+                                <tr key={data.key}>
+                                    <td>{data.insurerMasterFileName}</td>
+                                    <td>{data.Name}</td>
+                                    <td>{data.Description}</td> 
+                                </tr>
+                            )
+                            : "")
+                    } */}
                 </ul>
             </div>
         )

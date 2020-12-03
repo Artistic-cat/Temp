@@ -8,15 +8,13 @@ import Row from "react-bootstrap/Row";
 import {Container} from 'react-bootstrap'
 import axios from "axios"
 
-import './GiiXMapping.css'
-
 /*
  * @Author: Sristi
  *
- * Status Page 3- To preview the mapped entries in GiiX Mapping page.
+ * Define API Sequence Page 3iii- Preview Mapped Entries.
  * 
- * This view uses the GET insurerMasterColumnMapStatus API but the columns are not implemented here.
- * The displaying of columns is commented out for reference.
+ * This is just the wireframe but since it's similar to GiiXMapping.js, that API is used. Need to change it.
+ * Change API to what's required.
  * 
  */
 
@@ -50,8 +48,9 @@ class PreviewMappedEntries extends Component{
                                 <thread>
                                     <tr>
                                         {/* <th>Sr. No.</th> */}
-                                        <th>Insurer Column Name</th>
-                                        <th>GiiX Column Name</th>
+                                        <th>Sr. No.</th>
+                                        <th>Insurer API File</th>
+                                        <th>GiiX API File</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Undo Mapping</th>
@@ -77,7 +76,7 @@ class PreviewMappedEntries extends Component{
                         <br/>
                         <br/>
                         <Row className='navigation-buttons'>
-                            <Col><Link to='/status/giixmapping'><button className='btn '>Back</button></Link></Col>
+                            <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Back</button></Link></Col>
                         </Row>
                     </div>
                 </Container>

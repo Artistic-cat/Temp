@@ -14,6 +14,17 @@ import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
 import Status from "./Views/APITags/Status";
 import Define from "./Views/APITags/Define";
+import PreviewMappedEntries from './Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries'
+import InsurerDefinition from './Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition'
+import AutomaticMapping from './Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping'
+import GiiXMapping from './Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping'
+import StatusOfMasterSetup from './Views/StatusOfMasterSetup/StatusOfMasterSetup'
+import InsurerAPISequence from './Views/DefineAPISequence/InsurerAPISequence'
+import MappingOfInsurerAPIFiles from './Views/DefineAPISequence/MappingOfInsurerAPIFiles'
+import StatusOfApiSetup from './Views/DefineAPISequence/StatusOfApiSetup'
+import EntityMapping from './Views/DefineAPISequence/StatusOfApiSetup/EntityMappingOfInsurerAPIFiles'
+import APIPreviewMapping from './Views/DefineAPISequence/StatusOfApiSetup/PreviewMappedEntries'
+import APIAutomaticMapping from './Views/DefineAPISequence/StatusOfApiSetup/AutomaticMapping'
 
 /**
  * Author Sristi, Vidhi, Rifas
@@ -27,6 +38,7 @@ import Define from "./Views/APITags/Define";
  *      <button className="btn"></button>
  *      to render the common button
  */
+
 function App() {
   global.config = {
     backend_ip: "http://13.229.56.134:1337",
@@ -35,6 +47,24 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/statusofapisetup/mapping/preview">
+            <APIPreviewMapping/>
+          </Route>
+          <Route path="/statusofapisetup/mapping/automatic">
+            <APIAutomaticMapping/>
+          </Route>
+          <Route path="/statusofapisetup/entitymapping">
+            <EntityMapping/>
+          </Route>
+          <Route path="/statusofapisetup">
+            <StatusOfApiSetup/>
+          </Route>
+          <Route path="/mappingofinsurerapifiles">
+            <MappingOfInsurerAPIFiles/>
+          </Route>
+          <Route path="/insurerapisequence">
+            <InsurerAPISequence/>
+          </Route>
           <Route path="/apidefine">
               <Define/>
           </Route>

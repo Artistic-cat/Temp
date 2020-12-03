@@ -40,3 +40,13 @@ a {
 a:hover{
     color: inherit;
 }
+
+.navigation-buttons{
+    position: fixed;
+    left: 50%;
+    margin-left: -30vw;
+}
+
+.container-box {
+    margin: auto !important;
+}

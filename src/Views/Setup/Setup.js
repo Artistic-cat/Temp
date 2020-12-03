@@ -8,13 +8,17 @@ import FuncNavtab from "../../Components/NavTab/FuncNavtab"
 import {Container} from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
 import {AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-icons/ai";
-import {
-    GrGraphQl,
-} from "react-icons/all";
+import {GrGraphQl} from "react-icons/all";
 
-//To do:
-//Pass icons as components
-//Dropdown options for API Driven
+/*
+ * @Author: Sristi
+ *
+ * Setup Page
+ * This view uses the FuncNavTab component under the NavTab folder in Components
+ * The cascading forms need to be passed as a component below (The same way icons are passed)
+ * Replace the component with "API Driven NP" in npcontent: "API Driven NP" and so..
+ * 
+ */
 
 const tabs = [
     {
@@ -22,7 +26,6 @@ const tabs = [
         icon: <GrGraphQl className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
-        content: "For API Driven",
         npcontent: "API Driven NP",
         nttcontent: "API Driven NTT",
         drafts: "API Driven Drafts",
@@ -32,7 +35,6 @@ const tabs = [
         icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "GiiX Managed",
         tabpath: "/setup/GiiXManaged",
-        content: "For GiiX Managed",
         npcontent: "GiiX Managed NP",
         nttcontent: "GiiX Managed NTT",
         drafts: "GiiX Managed Drafts"
@@ -42,7 +44,6 @@ const tabs = [
         icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "Insurer Managed",
         tabpath: "/setup/InsurerManaged",
-        content: "For Insurer Managed",
         npcontent: "Insurer Managed NP",
         nttcontent: "Insurer Managed NTT",
         drafts: "Insurer Managed Drafts"
@@ -52,7 +53,7 @@ const tabs = [
 
 function Setup() {
     new RecentlyUsed().setPath("Setup", window.location.href)
-    const tabsComponent = tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname} content={tab.content}
+    const tabsComponent = tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname}
                                                       npcontent={tab.npcontent} nttcontent={tab.nttcontent}
                                                       drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon}/>)
     return (
