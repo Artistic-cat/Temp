@@ -1,7 +1,5 @@
-/* imports Start Here */
-import React, {Component} from "react";
-import {Link} from "react-router-dom";
-import "./Home.css"
+import React,{Component} from "react";
+import "./Home.css";
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
@@ -13,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 
+import {Link} from 'react-router-dom'
 import {MdComputer, MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";

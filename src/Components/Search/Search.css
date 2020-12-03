@@ -1,8 +1,12 @@
 .searchbar {
-
-    width: 50%;
-    height: auto;
-    margin: 0 auto;
+    text-align : center;
+    z-index : -1;
+}
+.searchbar input {
+    margin : 3vw 0;
+    position: relative;
+    padding : 0.5vw 1vw;
+    border-radius : 7%;
+    font-family: source-code-pro, Menlo, Monaco, Consoles, "Courier Mew";
     text-align: center;
-
 }

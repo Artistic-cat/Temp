@@ -1,0 +1,38 @@
+.master-header {
+    text-align: center;
+    margin-bottom: 6%;
+    margin-top : 10%;
+    font-family : Roboto;
+}
+
+.headings {
+    font-size : 3vh;
+}
+
+
+.mapping-option{
+    background-color: #000A28;
+    color: white;
+    outline: 0;
+    border: 0;
+    padding: 1em 1.5em;
+    font-size: 1em;
+    width: auto;
+    margin-top: 1.5em;
+    border-radius: 4px !important;
+    text-align: center;
+}
+
+.mapping-option:hover{
+    background-color: #06517B;
+    color: white;
+    text-decoration: none;
+}
+
+.mapping-options{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    margin-bottom: 5%;
+    margin-top : 5%;
+}
