@@ -78,7 +78,7 @@ class Define extends Component {
                             <td>Description</td>
                             <td>Insurer Mother Tags</td>
                             <td>Insurer Child Tags with value</td>
-                            <td>(M/NM/CM))</td>
+                            <td>Mandatory Type</td>
                             <td>Conditional Tag</td>
                             <td>Data Type</td>
                             <td>Data Length</td>
@@ -98,7 +98,13 @@ class Define extends Component {
                                             <td contentEditable={true} rowSpan={key.childTag.length}>{value}</td>
                                             <td rowSpan={key.childTag.length}>{key.motherTag}</td>
                                             <td>{key.childTag[0]}</td>
-                                            <td contentEditable={true}>{value}</td>
+                                            <td>
+                                                <select className="form-control" id={'m-nm-cm-' + value}>
+                                                    <option value={'m'}>Mandatory</option>
+                                                    <option value={'nm'}>Non Mandatory</option>
+                                                    <option value={'cm'}>Conditional Mandatory</option>
+                                                </select>
+                                            </td>
                                             <td contentEditable={true}>{value}</td>
                                             <td contentEditable={true}>{value}</td>
                                             <td contentEditable={true}>{value}</td>
@@ -108,7 +114,14 @@ class Define extends Component {
                                             [...key.childTag.slice(1)].map((key1, value1) => {
                                                 return <tr>
                                                     <td>{key1}</td>
-                                                    <td contentEditable={true}>{value1}</td>
+                                                    <td>
+                                                        <select className="form-control"
+                                                                id={'m-nm-cm-' + value + '-' + value1}>
+                                                            <option value={'m'}>Mandatory</option>
+                                                            <option value={'nm'}>Non Mandatory</option>
+                                                            <option value={'cm'}>Conditional Mandatory</option>
+                                                        </select>
+                                                    </td>
                                                     <td contentEditable={true}>{value1}</td>
                                                     <td contentEditable={true}>{value1}</td>
                                                     <td contentEditable={true}>{value1}</td>
