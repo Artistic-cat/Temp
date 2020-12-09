@@ -1,5 +1,6 @@
 {
   "name": "giix-frontend",
+  "homepage": "http://13.229.56.134",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
