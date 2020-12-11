@@ -15,11 +15,42 @@ import Footer from "../../Components/Footer/Footer";
  */
 class Define extends Component {
     render() {
+
+        const mockData = {
+            data: [
+                {
+                    motherTag: "Vehicle Details",
+                    childTag: ["Make"]
+                },
+                {
+                    motherTag: "Client Details",
+                    childTag: ["Salutation"]
+                },
+                {
+                    motherTag: "Registration Details",
+                    childTag: ["Engine Number"]
+                },
+                {
+                    motherTag: "Policy Details",
+                    childTag: ["Policy Start Date"]
+                },
+                {
+                    motherTag: "Music System Fitted",
+                    childTag: [
+                        "Music System",
+                        "Music System Make",
+                        "Music System Model",
+                        "Music System Price"
+                    ]
+                },
+            ]
+        }
+
         return (
             <>
                 <Header/>
                 <Container className="container-box">
-                    <h3 className="apiTag-header">Define API Tag Properties</h3>
+                    <h3 className="apiTag-header mb-4">Define API Tag Properties</h3>
                     <Row className="mb-4">
                         <Col>
                             <p>Insurer API Nomenclature</p>
@@ -47,7 +78,7 @@ class Define extends Component {
                             <td>Description</td>
                             <td>Insurer Mother Tags</td>
                             <td>Insurer Child Tags with value</td>
-                            <td>(M/NM/CM))</td>
+                            <td>Mandatory Type</td>
                             <td>Conditional Tag</td>
                             <td>Data Type</td>
                             <td>Data Length</td>
@@ -56,6 +87,50 @@ class Define extends Component {
                         <tbody>
                         {
                             /* Add Code Here */
+
+                            /* Mock Data Code */
+                            [...mockData.data].map((key, value) => {
+                                    return <>
+                                        <tr key={value}>
+                                            <td rowSpan={key.childTag.length}>{value + 1}</td>
+                                            <td contentEditable={true} rowSpan={key.childTag.length}>{value}</td>
+                                            <td contentEditable={true} rowSpan={key.childTag.length}>{value}</td>
+                                            <td contentEditable={true} rowSpan={key.childTag.length}>{value}</td>
+                                            <td rowSpan={key.childTag.length}>{key.motherTag}</td>
+                                            <td>{key.childTag[0]}</td>
+                                            <td>
+                                                <select className="form-control" id={'m-nm-cm-' + value}>
+                                                    <option value={'m'}>Mandatory</option>
+                                                    <option value={'nm'}>Non Mandatory</option>
+                                                    <option value={'cm'}>Conditional Mandatory</option>
+                                                </select>
+                                            </td>
+                                            <td contentEditable={true}>{value}</td>
+                                            <td contentEditable={true}>{value}</td>
+                                            <td contentEditable={true}>{value}</td>
+                                        </tr>
+
+                                        {
+                                            [...key.childTag.slice(1)].map((key1, value1) => {
+                                                return <tr>
+                                                    <td>{key1}</td>
+                                                    <td>
+                                                        <select className="form-control"
+                                                                id={'m-nm-cm-' + value + '-' + value1}>
+                                                            <option value={'m'}>Mandatory</option>
+                                                            <option value={'nm'}>Non Mandatory</option>
+                                                            <option value={'cm'}>Conditional Mandatory</option>
+                                                        </select>
+                                                    </td>
+                                                    <td contentEditable={true}>{value1}</td>
+                                                    <td contentEditable={true}>{value1}</td>
+                                                    <td contentEditable={true}>{value1}</td>
+                                                </tr>
+                                            })
+                                        }
+                                    </>
+                                }
+                            )
                         }
                         </tbody>
                     </Table>
