@@ -2,15 +2,26 @@ import React, { Component } from "react";
 import "./MasterDependency.css";
 import axios from "axios";
 import {Container, Table} from "react-bootstrap";
+// import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import { render } from "@testing-library/react";
 import { Link } from "react-router-dom";
+
+/**
+ * @Author: Vidhi
+ *
+ * Master Dependency Nomenclature Status Page
+ * This page contains the wireframe for the page, has no implementations coded
+ *
+ * Calls the GET /gixapifiles API
+ */
 
 class MasterDependency extends Component {
     async componentDidMount() {
+        //calls the api, wait for the response and set it to the state variable 
         try{
-            await axios.get("http://13.229.56.134:1337/giixapifiles?giixTransactionTypeId=1")
+            await axios.get(global.config.backend_ip +"/giixapifiles?giixTransactionTypeId=1")
             .then((response) =>{
                 this.setState({
                     giixMasterFileList: response.data.apiResponse.data
@@ -25,13 +36,13 @@ class MasterDependency extends Component {
     }
     render() {
         return(
-            <div>
+            <>
                <Header/>
                <Container className = "container-box">
-                   <h3 className = "master-header">Status of Master Depenency</h3>
-                   <Table className = "complete-table" responsive striped hover style = {{width : "90%", marginLeft : "10%"}}>
-                       <thead>
-                           <tr className = "headings">
+                   <h3 className = "master-header" style = {{ marginBottom : "0px"}}>Status of Master Dependency</h3>
+                   <Table className = "mapper-table" responsive striped hover>
+                       <thead className = "headings" style = {{fontSize : "2.5vh"}}>
+                           <tr>
                                <td>Giix Master File</td>
                                <td>Insurer API File</td>
                                <td>Status</td>
@@ -44,8 +55,11 @@ class MasterDependency extends Component {
                                 [...this.state.giixMasterFileList].map((data, key)=>
                                    <tr key={data.id}>
                                        <td>{data.name}</td>
+                                       {/*// TODO: Set the appropriate Data in the status of master dependency file field*/}
                                        <td>Insurer {data.name}</td>
+                                        {/*// TODO: Set the status of the file according to the response*/}
                                        <td>Pending</td>
+                                       {/*// TODO: Enable only one based on status*/}
                                        <td>
                                            <span style={{color : "red" }}>Edit</span>
                                            <span style={{color : "blue", paddingLeft : "4%"}}>Start</span>
@@ -65,7 +79,7 @@ class MasterDependency extends Component {
                    </div> 
                </Container>
                 <Footer/> 
-            </div>
+            </>
         )
 
     }

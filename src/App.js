@@ -11,12 +11,20 @@ import Home from "./Views/Home/Home"
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
+import AutomaticMapping from "./Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping";
+import PreviewMappedEntries from "./Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries";
 import Status from "./Views/APITags/Status";
 import Define from "./Views/APITags/Define";
 import Nomenclature from "./Views/Nomenclature/Nomenclature";
 import MasterDependency from "./Views/MasterDependency/MasterDependency";
 import Xmltags from "./Views/Xmltags/Xmltags";
 import Preview from "./Views/Preview/Preview";
+import InsurerDefinition from "./Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition";
+import GiiXMapping from "./Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping";
+import StatusOfMasterSetup from "./Views/StatusOfMasterSetup/StatusOfMasterSetup";
+import AutomaticDependency from "./Views/MasterDependency/DependencyMap/AutomaticDependency";
+
+
 
 
 /**
@@ -40,6 +48,9 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path = "/masterdependency/dependencymap">
+             <AutomaticDependency/>
+          </Route>
           <Route path = "/Preview">
              <Preview/>
           </Route>
@@ -77,7 +88,7 @@ function App() {
           </Route>
           <Route path="/status">
             <StatusOfMasterSetup />
-          </Route>
+          </Route> 
           <Route path="/dropdown">
             <CascadingDropdown />
           </Route>

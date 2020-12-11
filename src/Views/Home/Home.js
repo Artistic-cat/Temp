@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import "./Home.css";
 
 import Header from '../../Components/Header/Header';
@@ -17,6 +17,7 @@ import {BsCheckCircle} from "react-icons/bs";
 import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
 
 import {Doughnut, Line} from "react-chartjs-2";
+import { Link } from "react-router-dom";
 
 /* Imports End Here */
 
