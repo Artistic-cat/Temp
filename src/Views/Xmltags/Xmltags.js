@@ -100,8 +100,18 @@ class Xmltags extends Component {
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Master Dependency of Xml/Json Tags</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Master Dependency Xml/Json</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className = "container-box">
-                    <h3 className = "master-header">Master Dependency of Xml/Json Tags</h3>
                     <Table  responsive striped bordered hover style = {{width : "70%", marginLeft : "15%"}}>
                         <thead className = "headings" style = {{fontSize: "2.2vh"}}>
                             <tr>

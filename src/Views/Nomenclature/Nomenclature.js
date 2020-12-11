@@ -128,6 +128,18 @@ function Nomenclature()  {
 
            <div>
                <Header/>
+               <div className='completed-status-bar'>
+                    <div className='left-name'>Nomenclature of Insurer Master</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Nomenclature</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
+
                <div className = "table_1">
                    <Table style = {{width : "95%"}}>
                        <thead>
@@ -143,7 +155,7 @@ function Nomenclature()  {
                        <tbody>
                            <tr>
                                <td style={{paddingLeft : "2%", fontSize : "2vh"}}>Make Model Master</td>
-                               <td><input type = "checkbox" value = "2" className = "box"/></td>
+                               <td><input type = "checkbox" value = "2" className = "check"/></td>
                                <td><input type = "text" className = "txt" /></td>
                                <td><Button type = "button" style = {{fontSize: "1.7vh", width: "9vw"}} onClick>Master File Selection</Button></td>
                                <td><input type = "text" style = {{marginLeft : "18%"}}  className = "txtf"/></td>
@@ -212,10 +224,10 @@ function Nomenclature()  {
                    </Table>
                </div>
                <div className = "wrapper" >
-                   <Link className = "btn" to="/FileDropBox" style = {{backgroundColor: "#710044", borderRadius : "60px"}}>Back</Link>
+                   <Link className = "btn" to="/mapfile" style = {{backgroundColor: "#710044", borderRadius : "60px"}}>Back</Link>
                    <Link className = "btn" to="/" style = {{backgroundColor: "#710044", borderRadius : "60px"}}><span>Cancel</span></Link>
                    <Link className = "btn" to="/" style = {{backgroundColor: "#710044", borderRadius : "60px"}}><span>Save Draft</span></Link>
-                   <Link className = "btn" to="/" style = {{backgroundColor: "#710044", borderRadius : "60px"}}><span>Next</span></Link>
+                   <Link className = "btn" to="/status" style = {{backgroundColor: "#710044", borderRadius : "60px"}}><span>Next</span></Link>
                </div>
                
                <Footer/>

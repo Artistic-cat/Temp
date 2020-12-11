@@ -40,10 +40,20 @@ class Preview extends Component {
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Preview Master Dependencies Entries</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Preview Master Dependency</div>
+                    </div>
+                </div>
+                <br/>
                 <Container className = "container-box">
                 <div>
                         <div className='previewdependency-table'>
-                            <h3>Preview Master Dependency Entries</h3>
                             <Table responsive striped bordered hover style ={{marginTop:"5%"}}>
                                 <thead>
                                     <tr className = "headings">

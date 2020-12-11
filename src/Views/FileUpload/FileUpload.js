@@ -12,6 +12,17 @@ class FileUpload extends Component {
         return (
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Files Upload</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-active'>Upload Files</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <div className="file-file_box">
                         <h4>Upload Your Files to Proceed</h4>

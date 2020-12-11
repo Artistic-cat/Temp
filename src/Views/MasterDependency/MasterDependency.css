@@ -4,12 +4,6 @@
     min-height: calc(100vh - 70px) !important;
 }
 
-h3 {
-    text-align:center;
-    font-size : 1.75rem;
-    font-weight : 550;
-}
-
 .mapper-table {
     width: 90%;
     height : 70%;

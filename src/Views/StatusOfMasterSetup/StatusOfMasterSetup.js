@@ -30,6 +30,17 @@ class Status extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Status of Master Setup</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Master Setup Status</div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className='container-box'>
                     <div className='status-table'>
                         <br/>
@@ -91,9 +102,9 @@ class Status extends Component{
                     <br/>
                     <br/>
                     <Row className='navigation-buttons'>
-                        <Col><Link to='/status'><button className='btn '>Back</button></Link></Col>
+                        <Col><Link to='/Nomenclature'><button className='btn '>Back</button></Link></Col>
                         <Col><Link><button className='btn '>Save Draft</button></Link></Col>
-                        <Col><Link><button className='btn '>Next</button></Link></Col>
+                        <Col><Link to='/status/giixmapping'><button className='btn '>Next</button></Link></Col>
                     </Row>
                 </Container>
                 <Footer/>

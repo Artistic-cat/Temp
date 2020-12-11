@@ -41,8 +41,18 @@ class AutomaticDependency extends Component {
         return(
            <div>
                <Header/>
+               <div className='completed-status-bar'>
+                    <div className='left-name'>Automatic Mapping Screen</div>
+                        <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Automatic Mapping</div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                <Container className = "container-box">
-                   <h3>Automatic Mapping Screen</h3>
                    <Row>
                        <Col>
                           <Table responsive striped hover style ={{marginTop:"2%"}}>

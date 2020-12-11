@@ -40,3 +40,50 @@ a {
 a:hover{
     color: inherit;
 }
+
+.container-box {
+    min-height: calc(100vh - 70px) !important;    
+}
+
+.completed-status-bar{
+    position: relative;
+    height: 3em;
+    width: 100%;
+    display: flex;
+}
+
+.left-name{
+    position: absolute;
+    margin: 10px;
+    font-size: 1.5em;
+    left: 10px;
+}
+.status-icons{
+    position: absolute;
+    display: flex;
+    float: right;
+    right: 10px;
+}
+.status-icon-complete{
+    margin: 10px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50% !important;
+    background: #010e35;
+}
+.status-icon-active{
+    margin: 10px;
+    height: 2em;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 20px !important;
+    background: #031d6b;
+    color: rgb(206, 206, 206);
+}
+.status-icon-incomplete{
+    margin: 10px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50% !important;
+    background: #80889e;
+}

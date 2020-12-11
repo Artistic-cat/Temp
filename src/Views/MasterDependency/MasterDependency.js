@@ -38,8 +38,18 @@ class MasterDependency extends Component {
         return(
             <>
                <Header/>
+               <div className='completed-status-bar'>
+                    <div className='left-name'>Master Dependency Status</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Master Dependency Status</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                <Container className = "container-box">
-                   <h3 className = "master-header" style = {{ marginBottom : "0px"}}>Status of Master Dependency</h3>
                    <Table className = "mapper-table" responsive striped hover>
                        <thead className = "headings" style = {{fontSize : "2.5vh"}}>
                            <tr>

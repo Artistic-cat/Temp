@@ -1,9 +1,9 @@
 .table_1 {
 
-    margin-top : 5%;
+    margin-top : 2%;
     margin-left: 5%;
-    /*margin-right: 5%;*/
-    min-height: calc(100vh - 70px) !important;
+    margin-bottom: 2%!important;
+    /* min-height: calc(100vh - 70px) !important; */
 
 }
 
@@ -40,13 +40,11 @@ input[type = "checkbox"] {
 .table_2 {
 
     margin-left: 5%;
-    /*margin-right: 5%;*/
-    min-height: calc(100vh - 70px) !important;
+    margin-top : 2%!important;
 }
 
 .wrapper {
     text-align: center;
-    margin-bottom: 10%;
 }
 
 .btn {
