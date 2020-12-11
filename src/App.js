@@ -41,6 +41,20 @@ import Preview from "./Views/Preview/Preview";
  * Use react buttons
  *      <button className="btn"></button>
  *      to render the common button
+ * 
+ * Put the navigation buttons of the pages(without sidebar) in a div or Row with className navigation-buttons
+ * 
+ * Code for status bar on transaction pages
+ * <div className='completed-status-bar'>
+      <div className='left-name'>Name of the page</div>
+      <div className='status-icons'>
+          <div className='status-icon-complete'></div>
+          <div className='status-icon-active'>Name of the stage it's in</div>
+          <div className='status-icon-incomplete'></div>
+          <div className='status-icon-incomplete'></div>
+          <div className='status-icon-incomplete'></div>
+      </div>
+  </div> 
  */
 
 function App() {
@@ -78,7 +92,7 @@ function App() {
           <Route path = "/MasterDependency">
             <MasterDependency/>
           </Route>
-          <Route path = "/Nomenclature">
+          <Route path = "/nomenclature">
             <Nomenclature/>
           </Route>
           <Route path="/apidefine">

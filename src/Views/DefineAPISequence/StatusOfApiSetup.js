@@ -100,10 +100,13 @@ class Status extends Component{
                     <Row className='navigation-buttons'>
                         <Col><Link to='/mappingofinsurerapifiles'><button className='btn '>Back</button></Link></Col>
                         <Col><Link><button className='btn '>Save Draft</button></Link></Col>
-                        <Col><Link to=''><button className='btn '>Next</button></Link></Col>
+                        <Col><Link to='/statusofapisetup'><button className='btn '>Next</button></Link></Col> 
+                        {/* Change Link of Next and add button POST Functionality. Activate button only when all above are filled */}
                     </Row>
                 </Container>
                 <Footer/>
+                <br/>
+                <br/>
             </div>
         )
     }

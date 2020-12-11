@@ -83,8 +83,6 @@ class GiiXMapping extends Component{
 
                             `}
                         </style>
-                        <br/>
-                        <br/>
                         <div className='mapping-options'>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                                 <ToggleButton variant="flat" size="xxl" value={1}>Manually Map</ToggleButton>
@@ -92,8 +90,6 @@ class GiiXMapping extends Component{
                             </ToggleButtonGroup>
                             <Link to='/statusofapisetup/mapping/preview' className='mapping-option'>Preview Mapped Entries</Link>
                         </div>
-                        <br/>
-                        <br/>
                         <Row>
                             <Col>
                                 <div className='insurer-table'>
@@ -150,8 +146,6 @@ class GiiXMapping extends Component{
                                 </div>
                             </Col>
                         </Row>
-                        <br/>
-                        <br/>
                         <br/>
                         <br/>
                         <Row>

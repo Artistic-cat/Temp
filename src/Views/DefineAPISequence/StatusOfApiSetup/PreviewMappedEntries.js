@@ -81,6 +81,8 @@ class PreviewMappedEntries extends Component{
                     </div>
                 </Container>
                 <Footer/>
+                <br/>
+                <br/>
             </div>
         )
     }

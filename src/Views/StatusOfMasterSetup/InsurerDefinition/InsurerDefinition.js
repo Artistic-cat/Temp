@@ -54,8 +54,8 @@ class InsurerDefinition extends Component{
                         <Col>
                             <Row>
                                 <div className='insurer-table'>
-                                    <Table>
-                                        <thread>
+                                    <Table bordered>
+                                        <thread style={{display: 'table-header-group'}}>
                                             <tr>
                                                 <th>Insurer Master File</th>
                                                 <th>Name</th>
@@ -63,6 +63,11 @@ class InsurerDefinition extends Component{
                                             </tr>
                                         </thread>
                                         <tbody>
+                                            <tr>
+                                                <td>Proposal Type</td>
+                                                <td>aaaa</td>
+                                                <td>aaaaaaaaaa</td>
+                                            </tr>
                                             {/* {
                                                 (this.state != null ?
                                                     [...this.state.insurerTableColumnItems].map((data) =>
@@ -80,8 +85,8 @@ class InsurerDefinition extends Component{
                             </Row>
                             <Row>
                                 <div>
-                                    <Table>
-                                        <thread>
+                                    <Table bordered>
+                                        <thread style={{display: 'table-header-group'}}>
                                             <tr>
                                                 <th>Sr. No.</th>
                                                 <th>Column Name</th>
@@ -90,6 +95,24 @@ class InsurerDefinition extends Component{
                                             </tr>
                                         </thread>
                                         <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>column 1</td>
+                                                <td><input type='text'/></td>
+                                                <td><input type='text'/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>column 1</td>
+                                                <td><input type='text'/></td>
+                                                <td><input type='text'/></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>column 1</td>
+                                                <td><input type='text'/></td>
+                                                <td><input type='text'/></td>
+                                            </tr>
                                             {/* {
                                                 (this.state != null ?
                                                     [...this.state.insurerDescriptionsColumnItems].map((data) =>
@@ -112,6 +135,8 @@ class InsurerDefinition extends Component{
                             <Col><Link to='/status'><button className='btn '>Cancel</button></Link></Col>
                             <Col><Link to='/status'><button className='btn '>Save</button></Link></Col>
                         </Row>
+                        <br/>
+                        <br/>
                     </div>
                 </Container>
                 <Footer/>

@@ -16,6 +16,7 @@ import './GiiXMapping.css'
  * Status Page 3- To preview the mapped entries in GiiX Mapping page.
  * 
  * This view uses the GET insurerMasterColumnMapStatus API but the columns are not implemented here.
+ * currently using another API just as a sample.
  * The displaying of columns is commented out for reference.
  * 
  */
@@ -24,7 +25,7 @@ class PreviewMappedEntries extends Component{
     async componentDidMount() {
         try {
             await axios.get(global.config.backend_ip
-                + "/insurerMasterColumnMapStatus?insurerMasterRepoId=5")
+                + "/insurerMasterSetupStatus?insurerProductTransactionTypeId=156")
                 .then((response) => {
                     this.setState({
                             MapStatus: response.data.apiResponse.data
@@ -41,36 +42,46 @@ class PreviewMappedEntries extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Preview Mapped Entries</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Status of Master Setup</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <div>
                         <div className='preview-table'>
-                            <br/>
-                            <br/>
                             <Table>
-                                <thread>
+                                <thread style={{display: 'table-header-group'}}>
                                     <tr>
-                                        {/* <th>Sr. No.</th> */}
+                                        <th>Sr. No.</th>
                                         <th>Insurer Column Name</th>
                                         <th>GiiX Column Name</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Undo Mapping</th>
                                     </tr>
-                                </thread>
+                                </thread >
                                 <tbody>
-                                    {/* {
+                                    {
                                         (this.state != null ?
                                             [...this.state.MapStatus].map((data) =>
-                                                <tr key={data.id}>
-                                                    <td>{data.insurerColumnName}</td>
-                                                    <td>{data.giixMasterColumnRepoId}</td>
-                                                    <td>{data.freetext}</td>
-                                                    <td>{data.insurerColumnDescription}</td>
-                                                    <td>Undo Mapping</td>
+                                                <tr key={data.insurerMasterRepoId}>
+                                                    <td>{data.insurerMasterRepoId}</td>
+                                                    <td>{data.insurerMasterName}</td>
+                                                    <td>{data.giixMasterName}</td>
+                                                    <td>aaaaa</td>
+                                                    <td>aaaaa</td>
+                                                    <td style={{color: 'red'}}>Undo Mapping</td>
                                                 </tr>
                                             )
                                             : "")
-                                    } */}
+                                    }
                                 </tbody>
                             </Table>
                         </div>
@@ -79,6 +90,8 @@ class PreviewMappedEntries extends Component{
                         <Row className='navigation-buttons'>
                             <Col><Link to='/status/giixmapping'><button className='btn '>Back</button></Link></Col>
                         </Row>
+                        <br/>
+                        <br/>
                     </div>
                 </Container>
                 <Footer/>

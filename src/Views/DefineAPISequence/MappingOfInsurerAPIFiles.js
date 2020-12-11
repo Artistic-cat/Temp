@@ -11,7 +11,7 @@ import Footer from '../../Components/Footer/Footer'
  * Define API Sequence Page 2- Mapping of Insurer API files.
  * 
  * This page is just a wireframe and has no api used. 
- * File Preview code is written in the file drop box series.
+ * File Preview code is written in the FileDropBox.js
  * 
  */
 
@@ -54,6 +54,7 @@ class MappingOfInsurerAPIFiles extends Component{
                     <br/>
                 </Container>
                 <Footer/>
+                <br/>
             </div>
         )
     }

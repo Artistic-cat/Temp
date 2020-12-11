@@ -61,8 +61,7 @@ class AutomaticMapping extends Component{
 
                             `}
                         </style>
-                        <br/>
-                        <br/>
+                        
                         
                         <div className='mapping-options'>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
@@ -120,6 +119,8 @@ class AutomaticMapping extends Component{
                     </div>
                 </Container>
                 <Footer/>
+                <br/>
+                <br/>
             </div>
         )
     }
