@@ -8,16 +8,13 @@ import Row from "react-bootstrap/Row";
 import {Container} from 'react-bootstrap'
 import axios from "axios"
 
-import './GiiXMapping.css'
-
 /*
  * @Author: Sristi
  *
- * Status Page 3- To preview the mapped entries in GiiX Mapping page.
+ * Define API Sequence Page 3iii- Preview Mapped Entries.
  * 
- * This view uses the GET insurerMasterColumnMapStatus API but the columns are not implemented here.
- * currently using another API just as a sample.
- * The displaying of columns is commented out for reference.
+ * This is just the wireframe but since it's similar to GiiXMapping.js, that API is used. Need to change it.
+ * Change API to what's required.
  * 
  */
 
@@ -25,7 +22,7 @@ class PreviewMappedEntries extends Component{
     async componentDidMount() {
         try {
             await axios.get(global.config.backend_ip
-                + "/insurerMasterSetupStatus?insurerProductTransactionTypeId=156")
+                + "/insurerMasterColumnMapStatus?insurerMasterRepoId=5")
                 .then((response) => {
                     this.setState({
                             MapStatus: response.data.apiResponse.data
@@ -43,58 +40,61 @@ class PreviewMappedEntries extends Component{
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Set Up Master</div>
+                    <div className='left-name'>Define-API Sequence</div>
                     <div className='status-icons'>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
-                        <div className='status-icon-active'>Preview Map</div>
+                        <div className='status-icon-active'>Preview API map</div>
                     </div>
                 </div>
                 <br/>
                 <Container className="container-box">
                     <div>
                         <div className='preview-table'>
+                            <br/>
+                            <br/>
                             <Table>
-                                <thread style={{display: 'table-header-group'}}>
+                                <thread>
                                     <tr>
+                                        {/* <th>Sr. No.</th> */}
                                         <th>Sr. No.</th>
-                                        <th>Insurer Column Name</th>
-                                        <th>GiiX Column Name</th>
+                                        <th>Insurer API File</th>
+                                        <th>GiiX API File</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Undo Mapping</th>
                                     </tr>
-                                </thread >
+                                </thread>
                                 <tbody>
-                                    {
+                                    {/* {
                                         (this.state != null ?
                                             [...this.state.MapStatus].map((data) =>
-                                                <tr key={data.insurerMasterRepoId}>
-                                                    <td>{data.insurerMasterRepoId}</td>
-                                                    <td>{data.insurerMasterName}</td>
-                                                    <td>{data.giixMasterName}</td>
-                                                    <td>aaaaa</td>
-                                                    <td>aaaaa</td>
-                                                    <td style={{color: 'red'}}>Undo Mapping</td>
+                                                <tr key={data.id}>
+                                                    <td>{data.insurerColumnName}</td>
+                                                    <td>{data.giixMasterColumnRepoId}</td>
+                                                    <td>{data.freetext}</td>
+                                                    <td>{data.insurerColumnDescription}</td>
+                                                    <td>Undo Mapping</td>
                                                 </tr>
                                             )
                                             : "")
-                                    }
+                                    } */}
                                 </tbody>
                             </Table>
                         </div>
                         <br/>
                         <br/>
                         <Row className='navigation-buttons'>
-                            <Col><Link to='/status/giixmapping'><button className='btn '>Back</button></Link></Col>
+                            <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Back</button></Link></Col>
+                            <Col><Link to='/MasterDependency'><button className='btn '>Next</button></Link></Col>
                         </Row>
-                        <br/>
-                        <br/>
                     </div>
                 </Container>
                 <Footer/>
+                <br/>
+                <br/>
             </div>
         )
     }

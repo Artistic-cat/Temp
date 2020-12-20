@@ -14,15 +14,22 @@ import FileMapper from "./Views/FileUpload/FileMapper";
 import AutomaticMapping from "./Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping";
 import PreviewMappedEntries from "./Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries";
 import Status from "./Views/APITags/Status";
-import Define from "./Views/APITags/Define";
+import Define from "./Views/APITags/Define"
+import InsurerDefinition from './Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition';
+import GiiXMapping from './Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping'
+import StatusOfMasterSetup from './Views/StatusOfMasterSetup/StatusOfMasterSetup'
+import InsurerAPISequence from './Views/DefineAPISequence/InsurerAPISequence'
+import MappingOfInsurerAPIFiles from './Views/DefineAPISequence/MappingOfInsurerAPIFiles'
+import StatusOfApiSetup from './Views/DefineAPISequence/StatusOfApiSetup'
+import EntityMapping from './Views/DefineAPISequence/StatusOfApiSetup/EntityMappingOfInsurerAPIFiles'
+import APIPreviewMapping from './Views/DefineAPISequence/StatusOfApiSetup/PreviewMappedEntries'
+import APIAutomaticMapping from './Views/DefineAPISequence/StatusOfApiSetup/AutomaticMapping'
 import Nomenclature from "./Views/Nomenclature/Nomenclature";
 import MasterDependency from "./Views/MasterDependency/MasterDependency";
 import Xmltags from "./Views/Xmltags/Xmltags";
 import Preview from "./Views/Preview/Preview";
-import InsurerDefinition from "./Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition";
-import GiiXMapping from "./Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping";
-import StatusOfMasterSetup from "./Views/StatusOfMasterSetup/StatusOfMasterSetup";
 import AutomaticDependency from "./Views/MasterDependency/DependencyMap/AutomaticDependency";
+import AdminHome from "./Views/Admin/AdminHome";
 
 
 
@@ -38,6 +45,20 @@ import AutomaticDependency from "./Views/MasterDependency/DependencyMap/Automati
  * Use react buttons
  *      <button className="btn"></button>
  *      to render the common button
+ * 
+ * Put the navigation buttons of the pages(without sidebar) in a div or Row with className navigation-buttons
+ * 
+ * Code for status bar on transaction pages
+ * <div className='completed-status-bar'>
+      <div className='left-name'>Name of the page</div>
+      <div className='status-icons'>
+          <div className='status-icon-complete'></div>
+          <div className='status-icon-active'>Name of the stage it's in</div>
+          <div className='status-icon-incomplete'></div>
+          <div className='status-icon-incomplete'></div>
+          <div className='status-icon-incomplete'></div>
+      </div>
+  </div> 
  */
 
 function App() {
@@ -45,25 +66,44 @@ function App() {
     backend_ip: "http://13.229.56.134:1337",
   }
   return (
-    <Router>
-      <div className="App">
+    <div className='App'>
+      <Router>
         <Switch>
-          <Route path = "/masterdependency/dependencymap">
-             <AutomaticDependency/>
+          <Route path="/admin/adminhome">
+            <AdminHome/>
+          </Route>
+          <Route path="/masterdependency/dependencymap">
+            <AutomaticDependency/>
+          </Route>
+          <Route path="/statusofapisetup/mapping/preview">
+            <APIPreviewMapping/>
+          </Route>
+          <Route path="/statusofapisetup/mapping/automatic">
+            <APIAutomaticMapping/>
+          </Route>
+          <Route path="/statusofapisetup/entitymapping">
+            <EntityMapping/>
+          </Route>
+          <Route path="/statusofapisetup">
+            <StatusOfApiSetup/>
+          </Route>
+          <Route path="/mappingofinsurerapifiles">
+            <MappingOfInsurerAPIFiles/>
+          </Route>
+          <Route path="/insurerapisequence">
+            <InsurerAPISequence/>
           </Route>
           <Route path = "/Preview">
-             <Preview/>
+            <Preview/>
           </Route>
           <Route path = "/Xmltags">
-             <Xmltags/>
+            <Xmltags/>
           </Route>
-
           <Route path = "/MasterDependency">
-             <MasterDependency/>
+            <MasterDependency/>
           </Route>
-
-          <Route path = "/Nomenclature">
-             <Nomenclature/>
+          <Route path = "/nomenclature">
+            <Nomenclature/>
           </Route>
           <Route path="/apidefine">
               <Define/>
@@ -105,15 +145,16 @@ function App() {
             <Reset />
           </Route>
           <Route path="/files"> {/* Move this inside some other page */}
-            <FileUpload/>
+          <FileUpload/>
           </Route>
           <Route path="/">
             <Login />
           </Route>
         </Switch>
-      </div>
-
-    </Router>  
+      </Router>
+    </div>
+      
+      
 
   );
 }

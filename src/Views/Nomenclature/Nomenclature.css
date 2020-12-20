@@ -1,55 +1,41 @@
-.table_1 {
+/* .container-box {
+    margin-top : 2% !important;
+    left : 30%!important;
 
+} */
+
+.table-responsive {
     margin-top : 2%;
-    margin-left: 5%;
-    margin-bottom: 2%!important;
-    /* min-height: calc(100vh - 70px) !important; */
-
-}
-
- .txt {
-
-    background-color: #E0EAF9;
-    border : none;
-    outline: 0;
-    width : 50%;
-    margin-left: 5%;
-    
+    width : 90%;
 } 
 
-.txtf{
+/* .mapper-table {
+    left : 20% !important;
+    right : 50% !important;
+} */
 
-    background-color: #E0EAF9;
-    border : none;
+.txt {
+
+    /* background-color: #E0EAF9; */
     outline: 0;
     width : 50%;
-
-}
+    margin-left: 5%;  
+} 
 
 input[type = "checkbox"] {
     margin-left: 25%;
 }
-
-.view {
-
-    color : blue;
-    font-size: 2vh;
-    padding-left: 8%;
+.button-select {
+    width : 9vw;
+    font-size : 2vh;
 }
-
-.table_2 {
-
-    margin-left: 5%;
-    margin-top : 2%!important;
-}
-
 .wrapper {
     text-align: center;
 }
 
 .btn {
     margin-left: 2%;
-    width : 110px;
+    width : auto;
    /* background-color: #710044;
     border-radius: 60%;*/
     

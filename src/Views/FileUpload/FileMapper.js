@@ -3,7 +3,7 @@ import "./FileUpload.css";
 
 import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
-import {Container} from "react-bootstrap";
+import {Container, Row, Col} from "react-bootstrap";
 import FileMapper from "../../Components/FileMapper/FileMapper";
 import {Link} from "react-router-dom";
 
@@ -22,10 +22,10 @@ class FileUpload extends Component {
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Files Map</div>
+                    <div className='left-name'>Files Upload</div>
                     <div className='status-icons'>
-                        <div className='status-icon-complete'></div>
                         <div className='status-icon-active'>Map Files</div>
+                        <div className='status-icon-incomplete'></div>
                         <div className='status-icon-incomplete'></div>
                         <div className='status-icon-incomplete'></div>
                         <div className='status-icon-incomplete'></div>
@@ -52,8 +52,9 @@ class FileUpload extends Component {
                             </Link>
                         </div>
                     </div>
+                    <br/>
+                    <br/>
                 </Container>
-
                 <Footer/>
             </div>
         )

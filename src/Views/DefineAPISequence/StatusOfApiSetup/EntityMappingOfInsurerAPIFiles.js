@@ -8,8 +8,15 @@ import Row from "react-bootstrap/Row";
 import {Container} from 'react-bootstrap'
 import axios from "axios"
 
-import './GiiXMapping.css'
-
+/*
+ * @Author: Sristi
+ *
+ * Define API Sequence Page 3i- Entity Mapping of API.
+ * 
+ * This is just the wireframe but since it's similar to GiiXMapping.js, that API is used. Need to change it.
+ * Change API to what's required.
+ * 
+ */
 
 class GiiXMapping extends Component{
     async componentDidMount() {
@@ -41,12 +48,12 @@ class GiiXMapping extends Component{
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Set Up Master</div>
+                    <div className='left-name'>Define-API Sequence</div>
                     <div className='status-icons'>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
-                        <div className='status-icon-active'>GiiX Mapping</div>
+                        <div className='status-icon-active'>Entity mapping API</div>
                         <div className='status-icon-incomplete'></div>
                     </div>
                 </div>
@@ -87,28 +94,24 @@ class GiiXMapping extends Component{
 
                             `}
                         </style>
-                        <br/>
-                        <br/>
                         <div className='mapping-options'>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                                 <ToggleButton variant="flat" size="xxl" value={1}>Manually Map</ToggleButton>
-                                <ToggleButton variant="flat" size="xxl" value={2}><Link to='/status/giixmapping/automaticmapping'>Automatic Mapping</Link></ToggleButton>
+                                <ToggleButton variant="flat" size="xxl" value={2}><Link to='/statusofapisetup/mapping/automatic'>Automatic Mapping</Link></ToggleButton>
                             </ToggleButtonGroup>
-                            <Link to='/status/giixmapping/preview' className='mapping-option'>Preview Mapped Entries</Link>
+                            <Link to='/statusofapisetup/mapping/preview' className='mapping-option'>Preview Mapped Entries</Link>
                         </div>
-                        <br/>
-                        <br/>
                         <Row>
                             <Col>
                                 <div className='insurer-table'>
-                                    <h5>Insurer Master Column Names</h5>
+                                    <h5>Insurer API Tags</h5>
                                     <Table>
                                         <thread>
                                             <tr>
                                                 <th>Sr. No.</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
-                                                <th>Column Name</th>
+                                                <th>Insurer Tag Name</th>
                                                 <th>Radio Button</th>
                                             </tr>
                                         </thread>
@@ -129,12 +132,12 @@ class GiiXMapping extends Component{
                             </Col>
                             <Col>
                                 <div>
-                                    <h5>GiiX Master Column Names</h5>
+                                    <h5>GiiX Standard API Tags</h5>
                                     <Table>
                                         <thread>
                                             <tr>
                                                 <th>Radio Button</th>
-                                                <th>Column Name</th>
+                                                <th>GiiX Tag Name</th>
                                                 <th>Sr. No.</th>
                                             </tr>
                                         </thread>
@@ -156,11 +159,75 @@ class GiiXMapping extends Component{
                         </Row>
                         <br/>
                         <br/>
+                        <Row>
+                            <Col>
+                                <div className='insurer-table'>
+                                    <h5>Insurer API File Preview</h5>
+                                    <Table>
+                                        <thread>
+                                            {/* {
+                                                (this.state != null ?
+                                                    [...this.state.insurerMasterColumnList].map((data) =>
+                                                        <tr key={data.insurerFileManager}>
+                                                            <td>{data.giixMasterName}</td>
+                                                        </tr>
+                                                    )
+                                                    : "")
+                                            } */}
+                                        </thread>
+                                        <tbody>
+                                            {/* {
+                                                (this.state != null ?
+                                                    [...this.state.insurerMasterColumnList].map((data) =>
+                                                        <tr key={data.insurerFileManager}>
+                                                            <td>{data.giixMasterName}</td>
+                                                        </tr>
+                                                    )
+                                                    : "")
+                                            } */}
+                                        </tbody>
+                                    </Table>
+                                </div>
+                            </Col>
+                            <Col>
+                                <div>
+                                    <h5>GiiX API File Preview</h5>
+                                    <Table>
+                                    <thread>
+                                            {/* {
+                                                (this.state != null ?
+                                                    [...this.state.insurerMasterColumnList].map((data) =>
+                                                        <tr key={data.insurerFileManager}>
+                                                            <td>{data.giixMasterName}</td>
+                                                        </tr>
+                                                    )
+                                                    : "")
+                                            } */}
+                                        </thread>
+                                        <tbody>
+                                            {/* {
+                                                (this.state != null ?
+                                                    [...this.state.insurerMasterColumnList].map((data) =>
+                                                        <tr key={data.insurerFileManager}>
+                                                            <td>{data.giixMasterName}</td>
+                                                        </tr>
+                                                    )
+                                                    : "")
+                                            } */}
+                                        </tbody>
+                                    </Table>
+                                </div>
+                            </Col>
+                        </Row>
+                        <br/>
+                        <br/>
                         <Row className='navigation-buttons'>
-                            <Col><Link to='/status'><button className='btn '>Cancel</button></Link></Col>
+                            <Col><Link to='/statusofapisetup'><button className='btn '>Cancel</button></Link></Col>
                             <Col><Link><button className='btn '>Save Draft</button></Link></Col>
                             <Col><Link><button className='btn '>Map</button></Link></Col>
                         </Row>
+                        <br/>
+                        <br/>
                     </div>
                 </Container>
                 <Footer/>

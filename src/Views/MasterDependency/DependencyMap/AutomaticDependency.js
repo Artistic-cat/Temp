@@ -42,9 +42,8 @@ class AutomaticDependency extends Component {
            <div>
                <Header/>
                <div className='completed-status-bar'>
-                    <div className='left-name'>Automatic Mapping Screen</div>
+                    <div className='left-name'>Master Dependency</div>
                         <div className='status-icons'>
-                        <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-active'>Automatic Mapping</div>

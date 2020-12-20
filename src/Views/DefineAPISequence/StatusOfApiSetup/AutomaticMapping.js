@@ -5,45 +5,28 @@ import {Link} from 'react-router-dom'
 import { Table,ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import axios from "axios"
 import {Container} from 'react-bootstrap'
 
-import './GiiXMapping.css'
 
 /*
  * @Author: Sristi
  *
- * Status Page 2- GiiX Mapping page.
+ * Define API Sequence Page 3ii- Automatic Mapping.
  * 
- * This view is just the wireframe and not the implementation, the API used is just for eference and not the actual API.
+ * This is just the wireframe but since it's similar to GiiXMapping.js, that API is used. Need to change it.
+ * Change API to what's required.
  * 
  * Add onClicks to the ML and Concantenation toggle buttons
  * 
  */
 
 class AutomaticMapping extends Component{
-    async componentDidMount() {
-        try {
-            await axios.get(global.config.backend_ip
-                + "/insurerMasterSetupStatus?insurerProductTransactionTypeId=156")
-                .then((response) => {
-                    this.setState({
-                            giixStatusList: response.data.apiResponse.data
-                        }
-                    )
-                })
-        } catch (error) {
-            console.log(error.response);
-            alert("An error occurred, please try again.");
-            console.log({error});
-        }
-    }
     render(){
         return(
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Set Up Master</div>
+                    <div className='left-name'>Define-API Sequence</div>
                     <div className='status-icons'>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
@@ -90,6 +73,7 @@ class AutomaticMapping extends Component{
                             `}
                         </style>
                         
+                        
                         <div className='mapping-options'>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                                 <ToggleButton variant="flat" size="xxl" value={1}>Machine Learning</ToggleButton>
@@ -101,17 +85,16 @@ class AutomaticMapping extends Component{
                             <Col>
                                 <Row>
                                     <div className='insurer-table'>
-                                        <Table bordered>
-                                            <thread style={{display: 'table-header-group'}}>
+                                        <Table>
+                                            <thread>
                                                 <tr>
-                                                    <th>Insurer Master Name</th>
-                                                    <th>GiiX Master Name</th>
+                                                    <th>Insurer API File</th>
+                                                    <th>GiiX API File</th>
                                                 </tr>
                                             </thread>
                                             <tbody>
                                                 <tr>
-                                                    <td>abc</td>
-                                                    <td>Make Model Master</td>
+                                                    <td></td>
                                                 </tr>
                                             </tbody>
                                         </Table>
@@ -119,30 +102,20 @@ class AutomaticMapping extends Component{
                                 </Row>
                                 <Row>
                                     <div>
-                                        <Table bordered>
-                                            <thread style={{display: 'table-header-group'}}>
+                                        <Table>
+                                            <thread>
                                                 <tr>
                                                     <th>Sr. No.</th>
-                                                    <th>Insurer Column Names</th>
-                                                    <th>GiiX Column Names</th>
+                                                    <th>Insurer Tag Name</th>
+                                                    <th>GiiX Tag Name</th>
                                                     <th>Sr. No.</th>
                                                     <th>Verified</th>
                                                 </tr>
                                             </thread>
                                             <tbody>
-                                                {
-                                                (this.state != null ?
-                                                    [...this.state.giixStatusList].map((data) =>
-                                                        <tr key={data.insurerFileManager}>
-                                                            <td></td>
-                                                            <td>{data.insurerMasterName}</td>
-                                                            <td>{data.giixMasterName}</td>
-                                                            <td></td>
-                                                            <td><input type='checkbox'/></td>
-                                                        </tr>
-                                                    )
-                                                    : "")
-                                                }
+                                                <tr>
+                                                    <td></td>
+                                                </tr>
                                             </tbody>
                                         </Table>
                                     </div>
@@ -151,14 +124,14 @@ class AutomaticMapping extends Component{
                         <br/>
                         <br/>
                         <Row className='navigation-buttons'>
-                            <Col><Link to='/status/giixmapping'><button className='btn '>Back</button></Link></Col>
-                            <Col><Link to='/status/giixmapping'><button className='btn '>Save Mapping</button></Link></Col>
+                            <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Back</button></Link></Col>
+                            <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Save Mapping</button></Link></Col>
                         </Row>
-                        <br/>
-                        <br/>
                     </div>
                 </Container>
                 <Footer/>
+                <br/>
+                <br/>
             </div>
         )
     }

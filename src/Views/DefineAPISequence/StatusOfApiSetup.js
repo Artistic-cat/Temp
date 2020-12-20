@@ -7,17 +7,13 @@ import axios from "axios"
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-import './StatusOfMasterSetup.css'
 
 /*
  * @Author: Sristi
  *
- * Status Page 1- Status of Master Setup.
- * The GiiX Mapping view and the Insurer Definition view are made into folders in the same folder.
- * 
- * This view uses insurerMasterSetupStatus GET api.
- * If possible make the insurer definitions and the GiiX columns available as separate tables.
- * Make "Next" Button active only when all the Status values=3 or Mapped/Description Complete
+ * Define API Sequence Page 3- Status of API Setup.
+ * This is just the wireframe but since it's similar to StatusofMasterSetup.js, that API is used. Need to change it.
+ * Change API and table's to what's required.
  * 
  */
 
@@ -28,7 +24,7 @@ class Status extends Component{
                 + "/insurerMasterSetupStatus?insurerProductTransactionTypeId=156")
                 .then((response) => {
                     this.setState({
-                            giixStatusList: response.data.apiResponse.data
+                            APIStatusList: response.data.apiResponse.data
                         }
                     )
                 })
@@ -43,11 +39,11 @@ class Status extends Component{
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Set Up Master</div>
+                    <div className='left-name'>Define-API Sequence</div>
                     <div className='status-icons'>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
-                        <div className='status-icon-active'>Master Setup Status</div>
+                        <div className='status-icon-active'>Api Setup Status</div>
                         <div className='status-icon-incomplete'></div>
                         <div className='status-icon-incomplete'></div>
                     </div>
@@ -60,8 +56,8 @@ class Status extends Component{
                         <Table size="sm" borderless hover>
                             <thead>
                                 <tr>
-                                    <th>GiiX Master File</th>
-                                    <th>Insurer Master File</th>
+                                    <th>GiiX API File</th>
+                                    <th>Insurer API File</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -69,9 +65,9 @@ class Status extends Component{
                             <tbody>
                             {
                             (this.state != null ?
-                                [...this.state.giixStatusList].map((data) =>
+                                [...this.state.APIStatusList].map((data) =>
                                     <tr key={data.insurerFileManager}>
-                                        <td>{data.giixMasterName ? <h5>{data.giixMasterName}</h5>: <h5 style={{ color: 'grey' }}>Insurer Specific Master</h5>}</td>
+                                        <td>{data.giixMasterName ? <h5>{data.giixMasterName}</h5>: <h5 style={{ color: 'grey' }}>Insurer Specific API</h5>}</td>
                                         <td>{data.giixMasterName ? <h5>{data.insurerMasterName}</h5>: <h5 style={{ color: 'grey' }}>{data.insurerMasterName}</h5>}</td>
                                         <td>
                                             {/* Check what status 1 is for. */}
@@ -90,15 +86,15 @@ class Status extends Component{
                                         </td>
                                         <td >
                                             {data.giixMasterName ?
-                                            data.status===1 ? <Link to='/status/giixmapping' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
-                                            :data.status===2 ? <Link to='/status/giixmapping' style={{ color: 'red' }}><h5>Start Mapping</h5></Link>
-                                            :data.status===3 ? <Link to='/status/giixmapping' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
-                                            :data.status===4 ? <Link to='/status/giixmapping' style={{ color: 'red' }}><h5>Continue Draft</h5></Link>
+                                            data.status===1 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
+                                            :data.status===2 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Start Mapping</h5></Link>
+                                            :data.status===3 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
+                                            :data.status===4 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Continue Draft</h5></Link>
                                             : ""
-                                            :data.status===1 ? <Link to='/status/insurerdefinition' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
-                                            :data.status===2 ? <Link to='/status/insurerdefinition' style={{ color: 'red' }}><h5>Start Description</h5></Link>
-                                            :data.status===3 ? <Link to='/status/insurerdefinition' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
-                                            :data.status===4 ? <Link to='/status/insurerdefinition' style={{ color: 'red' }}><h5>Continue Draft</h5></Link>
+                                            :data.status===1 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
+                                            :data.status===2 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Start Description</h5></Link>
+                                            :data.status===3 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Edit and Redo</h5></Link>
+                                            :data.status===4 ? <Link to='/statusofapisetup/entitymapping' style={{ color: 'red' }}><h5>Continue Draft</h5></Link>
                                             : ""
                                             }
                                         </td>
@@ -113,12 +109,15 @@ class Status extends Component{
                     <br/>
                     <br/>
                     <Row className='navigation-buttons'>
-                        <Col><Link to='/Nomenclature'><button className='btn '>Back</button></Link></Col>
+                        <Col><Link to='/mappingofinsurerapifiles'><button className='btn '>Back</button></Link></Col>
                         <Col><Link><button className='btn '>Save Draft</button></Link></Col>
-                        <Col><Link to='/insurerapisequence'><button className='btn '>Next</button></Link></Col>
+                        <Col><Link to='/MasterDependency'><button className='btn '>Next</button></Link></Col> 
+                        {/* Change Link of Next and add button POST Functionality. Activate button only when all above are filled */}
                     </Row>
                 </Container>
                 <Footer/>
+                <br/>
+                <br/>
             </div>
         )
     }

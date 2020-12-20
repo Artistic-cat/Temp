@@ -41,13 +41,12 @@ class Preview extends Component {
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Preview Master Dependencies Entries</div>
+                    <div className='left-name'>Master Dependency</div>
                     <div className='status-icons'>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
-                        <div className='status-icon-complete'></div>
-                        <div className='status-icon-complete'></div>
                         <div className='status-icon-active'>Preview Master Dependency</div>
+                        <div className='status-icon-incomplete'></div>
                     </div>
                 </div>
                 <br/>

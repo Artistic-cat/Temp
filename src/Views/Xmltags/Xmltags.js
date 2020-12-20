@@ -101,9 +101,8 @@ class Xmltags extends Component {
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Master Dependency of Xml/Json Tags</div>
+                    <div className='left-name'>Master Dependency</div>
                     <div className='status-icons'>
-                        <div className='status-icon-complete'></div>
                         <div className='status-icon-complete'></div>
                         <div className='status-icon-active'>Master Dependency Xml/Json</div>
                         <div className='status-icon-incomplete'></div>
@@ -252,7 +251,7 @@ class Xmltags extends Component {
                          {/* Buttons created which is set through link, helpful in connecting the next page */}
                         <Link to="/MasterDependency" className="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Cancel</Link>
                         <Link to="/" className ="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Save as Draft</Link>
-                        <Link to="/" className ="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Next</Link>
+                        <Link to="/apitag" className ="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Next</Link>
 
                 </div> 
                 </Container>

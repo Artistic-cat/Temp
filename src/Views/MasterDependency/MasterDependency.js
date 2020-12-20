@@ -39,9 +39,8 @@ class MasterDependency extends Component {
             <>
                <Header/>
                <div className='completed-status-bar'>
-                    <div className='left-name'>Master Dependency Status</div>
+                    <div className='left-name'>Master Dependency</div>
                     <div className='status-icons'>
-                        <div className='status-icon-complete'></div>
                         <div className='status-icon-active'>Master Dependency Status</div>
                         <div className='status-icon-incomplete'></div>
                         <div className='status-icon-incomplete'></div>
@@ -84,7 +83,7 @@ class MasterDependency extends Component {
 
                    </Table>
                    <div className = "wrapper">
-                        <Link to="/" className="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Cancel</Link>
+                        <Link to="/statusofapisetup" className="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Cancel</Link>
                         <Link to="/Xmltags" className ="btn" style = {{backgroundColor : "#710044", color : "#ffffff", borderRadius : "60px"}}>Next</Link>
                    </div> 
                </Container>

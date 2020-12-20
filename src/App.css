@@ -1,6 +1,6 @@
-.container {
+/* .container {
     animation: fade 0.7s ease-in;
-}
+} */
 
 @keyframes fade {
     0% {
@@ -14,11 +14,11 @@
 }
 
 .btn {
-    width: 12em;
-    height: 3em;
+    width: 12em !important;
+    height: 3.5em !important;
     background: #710044;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 70px;
+    border-radius: 70px !important;
     border: none;
     font-weight: bold;
     font-size: 0.7em;
@@ -51,7 +51,6 @@ a:hover{
     width: 100%;
     display: flex;
 }
-
 .left-name{
     position: absolute;
     margin: 10px;

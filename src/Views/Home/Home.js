@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React,{Component} from "react";
 import "./Home.css";
 
 import Header from '../../Components/Header/Header';
@@ -11,13 +11,14 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 
+import {Link} from 'react-router-dom'
 import {MdComputer, MdPhonelinkSetup} from "react-icons/md";
 import {FiSettings, FiUsers} from "react-icons/fi";
 import {BsCheckCircle} from "react-icons/bs";
 import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard} from "react-icons/all";
 
 import {Doughnut, Line} from "react-chartjs-2";
-import { Link } from "react-router-dom";
+
 
 /* Imports End Here */
 
@@ -201,10 +202,12 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">System Administration</h4>
                         <Col>
+                          <Link to="/admin/adminhome">
                             <button className="home-btn">
                                 <BsCheckCircle style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>Approval Mechanism</p>
                             </button>
+                          </Link>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>
