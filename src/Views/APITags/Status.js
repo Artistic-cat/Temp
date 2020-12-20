@@ -1,9 +1,12 @@
 import React, {Component} from "react";
 import "./APITag.css";
 import axios from "axios";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 import {Container, Table} from "react-bootstrap";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 /**
  * @Author: Rifas
@@ -36,6 +39,15 @@ class Status extends Component {
         return (
             <>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>API Attributes</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-active'>API Tag Status</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <h3 className="apiTag-header">Status of API Tag Properties</h3>
                     <Table className="mapper-table" responsive striped hover>
@@ -69,7 +81,10 @@ class Status extends Component {
                         }
                         </tbody>
                     </Table>
-                    <button className={"btn"}>Submit</button>
+                    <Row className='navigation-buttons'>
+                            <Col><Link to='/Xmltags'><button className='btn' style = {{borderRadius : "60px"}}>Back</button></Link></Col>
+                            <Col><Link to='/apidefine'><button className='btn' style = {{borderRadius : "60px"}}>Submit</button></Link></Col>
+                    </Row>
                 </Container>
                 <Footer/>
             </>

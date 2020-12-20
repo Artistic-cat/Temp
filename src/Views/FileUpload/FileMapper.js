@@ -21,6 +21,17 @@ class FileUpload extends Component {
         return (
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Files Upload</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-active'>Map Files</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <div className="file-file_box">
                         <h4>Map your Files to Proceed</h4>
@@ -28,11 +39,19 @@ class FileUpload extends Component {
                         <div className={"m-4"}>
                             <FileMapper/>
                         </div>
+                        <div className={"m-4"}>
+                            <Link to="/files">
+                                <button className="btn">
+                                    Back
+                                </button>
+                            </Link>
+                            <Link to="/Nomenclature">
+                                <button className="btn">
+                                    Next
+                                </button>
+                            </Link>
+                        </div>
                     </div>
-                    <Row className='navigation-buttons'>
-                        <Col><Link to='/files'><button className='btn '>Back</button></Link></Col>
-                        <Col><Link to='/nomenclature'><button className='btn '>Next</button></Link></Col>
-                    </Row>
                     <br/>
                     <br/>
                 </Container>

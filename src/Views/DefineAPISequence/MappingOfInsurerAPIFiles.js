@@ -20,6 +20,17 @@ class MappingOfInsurerAPIFiles extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Define-API Sequence</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Map Insurer Api</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className='container-box'>
                     <br/>
                     <br/>

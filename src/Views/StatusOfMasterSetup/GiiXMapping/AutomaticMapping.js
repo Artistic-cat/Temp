@@ -42,6 +42,17 @@ class AutomaticMapping extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Set Up Master</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Automatic Mapping</div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <div>
                         <style type="text/css">

@@ -11,11 +11,11 @@ import Home from "./Views/Home/Home"
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
+import AutomaticMapping from "./Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping";
+import PreviewMappedEntries from "./Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries";
 import Status from "./Views/APITags/Status";
-import Define from "./Views/APITags/Define";
-import PreviewMappedEntries from './Views/StatusOfMasterSetup/GiiXMapping/PreviewMappedEntries'
-import InsurerDefinition from './Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition'
-import AutomaticMapping from './Views/StatusOfMasterSetup/GiiXMapping/AutomaticMapping'
+import Define from "./Views/APITags/Define"
+import InsurerDefinition from './Views/StatusOfMasterSetup/InsurerDefinition/InsurerDefinition';
 import GiiXMapping from './Views/StatusOfMasterSetup/GiiXMapping/GiiXMapping'
 import StatusOfMasterSetup from './Views/StatusOfMasterSetup/StatusOfMasterSetup'
 import InsurerAPISequence from './Views/DefineAPISequence/InsurerAPISequence'
@@ -28,6 +28,10 @@ import Nomenclature from "./Views/Nomenclature/Nomenclature";
 import MasterDependency from "./Views/MasterDependency/MasterDependency";
 import Xmltags from "./Views/Xmltags/Xmltags";
 import Preview from "./Views/Preview/Preview";
+import AutomaticDependency from "./Views/MasterDependency/DependencyMap/AutomaticDependency";
+import AdminHome from "./Views/Admin/AdminHome";
+
+
 
 
 /**
@@ -65,6 +69,12 @@ function App() {
     <div className='App'>
       <Router>
         <Switch>
+          <Route path="/admin/adminhome">
+            <AdminHome/>
+          </Route>
+          <Route path="/masterdependency/dependencymap">
+            <AutomaticDependency/>
+          </Route>
           <Route path="/statusofapisetup/mapping/preview">
             <APIPreviewMapping/>
           </Route>
@@ -118,7 +128,7 @@ function App() {
           </Route>
           <Route path="/status">
             <StatusOfMasterSetup />
-          </Route>
+          </Route> 
           <Route path="/dropdown">
             <CascadingDropdown />
           </Route>

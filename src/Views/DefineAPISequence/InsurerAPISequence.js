@@ -38,6 +38,17 @@ class APISequence extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Define-API Sequence</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-active'>Insurer Api Sequence</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className='container-box'>
                     <br/>
                     <br/>

@@ -39,6 +39,17 @@ class PreviewMappedEntries extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Define-API Sequence</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Preview API map</div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <div>
                         <div className='preview-table'>
@@ -77,6 +88,7 @@ class PreviewMappedEntries extends Component{
                         <br/>
                         <Row className='navigation-buttons'>
                             <Col><Link to='/statusofapisetup/entitymapping'><button className='btn '>Back</button></Link></Col>
+                            <Col><Link to='/MasterDependency'><button className='btn '>Next</button></Link></Col>
                         </Row>
                     </div>
                 </Container>

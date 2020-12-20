@@ -19,6 +19,7 @@ import {AiOutlineFundProjectionScreen, BiTrendingUp, SiLogstash, TiBusinessCard}
 
 import {Doughnut, Line} from "react-chartjs-2";
 
+
 /* Imports End Here */
 
 /* Home class to render the home page */
@@ -201,10 +202,12 @@ class Home extends Component {
                     <Row className="home-nav-buttons">
                         <h4 className="home-nav-button-title">System Administration</h4>
                         <Col>
+                          <Link to="/admin/adminhome">
                             <button className="home-btn">
                                 <BsCheckCircle style={{fontSize: '3.5em'}} className="home-circle-inner-text mb-2"/>
                                 <p>Approval Mechanism</p>
                             </button>
+                          </Link>
                         </Col>
                         <Col>
                             <button className="home-btn" onClick={Home}>

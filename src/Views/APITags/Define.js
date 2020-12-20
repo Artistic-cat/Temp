@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
+import { Link } from "react-router-dom";
 
 /**
  * @Author: Rifas
@@ -49,6 +50,15 @@ class Define extends Component {
         return (
             <>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>API Attributes</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Define API Tag</div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <h3 className="apiTag-header mb-4">Define API Tag Properties</h3>
                     <Row className="mb-4">
@@ -134,9 +144,11 @@ class Define extends Component {
                         }
                         </tbody>
                     </Table>
-                    <button className={"btn"}>Save as Draft</button>
-                    <button className={"btn"}>Next</button>
-                    <button className={"btn"}>Cancel</button>
+                    <Row className='navigation-buttons'>
+                            <Col><Link to='/apitag'><button className='btn' style = {{borderRadius : "60px"}}>Cancel</button></Link></Col>
+                            <Col><Link to='/'><button className='btn' style = {{borderRadius : "60px"}}>Save as Draft</button></Link></Col>
+                            <Col><Link to='/'><button className='btn' style = {{borderRadius : "60px"}}>Next</button></Link></Col>
+                    </Row>
                 </Container>
                 <Footer/>
             </>

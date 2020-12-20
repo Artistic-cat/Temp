@@ -1,0 +1,23 @@
+.tabs {
+    position: absolute;
+    display: flex;
+    float: right;
+    margin-left: 20%;
+}
+
+.overall {
+    position: relative;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    /* background-color: brown; */
+    width: 100%;
+    height: 8em;
+    margin-top: 2em;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.text {
+    font-size : 2vh;
+}

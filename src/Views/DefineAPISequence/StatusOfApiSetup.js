@@ -38,6 +38,17 @@ class Status extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Define-API Sequence</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Api Setup Status</div>
+                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className='container-box'>
                     <div className='status-table'>
                         <br/>
@@ -100,7 +111,7 @@ class Status extends Component{
                     <Row className='navigation-buttons'>
                         <Col><Link to='/mappingofinsurerapifiles'><button className='btn '>Back</button></Link></Col>
                         <Col><Link><button className='btn '>Save Draft</button></Link></Col>
-                        <Col><Link to='/statusofapisetup'><button className='btn '>Next</button></Link></Col> 
+                        <Col><Link to='/MasterDependency'><button className='btn '>Next</button></Link></Col> 
                         {/* Change Link of Next and add button POST Functionality. Activate button only when all above are filled */}
                     </Row>
                 </Container>

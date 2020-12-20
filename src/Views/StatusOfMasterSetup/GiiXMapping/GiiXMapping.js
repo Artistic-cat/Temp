@@ -10,21 +10,12 @@ import axios from "axios"
 
 import './GiiXMapping.css'
 
-/*
- * @Author: Sristi
- *
- * Status Page 2- GiiX Mapping page.
- * 
- * This view uses the GET giixmastersample and GET insurerMasterColumns API but the columns are not implemented here.
- * The displaying of columns is commented out for reference.
- * 
- */
 
 class GiiXMapping extends Component{
     async componentDidMount() {
         try {
             await axios.get(global.config.backend_ip
-                + "/giixmasterfiles")
+                + "/giixmastersample?masterRepoId=1")
                 .then((response) => {
                     this.setState({
                             giixMasterColumnList: response.data.apiResponse.data
@@ -49,6 +40,17 @@ class GiiXMapping extends Component{
         return(
             <div>
                 <Header/>
+                <div className='completed-status-bar'>
+                    <div className='left-name'>Set Up Master</div>
+                    <div className='status-icons'>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>GiiX Mapping</div>
+                        <div className='status-icon-incomplete'></div>
+                    </div>
+                </div>
+                <br/>
                 <Container className="container-box">
                     <div>
                         <style type="text/css">
@@ -85,6 +87,8 @@ class GiiXMapping extends Component{
 
                             `}
                         </style>
+                        <br/>
+                        <br/>
                         <div className='mapping-options'>
                             <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                                 <ToggleButton variant="flat" size="xxl" value={1}>Manually Map</ToggleButton>
@@ -98,8 +102,8 @@ class GiiXMapping extends Component{
                             <Col>
                                 <div className='insurer-table'>
                                     <h5>Insurer Master Column Names</h5>
-                                    <Table bordered>
-                                        <thread style={{display: 'table-header-group'}}>
+                                    <Table>
+                                        <thread>
                                             <tr>
                                                 <th>Sr. No.</th>
                                                 <th>Name</th>
@@ -109,29 +113,6 @@ class GiiXMapping extends Component{
                                             </tr>
                                         </thread>
                                         <tbody>
-                                            {/* Just some data for visualisation. Delete from here */}
-                                            <tr>
-                                                <td>1</td>
-                                                <td>a</td>
-                                                <td>aa</td>
-                                                <td>aaa</td>
-                                                <td><input type='radio' name='radio-select-insurer'/></td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>ba</td>
-                                                <td>baa</td>
-                                                <td>baaa</td>
-                                                <td><input type='radio' name='radio-select-insurer'/></td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>ca</td>
-                                                <td>caa</td>
-                                                <td>caaa</td>
-                                                <td><input type='radio' name='radio-select-insurer'/></td>
-                                            </tr>
-                                            {/* Just some data for visualisation. Delete till */}
                                             {/* {
                                                 (this.state != null ?
                                                     [...this.state.insurerMasterColumnList].map((data) =>
@@ -149,8 +130,8 @@ class GiiXMapping extends Component{
                             <Col>
                                 <div>
                                     <h5>GiiX Master Column Names</h5>
-                                    <Table responsive bordered>
-                                        <thread style={{display: 'table-header-group'}}>
+                                    <Table>
+                                        <thread>
                                             <tr>
                                                 <th>Radio Button</th>
                                                 <th>Column Name</th>
@@ -158,84 +139,12 @@ class GiiXMapping extends Component{
                                             </tr>
                                         </thread>
                                         <tbody>
-                                            {
+                                            {/* {
                                                 (this.state != null ?
                                                     [...this.state.giixMasterColumnList].map((data) =>
-                                                        <tr key={data.id}>
-                                                            <td><input type='radio' name='radio-select-giix'/></td>
-                                                            <td>{data.name}</td>
-                                                            <td>{data.id}</td>
-                                                        </tr>
-                                                    )
-                                                    : "")
-                                            }
-                                        </tbody>
-                                    </Table>
-                                </div>
-                            </Col>
-                        </Row>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <Row>
-                            <Col>
-                                <div className='insurer-table'>
-                                    <h5>Insurer Master Table Preview</h5>
-                                    <Table responsive bordered>
-                                        <thread>
-                                            <tr>
-                                                <th>Sl. No.</th>
-                                                <th></th>
-                                            </tr>
-                                            {/* {
-                                                (this.state != null ?
-                                                    [...this.state.insurerMasterColumnList].map((data) =>
                                                         <tr key={data.insurerFileManager}>
                                                             <td>{data.giixMasterName}</td>
-                                                        </tr>
-                                                    )
-                                                    : "")
-                                            } */}
-                                        </thread>
-                                        <tbody>
-                                            {/* {
-                                                (this.state != null ?
-                                                    [...this.state.insurerMasterColumnList].map((data) =>
-                                                        <tr key={data.insurerFileManager}>
-                                                            <td>{data.giixMasterName}</td>
-                                                        </tr>
-                                                    )
-                                                    : "")
-                                            } */}
-                                        </tbody>
-                                    </Table>
-                                </div>
-                            </Col>
-                            <Col>
-                                <div>
-                                    <h5>GiiX Master Table Preview</h5>
-                                    <Table responsive>
-                                        <thread>
-                                            <tr>
-                                                <th></th>
-                                            </tr>
-                                            {/* {
-                                                (this.state != null ?
-                                                    [...this.state.insurerMasterColumnList].map((data) =>
-                                                        <tr key={data.insurerFileManager}>
-                                                            <td>{data.giixMasterName}</td>
-                                                        </tr>
-                                                    )
-                                                    : "")
-                                            } */}
-                                        </thread>
-                                        <tbody>
-                                            {/* {
-                                                (this.state != null ?
-                                                    [...this.state.insurerMasterColumnList].map((data) =>
-                                                        <tr key={data.insurerFileManager}>
-                                                            <td>{data.giixMasterName}</td>
+                                                            <td>{data.insurerMasterName}</td> 
                                                         </tr>
                                                     )
                                                     : "")
@@ -252,8 +161,6 @@ class GiiXMapping extends Component{
                             <Col><Link><button className='btn '>Save Draft</button></Link></Col>
                             <Col><Link><button className='btn '>Map</button></Link></Col>
                         </Row>
-                        <br/>
-                        <br/>
                     </div>
                 </Container>
                 <Footer/>

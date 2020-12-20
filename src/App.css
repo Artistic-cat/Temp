@@ -1,6 +1,6 @@
-.container {
+/* .container {
     animation: fade 0.7s ease-in;
-}
+} */
 
 @keyframes fade {
     0% {
@@ -15,7 +15,7 @@
 
 .btn {
     width: 12em !important;
-    height: 3em !important;
+    height: 3.5em !important;
     background: #710044;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
     border-radius: 70px !important;
@@ -41,16 +41,9 @@ a:hover{
     color: inherit;
 }
 
-.navigation-buttons{
-    position: absolute;
-    left: 50%;
-    margin-left: -25vw;
-}
-
 .container-box {
     min-height: calc(100vh - 70px) !important;    
 }
-
 
 .completed-status-bar{
     position: relative;

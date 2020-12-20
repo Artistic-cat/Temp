@@ -43,13 +43,13 @@ class PreviewMappedEntries extends Component{
             <div>
                 <Header/>
                 <div className='completed-status-bar'>
-                    <div className='left-name'>Preview Mapped Entries</div>
+                    <div className='left-name'>Set Up Master</div>
                     <div className='status-icons'>
                         <div className='status-icon-complete'></div>
-                        <div className='status-icon-active'>Status of Master Setup</div>
-                        <div className='status-icon-incomplete'></div>
-                        <div className='status-icon-incomplete'></div>
-                        <div className='status-icon-incomplete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-complete'></div>
+                        <div className='status-icon-active'>Preview Map</div>
                     </div>
                 </div>
                 <br/>
