@@ -5,10 +5,10 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Sidebar from "../../Components/Sidebar/Sidebar"
 import FuncNavtab from "../../Components/NavTab/FuncNavtab"
-import {Container} from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
-import {AiOutlineDeploymentUnit, AiOutlineSnippets} from "react-icons/ai";
-import {GrGraphQl} from "react-icons/all";
+import { AiOutlineDeploymentUnit, AiOutlineSnippets } from "react-icons/ai";
+import { GrGraphQl } from "react-icons/all";
 
 /*
  * @Author: Sristi
@@ -23,16 +23,16 @@ import {GrGraphQl} from "react-icons/all";
 const tabs = [
     {
         id: 1,
-        icon: <GrGraphQl className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
+        icon: <GrGraphQl className='setup-icons' style={{ color: 'white', fontSize: '2.5em' }} />,
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
-        npcontent: <NewProductApi/>,
+        npcontent: NewProductApi,
         nttcontent: "API Driven NTT",
         drafts: "API Driven Drafts",
     },
     {
         id: 2,
-        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
+        icon: <AiOutlineDeploymentUnit className='setup-icons' style={{ color: 'white', fontSize: '2.5em' }} />,
         tabname: "GiiX Managed",
         tabpath: "/setup/GiiXManaged",
         npcontent: "GiiX Managed NP",
@@ -41,7 +41,7 @@ const tabs = [
     },
     {
         id: 3,
-        icon: <AiOutlineSnippets className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
+        icon: <AiOutlineSnippets className='setup-icons' style={{ color: 'white', fontSize: '2.5em' }} />,
         tabname: "Insurer Managed",
         tabpath: "/setup/InsurerManaged",
         npcontent: "Insurer Managed NP",
@@ -54,13 +54,13 @@ const tabs = [
 function Setup() {
     new RecentlyUsed().setPath("Setup", window.location.href)
     const tabsComponent = tabs.map(tab => <FuncNavtab id={tab.id} tabname={tab.tabname}
-                                                      npcontent={tab.npcontent} nttcontent={tab.nttcontent}
-                                                      drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon}/>)
+        npcontent={tab.npcontent} nttcontent={tab.nttcontent}
+        drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon} />)
     return (
         <div>
 
-            <Header/>
-            <Sidebar/>
+            <Header />
+            <Sidebar />
             <Container>
                 <div className='overall'>
                     <div className='tabs'>
@@ -68,7 +68,7 @@ function Setup() {
                     </div>
                 </div>
             </Container>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

@@ -4,13 +4,8 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { connect } from "react-redux";
 import _ from "lodash";
 
-
-
-
- 
  const NewProduct = (props) =>{
   const formikRef=useRef()
   const history = useHistory();

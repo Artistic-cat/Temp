@@ -11,18 +11,10 @@ import './FuncNavtab.css'
  */
 
 function InnerFunctionBody(props) {
+    const { content: Component } = props;
     return (
         <div className='inner-body-content'>
-            {`${props.content}`}
-
-            {/* Remove the code from here */}
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            <Component />
             <Link to='/files'><button className='btn'>Next</button></Link>
             {/* Remove the code till here, it's added just to preview the page flow */}
 
