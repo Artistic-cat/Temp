@@ -72,88 +72,82 @@ class Nomenclature extends Component {
                 </div>
                 <br />
                 <Container className="container-box">
-                    <div style={{ maxHeight: 320, minHeight: 50 }}>
-                        <Table className="mapper-table" responsive striped hover style={{ minWidth: 650 }}>
-                            <thead className="headings" style={{ fontSize: "2.5vh" }}>
-                                <tr>
-                                    <td>Giix Standard Masters</td>
-                                    <td>Insurer Master Not Available</td>
-                                    <td>Insurer Master Name</td>
-                                    <td>Insurer File Name</td>
-                                    <td>Insurer File Type</td>
-                                    <td>Verification hyperlink</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {nomenclatureFileList ?
-                                    [...(nomenclatureFileList || [])].map((data, key) =>
+                    <Table className="mapper-table" responsive striped hover style={{ minWidth: 650 }}>
+                        <thead className="headings" style={{ fontSize: "2.5vh" }}>
+                            <tr>
+                                <td>Giix Standard Masters</td>
+                                <td>Insurer Master Not Available</td>
+                                <td>Insurer Master Name</td>
+                                <td>Insurer File Name</td>
+                                <td>Insurer File Type</td>
+                                <td>Verification hyperlink</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {nomenclatureFileList ?
+                                [...(nomenclatureFileList || [])].map((data, key) =>
+                                    <tr key={data.id}>
+                                        <td>{data.name}</td>
+                                        {/*// TODO: Set the appropriate Data in the status of master dependency file field*/}
+                                        <td>
+                                            <Checkbox checked={checkboxCheckedKey.find((cck) => cck.toString() === key.toString())} onChange={this.handleOnCheckboxChange} name={key} />
+                                        </td>
+                                        {/*// TODO: Set the status of the file according to the response*/}
+                                        <td>
+                                            <input
+                                                type="text"
+                                                className="txt"
+                                                disabled={checkboxCheckedKey.find((cck) => cck.toString() === key.toString())}
+                                            />
+                                        </td>
+                                        {/*// TODO: Enable only one based on status*/}
+                                        <td>
+                                            <button className="button-select">Master file Selection</button>
+                                        </td>
+                                        <td>
+                                            <input value={key} type="text" className="txt" />
+                                        </td>
+                                        <td>
+                                            <Link style={{ color: "blue" }}>Preview</Link>
+                                        </td>
+                                    </tr>
+                                ) : <tr></tr>
+                            }
+                        </tbody>
+                    </Table>
+                    <Table className="mapper-table" style={{ minWidth: 650 }} responsive striped hover>
+                        <thead className="headings" style={{ fontSize: "2.5vh" }}>
+                            <tr>
+                                <td>Insurer Specific Master</td>
+                                <td>Generic Name</td>
+                                <td>Simple Description</td>
+                                <td>Insurer File Name</td>
+                                <td>Insurer File Type</td>
+                                <td>Verification hyperlink</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                (this.state != null ?
+                                    [...this.state.nomenclatureFileList].map((data, key) =>
                                         <tr key={data.id}>
-                                            <td>{data.name}</td>
+                                            <td><input type="text" className="txt"></input></td>
                                             {/*// TODO: Set the appropriate Data in the status of master dependency file field*/}
-                                            <td>
-                                                <Checkbox checked={checkboxCheckedKey.find((cck) => cck.toString() === key.toString())} onChange={this.handleOnCheckboxChange} name={key} />
-                                            </td>
+                                            <td><input type="text" className="txt"></input></td>
                                             {/*// TODO: Set the status of the file according to the response*/}
-                                            <td>
-                                                <input
-                                                    type="text"
-                                                    className="txt"
-                                                    disabled={checkboxCheckedKey.find((cck) => cck.toString() === key.toString())}
-                                                />
-                                            </td>
+                                            <td><input type="text" className="txt"></input></td>
                                             {/*// TODO: Enable only one based on status*/}
-                                            <td>
-                                                <button className="button-select">Master file Selection</button>
-                                            </td>
-                                            <td>
-                                                <input value={key} type="text" className="txt" />
-                                            </td>
-                                            <td>
-                                                <Link style={{ color: "blue" }}>Preview</Link>
-                                            </td>
+                                            <td><button className="button-select" onClick>Master file Selection</button></td>
+                                            <td><input type="text" className="txt"></input></td>
+                                            <td><Link style={{ color: "blue" }}>Preview</Link></td>
+
                                         </tr>
-                                    ) : <tr></tr>
-                                }
-                            </tbody>
-                        </Table>
-                    </div>
 
-                    <div style={{ maxHeight: 350, minHeight: 50, marginTop: "2%" }}>
-                        <Table className="mapper-table" style={{ minWidth: 650 }} responsive striped hover>
-                            <thead className="headings" style={{ fontSize: "2.5vh" }}>
-                                <tr>
-                                    <td>Insurer Specific Master</td>
-                                    <td>Generic Name</td>
-                                    <td>Simple Description</td>
-                                    <td>Insurer File Name</td>
-                                    <td>Insurer File Type</td>
-                                    <td>Verification hyperlink</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {
-                                    (this.state != null ?
-                                        [...this.state.nomenclatureFileList].map((data, key) =>
-                                            <tr key={data.id}>
-                                                <td><input type="text" className="txt"></input></td>
-                                                {/*// TODO: Set the appropriate Data in the status of master dependency file field*/}
-                                                <td><input type="text" className="txt"></input></td>
-                                                {/*// TODO: Set the status of the file according to the response*/}
-                                                <td><input type="text" className="txt"></input></td>
-                                                {/*// TODO: Enable only one based on status*/}
-                                                <td><button className="button-select" onClick>Master file Selection</button></td>
-                                                <td><input type="text" className="txt"></input></td>
-                                                <td><Link style={{ color: "blue" }}>Preview</Link></td>
-
-                                            </tr>
-
-                                        )
-                                        : "")
-                                }
-                            </tbody>
-                        </Table>
-                    </div>
+                                    )
+                                    : "")
+                            }
+                        </tbody>
+                    </Table>
                     <br />
                     <br />
                     <Row className='navigation-buttons'>
