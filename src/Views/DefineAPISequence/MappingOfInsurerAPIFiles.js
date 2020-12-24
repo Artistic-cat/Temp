@@ -31,11 +31,11 @@ class MappingOfInsurerAPIFiles extends Component{
                     </div>
                 </div>
                 <br/>
-                <Container className='container-box'>
+                <Container className='container-box' style = {{marginRight : "15%"}}>
                     <br/>
                     <br/>
-                    <Table>
-                        <thead>
+                    <Table >
+                        <thead style = {{backgroundColor : "#000A28", color : "#fff"}}>
                             <tr>
                                 <th>Sl. No.</th>
                                 <th>GiiX Standard API Name</th>

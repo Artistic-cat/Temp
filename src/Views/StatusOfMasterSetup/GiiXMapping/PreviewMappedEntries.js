@@ -57,16 +57,16 @@ class PreviewMappedEntries extends Component{
                     <div>
                         <div className='preview-table'>
                             <Table>
-                                <thread style={{display: 'table-header-group'}}>
+                                <thead style={{display: 'table-header-group', backgroundColor : "#000A28", color : "#fff"}}>
                                     <tr>
                                         <th>Sr. No.</th>
-                                        <th>Insurer Column Name</th>
                                         <th>GiiX Column Name</th>
-                                        <th>Name</th>
-                                        <th>Description</th>
+                                        <th>Insurer Column Name</th>
+                                        <th>Generic Name</th>
+                                        <th>Simple Description</th>
                                         <th>Undo Mapping</th>
                                     </tr>
-                                </thread >
+                                </thead >
                                 <tbody>
                                     {
                                         (this.state != null ?

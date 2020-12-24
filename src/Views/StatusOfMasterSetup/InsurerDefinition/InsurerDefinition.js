@@ -66,13 +66,13 @@ class InsurerDefinition extends Component{
                             <Row>
                                 <div className='insurer-table'>
                                     <Table bordered>
-                                        <thread style={{display: 'table-header-group'}}>
+                                        <thead style={{display: 'table-header-group', backgroundColor: "#000A28", color : "#fff"}}>
                                             <tr>
                                                 <th>Insurer Master File</th>
                                                 <th>Name</th>
                                                 <th>Description</th>
                                             </tr>
-                                        </thread>
+                                        </thead>
                                         <tbody>
                                             <tr>
                                                 <td>Proposal Type</td>
@@ -97,14 +97,14 @@ class InsurerDefinition extends Component{
                             <Row>
                                 <div>
                                     <Table bordered>
-                                        <thread style={{display: 'table-header-group'}}>
+                                        <thead style={{display: 'table-header-group', backgroundColor: "#000A28", color : "#fff"}}>
                                             <tr>
                                                 <th>Sr. No.</th>
-                                                <th>Column Name</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
+                                                <th>Insurer Column Name</th>
+                                                <th>Generic Name</th>
+                                                <th>Simple Description</th>
                                             </tr>
-                                        </thread>
+                                        </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>

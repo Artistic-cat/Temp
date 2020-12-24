@@ -1,3 +1,12 @@
+.headings {
+    background-color: #000A28;
+    color : #ffffff;
+}
+
+.status-table {
+    margin-right : 20%;
+}
+
 h5{
     font-size: 0.8em;
 }

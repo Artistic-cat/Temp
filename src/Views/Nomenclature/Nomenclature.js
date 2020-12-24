@@ -9,6 +9,29 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 class Nomenclature extends Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         isCheckboxChecked: false
+    //     };
+    // }
+
+    // handleOnCheckboxChange = (event, type) => {
+    //     switch (type) {
+    //         case "mmm":
+    //             if (event.target.checked) {
+    //                 this.setState({ isCheckboxChecked: true });
+    //             } else {
+    //                 this.setState({ isCheckboxChecked: false });
+    //             }
+    //             break;
+    //         default:
+    //             break;
+    //     }
+    // }
+
+
+
     async componentDidMount() {
         try{
             await axios.get(global.config.backend_ip 
@@ -20,7 +43,7 @@ class Nomenclature extends Component {
                 })
         
             await axios.get(global.config.backend_ip 
-                +"/giixMasterMapper?insurerProductTransactionTypeId=82")
+                +"/giixMasterMapper?insurerProductTransactionTypeId=156")
                 .then((response) =>{
                     this.setState({
                         nomenclatureList: response.data.apiResponse.data
@@ -35,6 +58,7 @@ class Nomenclature extends Component {
     }
 
     render() {
+        // const { isCheckboxChecked } = this.state;
         return(
             <>
                <Header/>
@@ -49,7 +73,7 @@ class Nomenclature extends Component {
                 </div>
                 <br/>
                 <Container className = "container-box">
-                    <div style={{maxHeight:350,minHeight:50}}>
+                    <div style={{maxHeight:320,minHeight:50}}>
                             <Table className = "mapper-table" responsive striped hover  style={{minWidth:650}}>
                             <thead className = "headings" style = {{fontSize : "2.5vh"}}>
                                 <tr>
@@ -68,9 +92,16 @@ class Nomenclature extends Component {
                                         <tr key={data.id}>
                                             <td>{data.name}</td>
                                             {/*// TODO: Set the appropriate Data in the status of master dependency file field*/}
-                                            <td><input type="checkbox" className = "check" value="2"></input></td>
+                                            <td><input 
+                                                    type="checkbox"    
+                                                    className = "check" 
+                                                    value="2"/>
+                                            </td>
                                                 {/*// TODO: Set the status of the file according to the response*/}
-                                            <td><input type = "text" className = "txt"></input></td>
+                                            <td><input 
+                                                   type = "text" 
+                                                   className = "txt"/>  
+                                            </td>
                                             {/*// TODO: Enable only one based on status*/}
                                             <td><button className="button-select" onClick>Master file Selection</button></td>
                                             <td><input type = "text" className = "txt"></input></td>
@@ -90,8 +121,8 @@ class Nomenclature extends Component {
                             <thead className = "headings" style = {{fontSize : "2.5vh"}}>
                                 <tr>
                                     <td>Insurer Specific Master</td>
-                                    <td>Simple Name</td>
-                                    <td>Description</td>
+                                    <td>Generic Name</td>
+                                    <td>Simple Description</td>
                                     <td>Insurer File Name</td>
                                     <td>Insurer File Type</td>
                                     <td>Verification hyperlink</td>

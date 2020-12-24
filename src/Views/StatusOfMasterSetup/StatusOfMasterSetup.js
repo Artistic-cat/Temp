@@ -58,7 +58,7 @@ class Status extends Component{
                         <br/>
                         <br/>
                         <Table size="sm" borderless hover>
-                            <thead>
+                            <thead className = "headings">
                                 <tr>
                                     <th>GiiX Master File</th>
                                     <th>Insurer Master File</th>
