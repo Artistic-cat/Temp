@@ -8,6 +8,7 @@ import Setup from "./Views/Setup/Setup";
 import Reset from "./Views/Login/Reset";
 import Login from './Views/Login/Login';
 import Home from "./Views/Home/Home"
+import NewProductApi from "./Components/FormsOnSetupPage/NewProduct";
 import CascadingDropdown from "./Components/CascadingDropdown/CascadingDropdown";
 import FileUpload from "./Views/FileUpload/FileUpload";
 import FileMapper from "./Views/FileUpload/FileMapper";
@@ -63,7 +64,7 @@ import AdminHome from "./Views/Admin/AdminHome";
 
 function App() {
   global.config = {
-    backend_ip: "http://13.229.56.134:1337",
+    backend_ip: "http://54.255.177.94:1337",
   }
   return (
     <div className='App'>
@@ -80,6 +81,9 @@ function App() {
           </Route>
           <Route path="/statusofapisetup/mapping/automatic">
             <APIAutomaticMapping/>
+          </Route>
+          <Route path="/test">
+            <NewProductApi/>
           </Route>
           <Route path="/statusofapisetup/entitymapping">
             <EntityMapping/>

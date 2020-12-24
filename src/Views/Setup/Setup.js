@@ -1,6 +1,6 @@
 import React from "react"
 import "./Setup.css"
-
+import NewProductApi from "../../Components/FormsOnSetupPage/NewProduct";
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Sidebar from "../../Components/Sidebar/Sidebar"
@@ -26,7 +26,7 @@ const tabs = [
         icon: <GrGraphQl className='setup-icons' style={{color: 'white', fontSize: '2.5em'}}/>,
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
-        npcontent: "API Driven NP",
+        npcontent: <NewProductApi/>,
         nttcontent: "API Driven NTT",
         drafts: "API Driven Drafts",
     },
