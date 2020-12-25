@@ -1,4 +1,5 @@
 import React, { Component} from 'react'
+import  "./EntityMappingOfInsurerAPIFiles.css";
 import Footer from '../../../Components/Footer/Footer'
 import Header from '../../../Components/Header/Header'
 import {Link} from 'react-router-dom'
@@ -19,6 +20,37 @@ import axios from "axios"
  */
 
 class GiiXMapping extends Component{
+
+    state = {
+
+        vehicle: {
+            btypecode : 1,
+            btypename : "New businees",
+            riskenddate : "20190403",
+            purchasedate : "20180312",
+            vehage : 0,
+            manfyear : 2018,
+            makecode : 158,
+            makename : "HONDA",
+            modelcode : 1023942,
+            modelname : "NEW JAZZ",
+            variantcode : 1023496,
+            modelparentcode : 1023492,
+            fuelcode : 2,
+            fuelname : "Diesel",
+            age : 0,
+            bodytypeid : 34
+        },
+         showVehicle : false 
+    }
+
+   toggleVehicleHandler = () => {
+       const isVisible = this.state.showVehicle;
+       this.setState({
+           showVehicle : !isVisible
+       });
+   }
+
     async componentDidMount() {
         try {
             await axios.get(global.config.backend_ip
@@ -44,6 +76,31 @@ class GiiXMapping extends Component{
         }
     }
     render(){
+        let vehicle = null;
+        if(this.state.showVehicle) {
+            vehicle = (
+                <div className = "xmlCard">
+                    <p>functionality : validatequote</p>
+                    <p>quote_type : full</p>
+                    <p>btype_code: {this.state.vehicle.btypecode}</p>
+                    <p>btype_name : {this.state.vehicle.btypename}</p>
+                    <p>risk_startdate : {this.state.vehicle.risk_startdate}</p>
+                    <p>risk_enddate : {this.state.vehicle.risk_enddate}</p>
+                    <p>purchase_date : {this.state.vehicle.purchase_date}</p>
+                    <p>veh_age : {this.state.vehicle.veh_age}</p>
+                    <p>manf_year : {this.state.vehicle.manf_year}</p>
+                    <p>make_code : {this.state.vehicle.make_code}</p>
+                    <p>make_name : {this.state.vehicle.make_name}</p>
+                    <p>model_parent_code : {this.state.vehicle.model_parent_code}</p>
+                    <p>fuel_code: {this.state.vehicle.fuel_code}</p>
+                    <p>fuel_name : {this.state.vehicle.fuel_name}</p>
+                    <p>variant_name : {this.state.vehicle.variant_name}</p>
+                    <p>age : {this.state.vehicle.age}</p>
+                    <p>bodytype_id : {this.state.vehicle.bodytype_id}</p>
+                </div>
+            );
+        }
+
         return(
             <div>
                 <Header/>
@@ -101,7 +158,7 @@ class GiiXMapping extends Component{
                             </ToggleButtonGroup>
                             <Link to='/statusofapisetup/mapping/preview' className='mapping-option'>Preview Mapped Entries</Link>
                         </div>
-                        <Row>
+                        <Row >
                             <Col>
                                 <div className='insurer-table'>
                                     <h5>Insurer API Tags</h5>
@@ -109,8 +166,8 @@ class GiiXMapping extends Component{
                                         <thread>
                                             <tr>
                                                 <th>Sr. No.</th>
-                                                <th>Name</th>
-                                                <th>Description</th>
+                                                <th>Generic Name</th>
+                                                <th>Simple Description</th>
                                                 <th>Insurer Tag Name</th>
                                                 <th>Radio Button</th>
                                             </tr>
@@ -189,6 +246,11 @@ class GiiXMapping extends Component{
                                     </Table>
                                 </div>
                             </Col>
+                            <Col className = "w3-container">
+                                <button className="btn" onClick = {this.toggleVehicleHandler}>Preview Xml</button>
+                                        <div>{vehicle}</div> 
+                            </Col>
+                           
                             <Col>
                                 <div>
                                     <h5>GiiX API File Preview</h5>

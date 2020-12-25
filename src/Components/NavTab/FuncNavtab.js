@@ -15,7 +15,7 @@ function InnerFunctionBody(props) {
     return (
         <div className='inner-body-content'>
             <Component />
-            <Link to='/files'><button className='btn'>Next</button></Link>
+            {/* <Link to='/files'><button className='btn'>Next</button></Link> */}
             {/* Remove the code till here, it's added just to preview the page flow */}
 
         </div>
@@ -29,25 +29,28 @@ function FunctionBody(props) {
     const drafts = props.drafts
 
     return (
-        <div className='content-area'>
-            <div className='content-tabs'>
-                <div className='content-links'>
-                    <NavLink to={`${props.tabpath}/NewProduct`} className='second-tabs'
-                             activeClassName='active-second-tabs'>New Product</NavLink>
-                    <NavLink to={`${props.tabpath}/NewTransactionType`} className='second-tabs'
-                             activeClassName='active-second-tabs'>New Transaction Type</NavLink>
-                    <NavLink to={`${props.tabpath}/Drafts`} className='second-tabs'
-                             activeClassName='active-second-tabs'>Drafts</NavLink>
+        <div>
+            <div className='content-area'>
+                <div className='content-tabs'>
+                    <div className='content-links'>
+                        <NavLink to={`${props.tabpath}/NewProduct`} className='second-tabs'
+                                activeClassName='active-second-tabs'>New Product</NavLink>
+                        <NavLink to={`${props.tabpath}/NewTransactionType`} className='second-tabs'
+                                activeClassName='active-second-tabs'>New Transaction Type</NavLink>
+                        <NavLink to={`${props.tabpath}/Drafts`} className='second-tabs'
+                                activeClassName='active-second-tabs'>Drafts</NavLink>
+                    </div>
+                    <Switch>
+                        <Route path={`${props.tabpath}/NewProduct`}
+                            render={() => <InnerFunctionBody content={npcontent}/>}/>
+                        <Route path={`${props.tabpath}/NewTransactionType`}
+                            render={() => <InnerFunctionBody content={nttcontent}/>}/>
+                        <Route path={`${props.tabpath}/Drafts`}
+                            render={() => <InnerFunctionBody content={drafts}/>}/>
+                    </Switch>
                 </div>
-                <Switch>
-                    <Route path={`${props.tabpath}/NewProduct`}
-                           render={() => <InnerFunctionBody content={npcontent}/>}/>
-                    <Route path={`${props.tabpath}/NewTransactionType`}
-                           render={() => <InnerFunctionBody content={nttcontent}/>}/>
-                    <Route path={`${props.tabpath}/Drafts`}
-                           render={() => <InnerFunctionBody content={drafts}/>}/>
-                </Switch>
             </div>
+            <br/>
         </div>
     )
 }

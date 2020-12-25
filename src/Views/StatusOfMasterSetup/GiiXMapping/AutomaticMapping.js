@@ -102,12 +102,12 @@ class AutomaticMapping extends Component{
                                 <Row>
                                     <div className='insurer-table'>
                                         <Table bordered>
-                                            <thread style={{display: 'table-header-group'}}>
+                                            <thead style={{display: 'table-header-group', backgroundColor: "#000A28", color : "#fff"}}>
                                                 <tr>
                                                     <th>Insurer Master Name</th>
                                                     <th>GiiX Master Name</th>
                                                 </tr>
-                                            </thread>
+                                            </thead>
                                             <tbody>
                                                 <tr>
                                                     <td>abc</td>
@@ -120,7 +120,7 @@ class AutomaticMapping extends Component{
                                 <Row>
                                     <div>
                                         <Table bordered>
-                                            <thread style={{display: 'table-header-group'}}>
+                                            <thead style={{display: 'table-header-group', backgroundColor : "#000A28", color : "#fff"}}>
                                                 <tr>
                                                     <th>Sr. No.</th>
                                                     <th>Insurer Column Names</th>
@@ -128,7 +128,7 @@ class AutomaticMapping extends Component{
                                                     <th>Sr. No.</th>
                                                     <th>Verified</th>
                                                 </tr>
-                                            </thread>
+                                            </thead>
                                             <tbody>
                                                 {
                                                 (this.state != null ?

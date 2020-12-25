@@ -1,6 +1,7 @@
 import React from "react"
 import "./Setup.css"
 import NewProductApi from "../../Components/FormsOnSetupPage/NewProduct";
+import NewTransactionApi from "../../Components/FormsOnSetupPage/NewTransaction"; 
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Sidebar from "../../Components/Sidebar/Sidebar"
@@ -27,7 +28,7 @@ const tabs = [
         tabname: "Api Driven",
         tabpath: "/setup/ApiDriven",
         npcontent: NewProductApi,
-        nttcontent: "API Driven NTT",
+        nttcontent: NewTransactionApi,
         drafts: "API Driven Drafts",
     },
     {
@@ -68,7 +69,8 @@ function Setup() {
                     </div>
                 </div>
             </Container>
-            <Footer />
+            <br/>
+            <Footer /> 
         </div>
     )
 }
