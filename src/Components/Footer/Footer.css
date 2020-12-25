@@ -11,7 +11,8 @@
     padding-left: 30%;
     padding-right: 20%;
     font-size: 0.9rem;
-    /*position: fixed;*/
+    position : absolute;
+       /*position: fixed;*/
 }
 
 @media only screen and (max-width: 600px) {

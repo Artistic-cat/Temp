@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import "./MappingOfInsurerAPIFiles";
 import {Table, Row, Col, Container} from 'react-bootstrap'
 import axios from "axios"
 import {Link} from 'react-router-dom'
@@ -16,7 +17,32 @@ import Footer from '../../Components/Footer/Footer'
  */
 
 class MappingOfInsurerAPIFiles extends Component{
+
+    state = {
+        
+        api : {
+            contentsofapi : 1
+        },
+        showApi : false
+    }
+
+    toggleApiHandler = () => {
+        const isVisible = this.state.showApi;
+        this.setState({
+            showApi: !isVisible
+        });
+    }
+
     render(){
+
+        let api = null;
+        if(this.state.showApi) {
+            api = (
+                <div className = "api-files">
+                    <p>Content of Api files/Url</p>
+                </div>
+            );
+        }
         return(
             <div>
                 <Header/>
@@ -34,26 +60,29 @@ class MappingOfInsurerAPIFiles extends Component{
                 <Container className='container-box' style = {{marginRight : "15%"}}>
                     <br/>
                     <br/>
-                    <Table >
-                        <thead style = {{backgroundColor : "#000A28", color : "#fff"}}>
-                            <tr>
-                                <th>Sl. No.</th>
-                                <th>GiiX Standard API Name</th>
-                                <th>Insurer API Request/Response Name</th>
-                                <th>URL Applicable</th>
-                                <th></th>
-                                <th>Insurer File Name</th>
-                                <th>Insurer File Type</th>
-                                <th>Actual URL</th>
-                                <th>Verification Hyperlink</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                    <div style = {{marginRight : "15%"}}>
+                        <Table >
+                            <thead style = {{backgroundColor : "#000A28", color : "#fff"}}>
+                                <tr>
+                                    <th>Sl. No.</th>
+                                    <th>GiiX Standard API Name</th>
+                                    <th>Insurer API Request/Response Name</th>
+                                    <th>URL Applicable</th>
+                                    <th></th>
+                                    <th>Insurer File Name</th>
+                                    <th>Insurer File Type</th>
+                                    <th>Actual URL</th>
+                                    <th>Verification Hyperlink</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>
+                                                   
                     <br/>
                     <br/>
                     <Row className='navigation-buttons'>
@@ -63,6 +92,29 @@ class MappingOfInsurerAPIFiles extends Component{
                     </Row>
                     <br/>
                     <br/>
+                    <Row>
+                        <Col>
+                            <h5>Api File Selection</h5>
+                            <Table>
+                                <thead>
+                                    <tr>
+                                        <th>Uploaded Files</th>
+                                        <th>Select API Request/Response files</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </Col>
+
+                        <Col className = "w3-container">
+                            <button className = "btn" onClick = {this.toggleApiHandler}>Preview</button>
+                                 <div>{api}</div>
+                        </Col>
+                    </Row>
                 </Container>
                 <Footer/>
                 <br/>

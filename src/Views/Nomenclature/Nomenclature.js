@@ -52,7 +52,8 @@ class Nomenclature extends Component {
         }
         else {
             // this.setState({ checkboxCheckedKey: "" })
-            // checkedKeys =  checkboxCheckedKey.filter data !== event.target.name
+            const checkedKeys =  checkboxCheckedKey.filter((data)=>data !== event.target.name)
+            this.setState({checkboxCheckedKey : checkedKeys})
         }
     }
 

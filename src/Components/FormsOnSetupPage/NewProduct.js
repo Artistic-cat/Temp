@@ -1,5 +1,6 @@
 import React,{useRef,useEffect,useState} from 'react';
- import { Formik } from 'formik';
+import './NewProduct.css';
+import { Formik } from 'formik';
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import { useHistory } from "react-router-dom";

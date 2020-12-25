@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link, NavLink, Route, Switch} from "react-router-dom"
 
-import './Functab.css'
+import '../NavTab/FuncNavtab.css';
 
 /*
  * @Author: Sristi
