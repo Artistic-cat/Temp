@@ -294,12 +294,7 @@ import axios from "axios";
 
                  </Grid>
              </div>
-            <button 
-                buttonType="Submit"
-                disabled={values.insert1?false:true}
-                left="35%"
-                top="3%"
-            >Set up New Transactions Type</button>
+            <button buttonType="Submit" className='btn' disabled={values.insert1?false:true} left="35%" top="3%" >Set up New Transactions Type</button>
          </form>
        )}}
      </Formik>

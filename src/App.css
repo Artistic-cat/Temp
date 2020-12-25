@@ -14,7 +14,7 @@
 }
 
 .btn {
-    width: 12em !important;
+    width: auto !important;
     height: 3.5em !important;
     background: #710044;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);

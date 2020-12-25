@@ -1,12 +1,8 @@
 import React from "react"
 import "./Setup.css"
 import NewProductApi from "../../Components/FormsOnSetupPage/NewProduct";
-import NewTransactionApi from "../../Components/FormsOnSetupPage/NewTransaction"; 
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
-import Sidebar from "../../Components/Sidebar/Sidebar"
+import NewTransactionApi from "../../Components/FormsOnSetupPage/NewTransaction";
 import FuncNavtab from "../../Components/NavTab/FuncNavtab"
-import { Container } from "react-bootstrap"
 import RecentlyUsed from "../../Components/RecentlyUsed/RecentlyUsed"
 import { AiOutlineDeploymentUnit, AiOutlineSnippets } from "react-icons/ai";
 import { GrGraphQl } from "react-icons/all";
@@ -58,19 +54,10 @@ function Setup() {
         npcontent={tab.npcontent} nttcontent={tab.nttcontent}
         drafts={tab.drafts} tabpath={tab.tabpath} icon={tab.icon} />)
     return (
-        <div>
-
-            <Header />
-            <Sidebar />
-            <Container>
-                <div className='overall'>
-                    <div className='tabs'>
-                        {tabsComponent}
-                    </div>
-                </div>
-            </Container>
-            <br/>
-            <Footer /> 
+        <div className='overall'>
+            <div className='tabs'>
+                {tabsComponent}
+            </div>
         </div>
     )
 }

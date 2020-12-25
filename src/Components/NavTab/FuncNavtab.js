@@ -17,7 +17,7 @@ function InnerFunctionBody(props) {
             <Component />
             {/* <Link to='/files'><button className='btn'>Next</button></Link> */}
             {/* Remove the code till here, it's added just to preview the page flow */}
-
+            <br/>
         </div>
     )
 }
@@ -63,7 +63,6 @@ function FuncNavtab(props) {
     const icon = props.icon
     return (
         <div className='functionality'>
-
             <NavLink to={`${props.tabpath}`} className="link" activeClassName='active-tabs'>
                 <div className='circle'>{icon}</div>
                 <div className='text'>{`${props.tabname}`}</div>
@@ -71,7 +70,8 @@ function FuncNavtab(props) {
             <Switch>
                 <Route path={`${props.tabpath}`} render={() =>
                     <FunctionBody tabpath={tabpath} npcontent={npcontent} nttcontent={nttcontent}
-                                  drafts={drafts}/>}/>
+                                  drafts={drafts}/>}
+                />
             </Switch>
         </div>
     )
